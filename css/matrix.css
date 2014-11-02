@@ -14,22 +14,22 @@
 
 @keyframes falling {
 	from {top: -250px;}
-	to 	{top: 100%;}
+	to 	{top: 125%;}
 }
 
 @-webkit-keyframes falling {
 	from {top: -250px;}
-	to 	{top: 100%;}
+	to 	{top: 125%;}
 }
 
 @-moz-keyframes falling {
 	from {top: -250px;}
-	to 	{top: 100%;}
+	to 	{top: 125%;}
 }
 
 @-o-keyframes falling {
 	from {top: -250px;}
-	to 	{top: 100%;}
+	to 	{top: 125%;}
 }
 
 .matrix-effect div.mtrx-column {
