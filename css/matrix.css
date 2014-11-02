@@ -14,22 +14,22 @@
 
 @keyframes falling {
 	from {top: -250px;}
-	to 	{top: 125%;}
+	to 	{top: 115%;}
 }
 
 @-webkit-keyframes falling {
 	from {top: -250px;}
-	to 	{top: 125%;}
+	to 	{top: 115%;}
 }
 
 @-moz-keyframes falling {
 	from {top: -250px;}
-	to 	{top: 125%;}
+	to 	{top: 115%;}
 }
 
 @-o-keyframes falling {
 	from {top: -250px;}
-	to 	{top: 125%;}
+	to 	{top: 115%;}
 }
 
 .matrix-effect div.mtrx-column {
@@ -56,18 +56,18 @@
 	-webkit-animation-duration: 6s;
 }
 .dur2{
-	animation-duration: 8s;
-	-webkit-animation-duration: 8s;
+	animation-duration: 9s;
+	-webkit-animation-duration: 9s;
 }
 .dur3{
-	animation-duration: 10s;
-	-webkit-animation-duration: 10s;
+	animation-duration: 13s;
+	-webkit-animation-duration: 13s;
 }
 .dur4{
-	animation-duration: 12s;
-	-webkit-animation-duration: 12s;
+	animation-duration: 16s;
+	-webkit-animation-duration: 16s;
 }
 .dur5{
-	animation-duration: 14s;
-	-webkit-animation-duration: 14s;
+	animation-duration: 20s;
+	-webkit-animation-duration: 20s;
 }
