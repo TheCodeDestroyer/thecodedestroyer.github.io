@@ -1,10 +1,11 @@
-const gulp = require('gulp'),
+var gulp = require('gulp'),
     eslint = require('gulp-eslint'),
     friendlyFormatter = require('eslint-friendly-formatter');
 
 gulp.task('eslint', function() {
     return gulp.src([
-        'gulp/aliases.js'
+        'src/**/*.js',
+        '!gulp/**/*.js'
     ])
     .pipe(eslint('.eslintrc'))
     .pipe(eslint.format(friendlyFormatter))
