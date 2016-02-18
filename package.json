@@ -1,0 +1,22 @@
+{
+  "name": "thecodedestroyer.github.io",
+  "version": "1.0.0",
+  "description": "About me page",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheCodeDestroyer/thecodedestroyer.github.io.git"
+  },
+  "author": "Nace Logar <the.code.destroyer@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheCodeDestroyer/thecodedestroyer.github.io/issues"
+  },
+  "homepage": "https://github.com/TheCodeDestroyer/thecodedestroyer.github.io#readme",
+  "dependencies": {
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1"
+  }
+}
