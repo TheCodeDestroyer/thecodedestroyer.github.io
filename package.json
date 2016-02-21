@@ -2,8 +2,6 @@
   "name": "thecodedestroyer.github.io",
   "version": "1.0.0",
   "description": "About me page",
-  "scripts": {
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TheCodeDestroyer/thecodedestroyer.github.io.git"
@@ -20,8 +18,15 @@
     "eslint": "^2.1.0",
     "eslint-friendly-formatter": "^1.2.2",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-changed": "^1.3.0",
     "gulp-eslint": "^2.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "latest",
+    "object.assign": "latest",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "yargs": "^4.1.0"
   }
 }
