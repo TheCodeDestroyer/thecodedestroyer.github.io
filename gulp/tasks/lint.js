@@ -1,12 +1,10 @@
 var gulp = require('gulp'),
     eslint = require('gulp-eslint'),
-    friendlyFormatter = require('eslint-friendly-formatter');
+    friendlyFormatter = require('eslint-friendly-formatter'),
+    paths = require('../paths');
 
 gulp.task('eslint', function() {
-    return gulp.src([
-        'src/**/*.js',
-        '!gulp/**/*.js'
-    ])
+    return gulp.src(paths.source)
     .pipe(eslint('.eslintrc'))
     .pipe(eslint.format(friendlyFormatter))
     .pipe(eslint.failOnError());
