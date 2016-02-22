@@ -66,3 +66,6 @@ com_crashlytics_export_strings.xml
 
 # JSPM
 jspm_packages
+
+# Other
+build
