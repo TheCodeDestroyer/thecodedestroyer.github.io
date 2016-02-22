@@ -1,12 +1,14 @@
+//noinspection Eslint
+
 var appRoot = './src/',
-    outputRoot = './dist/',
+    outputRoot = './build/',
     gulpRoot = './gulp/';
 
 module.exports = {
     root: appRoot,
     source: appRoot + '**/*.js',
     html: appRoot + '**/*.html',
-    css: appRoot + '**/*.css',
+    sass: appRoot + 'sass/**/*.scss',
     output: outputRoot,
     doc: './doc',
     gulp: gulpRoot + '**/*.js'

@@ -1,3 +1,4 @@
+//noinspection Eslint
 var yargs = require('yargs'),
     argv = yargs.argv,
     validBumpTypes = 'major|minor|patch|prerelease'.split('|'),
