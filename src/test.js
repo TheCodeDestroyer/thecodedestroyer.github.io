@@ -1,4 +1,5 @@
 export class App {
+    title = 'CV!';
     heading = 'Welcome to Aurelia!';
     firstName = 'John';
     lastName = 'Doe';
