@@ -1,3 +1,4 @@
+//noinspection Eslint
 var gulp = require('gulp'),
     eslint = require('gulp-eslint'),
     friendlyFormatter = require('eslint-friendly-formatter'),
