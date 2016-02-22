@@ -24,7 +24,7 @@
 @import "variables";
 
 body {
-    .font1;
+    @extend .font1;
 
     //background: #111;
     background: $color2 url('../img/background2.jpg') repeat-x fixed center top;
@@ -37,11 +37,13 @@ body {
     @media #{$mobile} {
         background-image: none;
     }
+
+    @media #{$laptop} {
+        padding: 0;
+    }
 }
 
-@media #{$laptop} {
-    padding: 0;
-}
+
 
 ul {
     margin: 0;
