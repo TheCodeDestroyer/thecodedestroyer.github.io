@@ -1,0 +1,9 @@
+/* MAIL CONTENT */
+
+#mailContent::before {
+    content: 'the.code.destroyer' '\0040';
+}
+
+#mailContent::after {
+    content: 'gmail.com';
+}
