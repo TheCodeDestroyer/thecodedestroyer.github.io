@@ -1,12 +1,15 @@
-//noinspection Eslint
 var gulp = require('gulp'),
-    eslint = require('gulp-eslint'),
-    friendlyFormatter = require('eslint-friendly-formatter'),
-    paths = require('../paths');
+    jshint = require('gulp-jshint');
 
-gulp.task('eslint', function() {
-    return gulp.src(paths.source)
-    .pipe(eslint('.eslintrc'))
-    .pipe(eslint.format(friendlyFormatter))
-    .pipe(eslint.failOnError());
+gulp.task('jshint', function () {
+    'use strict';
+
+    return gulp.src([
+            'gulpfile.js',
+            'gulp/**/*.js',
+            'src/js/**/*.js'
+        ])
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish', { verbose: true }))
+        .pipe(jshint.reporter('fail'));
 });
