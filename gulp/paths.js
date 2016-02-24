@@ -1,5 +1,3 @@
-//noinspection Eslint
-
 var appRoot = './src/',
     outputRoot = './build/',
     gulpRoot = './gulp/';
