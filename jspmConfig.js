@@ -14,7 +14,7 @@ System.config({
 
   map: {
     "FortAwesome/Font-Awesome": "github:FortAwesome/Font-Awesome@4.5.0",
-    "TheCodeDestroyer/jquery-nicescroll-plus": "github:TheCodeDestroyer/jquery-nicescroll-plus@1.0.0",
+    "TheCodeDestroyer/jquery-nicescroll": "github:TheCodeDestroyer/jquery-nicescroll@1.0.1",
     "aFarkas/html5shiv": "github:aFarkas/html5shiv@3.7.3",
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
@@ -24,7 +24,6 @@ System.config({
     "gdsmith/jquery.easing": "github:gdsmith/jquery.easing@1.3.2",
     "gilbitron/Nivo-Lightbox": "github:gilbitron/Nivo-Lightbox@1.2.0",
     "imakewebthings/jquery-waypoints": "github:imakewebthings/jquery-waypoints@2.0.5",
-    "inuyaksa/jquery.nicescroll": "github:inuyaksa/jquery.nicescroll@3.6.7",
     "jamesallardice/Placeholders.js": "github:jamesallardice/Placeholders.js@4.0.1",
     "jquery/jquery": "github:jquery/jquery@1.11.1",
     "jquery/jquery-mousewheel": "github:jquery/jquery-mousewheel@3.1.13",
@@ -44,7 +43,7 @@ System.config({
       "util": "npm:util@0.10.3"
     },
     "github:twbs/bootstrap@3.3.6": {
-      "jquery": "github:components/jquery@2.2.0"
+      "jquery": "github:components/jquery@2.2.1"
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
