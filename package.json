@@ -12,6 +12,11 @@
     "url": "https://github.com/TheCodeDestroyer/thecodedestroyer.github.io/issues"
   },
   "homepage": "https://github.com/TheCodeDestroyer/thecodedestroyer.github.io#readme",
+  "scripts": {
+    "postinstall": "jspm install",
+    "prestart": "gulp build",
+    "start": "bundle exec jekyll serve --drafts --watch"
+  },
   "dependencies": {
     "bower": "^1.7.7",
     "gulp": "^3.9.1",
