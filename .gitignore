@@ -71,4 +71,5 @@ jspm_packages
 build
 jspmConfig.js
 Gemfile.lock
+_site
 
