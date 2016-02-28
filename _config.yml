@@ -1,4 +1,4 @@
-exclude: [ "README.md", "package.json", "gulp", "CNAME", "Gemfile", "Gemfile.lock", ".idea", "node_modules" ]
+exclude: [ "README.md", "package.json", "gulp", "CNAME", "Gemfile", "Gemfile.lock", ".idea", "node_modules", "jspm_packages" ]
 
 name: "Nace Logar CV & Portfolio"
 description: "As stated above my name is <strong>Nace</strong>, pronounced 'Natse' I started as a windows desktop developer.
