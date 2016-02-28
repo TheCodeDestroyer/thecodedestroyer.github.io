@@ -83,7 +83,10 @@
 
     $(window).load(function() {
         var contentBodyQuery = $('#content-body');
-        $('#page-loader').fadeOut(200);
+
+        setTimeout(function() {
+            $('#page-loader').fadeOut(200);
+        }, 500);
 
         //Safari Crossbrowser animation Fix
         if ($('html').hasClass('safari')) {
