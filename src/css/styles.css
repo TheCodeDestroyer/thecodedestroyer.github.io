@@ -559,13 +559,13 @@ p {
 /* ==========================================================
 ! 9. Section: Education and Work Experience
 ========================================================== */
-.line-content-education {
+.line-content-graduation, .line-content-job {
   padding-bottom: 10px; }
   @media (min-width: 992px) {
-    .line-content-education {
+    .line-content-graduation, .line-content-job {
       min-height: 150px; } }
 
-.graduation-time, .job {
+.graduation-time, .job-time {
   font-size: 14px;
   font-weight: bold;
   color: #999999; }

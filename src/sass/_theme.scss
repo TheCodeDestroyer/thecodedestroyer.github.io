@@ -602,7 +602,7 @@ p {
 /* ==========================================================
 ! 9. Section: Education and Work Experience
 ========================================================== */
-.line-content-education {
+.line-content-graduation, .line-content-job {
     padding-bottom: 10px;
     @media
     #{$laptop} {
@@ -611,7 +611,7 @@ p {
     }
 }
 
-.graduation-time, .job {
+.graduation-time, .job-time {
     font-size: 14px;
     font-weight: bold;
     color: $textcolor + #444;
