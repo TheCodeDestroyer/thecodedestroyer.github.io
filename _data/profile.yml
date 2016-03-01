@@ -1,0 +1,21 @@
+name: &name "Nace Logar"
+job: "Software Developer"
+gravatar: "8b2576c1371a08fb6167c09a33ae50e8"
+bio: "As stated above my name is <strong>Nace</strong>, pronounced <strong>'Natse'</strong> I started
+                  as a windows desktop developer.
+                  Later on I became web developer working primarily on web pages and business web applications
+                  where I actually fell in love with
+                  <strong>CSS</strong>, <strong>HTML</strong> and <strong>JS</strong>."
+infoList:
+- title: "Name"
+  value: *name
+  partialPath: "main/empty.html"
+- title: "Born"
+  value: "17 March 1989 - Kranj, Slovenia"
+  partialPath: "main/empty.html"
+- title: "Email"
+  class: "mailContent"
+  value: ""
+  partialPath: "main/empty.html"
+- title: "Find Me On"
+  partialPath: "content/profile/info/social.html"
