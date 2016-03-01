@@ -1,0 +1,4 @@
+{% for social in site.data.socialList %}
+    <a href="{{ social.url }}" target="_blank"
+       class="btn btn-default"><i class="fa {{ social.icon }}"></i></a>
+{% endfor %}
