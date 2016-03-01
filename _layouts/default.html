@@ -1,109 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Page title -->
-        <title>Nace Logar CV & Portfolio</title>
-        <!-- /Page title -->
-
-        <!-- Page meta -->
-        <meta name="description" content="Nace Logar CV & Portfolio">
-        <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-        <meta name="revisit-after" content="30 days">
-        <meta name="robots" content="index, follow">
-        <!-- /Page meta -->
-
-        {% include styles.html %}
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="src/lib/js/html5shiv.min.js"></script>
-        <script src="src/lib/js/respond.js"></script>
-        <![endif]-->
-
-        <!-- Favicon
-        ========================================================= -->
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <!-- /Favicon
-        ========================================================= -->
-    </head>
+    {% include main/head.html %}
 
     <body data-spy="scroll" data-target="#side-menu">
 
-        <!-- Page Loader
-        ========================================================= -->
-        <div class="loader" id="page-loader">
-            <div class="loading-wrapper">
-                <div class="tp-loader spinner"></div>
-                <!-- Edit With Your Name -->
-                <div class="side-menu-name">
-                    Nace <strong>Logar</strong>
-                </div>
-                <!-- /Edit With Your Name -->
-                <!-- Edit With Your Job -->
-                <p class="side-menu-job">Software Developer</p>
-                <!-- /Edit With Your Job -->
-            </div>
-        </div>
-        <!-- /End of Page loader
-        ========================================================= -->
+        {% include main/pageLoader.html %}
 
-        <!-- SIDE MENU
-        ========================================================= -->
-        <div class="side-menu-open hidden-sm hidden-xs">
-            <!-- Menu-button -->
-            <a href="#" class="btn btn-default side-menu-button"><i class="fa fa-bars"></i> MENU</a>
-            <!-- /menu-button -->
-        </div>
-        <!-- Side Menu container -->
-        <div class="side-menu">
-            <!-- close button -->
-            <span id="side-menu-close"><i class="fa fa-times"></i></span>
-            <!-- /close button -->
-
-            <!-- Menu header -->
-            <div class="side-menu-name">
-                <!-- edit with your name -->
-                Nace <strong>Logar</strong>
-                <!-- /edit with your name -->
-            </div>
-            <!-- edit with your Job -->
-            <p class="side-menu-job">Software Developer</p>
-            <!-- /edit with your job -->
-            <!-- /Menu Header -->
-
-            <!-- Main Navigation -->
-            <nav id="side-menu" class="side-menu-este">
-                <ul class="nav side-menu-nav">
-                    <li><a href="#intro"><i class="fa fa-angle-right"></i> Intro</a></li>
-                    <li><a href="#works"><i class="fa fa-angle-right"></i> Work Experience</a></li>
-                    <li><a href="#skills"><i class="fa fa-angle-right"></i> Skills</a></li>
-                    <li><a href="#interests"><i class="fa fa-angle-right"></i> Interests</a></li>
-                    <li><a href="#portfolio"><i class="fa fa-angle-right"></i> Portfolio</a></li>
-                </ul>
-            </nav>
-            <!-- /Main Navigation-->
-
-            <!-- Other Buttons -->
-            <div class="side-menu-buttons">
-                <a href="https://drive.google.com/uc?export=download&id=0B1nAFv9WWinibkRRMmJLYkVEdFE" class="btn btn-side-menu"><i class="fa fa-download"></i> Download my resume</a>
-                <!--<a href="#" class="btn btn-side-menu"><i class="fa fa-envelope-o"></i> Send me a message</a>-->
-            </div>
-            <!-- /Other Buttons-->
-        </div>
-        <!-- /side menu container -->
-
-        <!-- /SIDE MENU
-        ========================================================= -->
+        {% include main/sideMenu.html %}
 
         {{ content }}
 
-
-        {% include scripts.html %}
+        {% include main/scripts.html %}
 
         <br>
         <br>
