@@ -1,0 +1,80 @@
+listTitle: "Work Experience"
+listType: "timeline-work"
+contentType: "line-content-job"
+sectionClass: "work-experience"
+sectionId: "works"
+list:
+- title: "Četrta pot d.o.o."
+  activity:
+    type: "job"
+    title: " Senior Frontend Developer - "
+    date: "Dec 2014 - Current"
+  partialPath: "main/empty.html"
+  divClass: "job-description"
+  value: "ČETRTA POT has a lot of different projects. The main project here is the 'Personnel information system',
+          which has different modules such as: Employee management, time tracking,
+          travel warrant management, payment management and much more.
+          Basically everything that a company needs internally. It also makes its own
+          hardware such as registration terminals which
+          integrate with time tracking, electronic permit, user data, etc. My role
+          here was to update this legacy web application by
+          switching it from MPA to SPA and to implement a client side MV* framework.
+          Along with my main role I also helped on other small projects,
+          one being online public transport tracking for the public and its
+          administrative component."
+- title: "Lokacom d.o.o."
+  activity:
+    type: "job"
+    title: " Volunteer Mobile Developer - "
+    date: "Apr 2014 - Aug 2014"
+  partialPath: "main/empty.html"
+  divClass: "job-description"
+  value: "LOKACOM has a windows mobile application which is quite extensive and has many interesting features
+          including vending, asset management, sales force, employee management, sales
+          acceleration, warehouse management,
+          RFID, offline mode and much more. My job here was to port the application
+          cross platform(Android, iOS and Windows Phone)."
+- title: "pixi* Software GmbH"
+  activity:
+    type: "job"
+    title: " Senior Developer - "
+    date: "Apr 2012 - Apr 2014"
+  partialPath: "main/empty.html"
+  divClass: "job-description"
+  value: "At PIXI* SOFTWARE I was a part of an internal \"startup\" team, which had a
+          goal to migrate a desktop application to a web application.
+          This product was meant for companies that primarily do business on eBay,
+          Amazon, Otto, Zalando,etc.
+          The application was basically an automation for orders(from ordering to
+          sending),
+          it also has logistics management, warehouse optimisation, stock management,
+          order tracking and much more.
+          The product that we started migrating is around 10 years old which meant
+          that there was a lot of work to be done.
+          In time this team grew so much that we had to split it in two. That's when I
+          became a team leader of one of the two teams."
+- title: "E-Soft d.o.o."
+  activity:
+    type: "job"
+    title: " Web Developer - "
+    date: "Nov 2010 - Apr 2012"
+  partialPath: "main/empty.html"
+  divClass: "job-description"
+  value: "E-SOFT has quite a lot of different projects. It mainly deals with
+          development of web pages with CMS and some business web applications.
+          My main role was working on web pages and server maintenance.
+          From time to time I also had a chance to work on huge business web
+          applications."
+- title: "Infotrans d.o.o."
+  activity:
+    type: "job"
+    title: " Windows Desktop Developer - "
+    date: "Sep 2008 - Aug 2010"
+  partialPath: "main/empty.html"
+  divClass: "job-description"
+  value: "INFOTRANS was the first development company I worked for and it had one product.
+          In short it is a Logistics and Transport application which has a lot of
+          different
+          features like order processing, traffic tracking, billing, analytics,
+          warehouse management,
+          time tracking, employee management and much more."
