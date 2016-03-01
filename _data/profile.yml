@@ -8,6 +8,9 @@ bio: "As stated above my name is <strong>Nace</strong>, pronounced <strong>'Nats
       <strong>CSS</strong>, <strong>HTML</strong> and <strong>JS</strong>."
 listTitle: "Profile"
 listType: "timeline-point"
+contentType: ""
+sectionClass: "profile-infos"
+sectionId: ""
 list:
 - title: "Name"
   value: *name
@@ -16,7 +19,7 @@ list:
   value: "17 March 1989 - Kranj, Slovenia"
   partialPath: "main/empty.html"
 - title: "Email"
-  class: "mailContent"
+  paragraphClass: "mailContent"
   value: ""
   partialPath: "main/empty.html"
 - title: "Find Me On"
