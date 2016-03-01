@@ -1,0 +1,151 @@
+<section class="timeline profile-infos">
+
+    <!-- VERTICAL MARGIN (necessary for the timeline effect) -->
+    <div class="line row timeline-margin">
+        <div class="content-wrap">
+            <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
+            <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height"></div>
+            <div class="col-md-9 bg1 full-height"></div>
+        </div>
+    </div>
+    <!-- /VERTICAL MARGIN -->
+
+    <!-- SECTION TITLE -->
+    {% include content/profile/info/title.html %}
+    <!-- /SECTION TITLE -->
+
+    {% for info in site.data.profile.infoList %}
+    <div class="line row">
+        <!-- Margin Collums (necessary for the timeline effect) -->
+        <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
+        <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>
+        <!-- /Margin Collums -->
+        <!-- Item Content -->
+        <div class="col-md-8 content-wrap bg1">
+            <div class="line-content">
+                <!-- Subtitle -->
+                <h3 class="section-item-title-1">{{ info.title }}</h3>
+                <!-- /Subtitle -->
+                <!-- content -->
+                <p class="{{ info.class }}">
+                    {{ info.value }}
+                    {% include {{ info.partialPath }} %}
+                </p>
+                <!-- /Content -->
+            </div>
+        </div>
+        <!-- /Item Content -->
+        <!-- Margin Collum-->
+        <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
+        <!-- /Margin Collum-->
+    </div>
+    {% endfor %}
+
+
+    <!--&lt;!&ndash; SECTION ITEM &ndash;&gt;-->
+    <!--<div class="line row">-->
+        <!--&lt;!&ndash; Margin Collums (necessary for the timeline effect) &ndash;&gt;-->
+        <!--<div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>-->
+        <!--<div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>-->
+        <!--&lt;!&ndash; /Margin Collums &ndash;&gt;-->
+        <!--&lt;!&ndash; Item Content &ndash;&gt;-->
+        <!--<div class="col-md-8 content-wrap bg1">-->
+            <!--<div class="line-content">-->
+                <!--&lt;!&ndash; Subtitle &ndash;&gt;-->
+                <!--<h3 class="section-item-title-1">Full Name</h3>-->
+                <!--&lt;!&ndash; /Subtitle &ndash;&gt;-->
+                <!--&lt;!&ndash; content &ndash;&gt;-->
+                <!--<p>Nace Logar</p>-->
+                <!--&lt;!&ndash; /Content &ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /Item Content &ndash;&gt;-->
+        <!--&lt;!&ndash; Margin Collum&ndash;&gt;-->
+        <!--<div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>-->
+        <!--&lt;!&ndash; /Margin Collum&ndash;&gt;-->
+    <!--</div>-->
+    <!--&lt;!&ndash; /SECTION ITEM &ndash;&gt;-->
+
+    <!--&lt;!&ndash; SECTION ITEM &ndash;&gt;-->
+    <!--<div class="line row">-->
+        <!--&lt;!&ndash; Margin Collums (necessary for the timeline effect) &ndash;&gt;-->
+        <!--<div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>-->
+        <!--<div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>-->
+        <!--&lt;!&ndash; /Margin Collums &ndash;&gt;-->
+        <!--&lt;!&ndash; Item Content &ndash;&gt;-->
+        <!--<div class="col-md-8 content-wrap bg1">-->
+            <!--<div class="line-content">-->
+                <!--&lt;!&ndash; Subtitle &ndash;&gt;-->
+                <!--<h3 class="section-item-title-1">Born</h3>-->
+                <!--&lt;!&ndash; /Subtitle &ndash;&gt;-->
+                <!--&lt;!&ndash; content &ndash;&gt;-->
+                <!--<p>17 March 1989 - Kranj, Slovenia</p>-->
+                <!--&lt;!&ndash; /Content &ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /Item Content &ndash;&gt;-->
+        <!--&lt;!&ndash; Margin Collum&ndash;&gt;-->
+        <!--<div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>-->
+        <!--&lt;!&ndash; /Margin Collum&ndash;&gt;-->
+    <!--</div>-->
+    <!--&lt;!&ndash; /SECTION ITEM &ndash;&gt;-->
+
+    <!--&lt;!&ndash; SECTION ITEM &ndash;&gt;-->
+    <!--<div class="line row">-->
+        <!--&lt;!&ndash; Margin Collums (necessary for the timeline effect) &ndash;&gt;-->
+        <!--<div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>-->
+        <!--<div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>-->
+        <!--&lt;!&ndash; /Margin Collums &ndash;&gt;-->
+        <!--&lt;!&ndash; Item Content &ndash;&gt;-->
+        <!--<div class="col-md-8 content-wrap bg1">-->
+            <!--<div class="line-content">-->
+                <!--&lt;!&ndash; Subtitle &ndash;&gt;-->
+                <!--<h3 class="section-item-title-1">Email</h3>-->
+                <!--&lt;!&ndash; /Subtitle &ndash;&gt;-->
+                <!--&lt;!&ndash; content &ndash;&gt;-->
+                <!--<p id="mailContent">-->
+
+                <!--</p>-->
+                <!--&lt;!&ndash; /Content &ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /Item Content &ndash;&gt;-->
+        <!--&lt;!&ndash; Margin Collum &ndash;&gt;-->
+        <!--<div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>-->
+        <!--&lt;!&ndash; /Margin Collums &ndash;&gt;-->
+    <!--</div>-->
+    <!--&lt;!&ndash; /SECTION ITEM &ndash;&gt;-->
+
+    <!--&lt;!&ndash; SECTION ITEM &ndash;&gt;-->
+    <!--<div class="line row">-->
+        <!--&lt;!&ndash; Margin Collums (necessary for the timeline effect) &ndash;&gt;-->
+        <!--<div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>-->
+        <!--<div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>-->
+        <!--&lt;!&ndash; Margin Collums (necessary for the timeline effect) &ndash;&gt;-->
+        <!--&lt;!&ndash; Item Content &ndash;&gt;-->
+        <!--<div class="col-md-8 content-wrap bg1">-->
+            <!--<div class="line-content">-->
+                <!--&lt;!&ndash; Subtitle &ndash;&gt;-->
+                <!--<h3 class="section-item-title-1">Find Me On</h3>-->
+                <!--&lt;!&ndash; /Subtitle &ndash;&gt;-->
+                <!--&lt;!&ndash; content &ndash;&gt;-->
+                <!--<a href="https://github.com/TheCodeDestroyer" target="_blank"-->
+                   <!--class="btn btn-default"><i class="fa fa-github"></i></a>-->
+                <!--<a href="https://twitter.com/ThCodeDestroyer" target="_blank"-->
+                   <!--class="btn btn-default"><i class="fa fa-twitter"></i></a>-->
+                <!--<a href="https://plus.google.com/+NaceLogarTM" target="_blank"-->
+                   <!--class="btn btn-default"><i class="fa fa-google-plus"></i></a>-->
+                <!--<a href="https://linkedin.com/in/thecodedestroyer" target="_blank"-->
+                   <!--class="btn btn-default"><i class="fa fa-linkedin"></i></a>-->
+                <!--<a href="http://feeds.feedburner.com/Coding4Passion" target="_blank"-->
+                   <!--class="btn btn-default"><i class="fa fa-rss"></i></a>-->
+                <!--&lt;!&ndash; /Content &ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /Item Content &ndash;&gt;-->
+        <!--&lt;!&ndash; Margin Collum &ndash;&gt;-->
+        <!--<div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>-->
+        <!--&lt;!&ndash; /Margin Collum &ndash;&gt;-->
+    <!--</div>-->
+    <!--&lt;!&ndash; /SECTION ITEM &ndash;&gt;-->
+</section>
