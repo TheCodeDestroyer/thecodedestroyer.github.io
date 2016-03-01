@@ -6,7 +6,9 @@ bio: "As stated above my name is <strong>Nace</strong>, pronounced <strong>'Nats
       Later on I became web developer working primarily on web pages and business web applications
       where I actually fell in love with
       <strong>CSS</strong>, <strong>HTML</strong> and <strong>JS</strong>."
-infoList:
+listTitle: "Profile"
+listType: "timeline-point"
+list:
 - title: "Name"
   value: *name
   partialPath: "main/empty.html"
@@ -18,4 +20,4 @@ infoList:
   value: ""
   partialPath: "main/empty.html"
 - title: "Find Me On"
-  partialPath: "content/profile/info/social.html"
+  partialPath: "content/profile/social.html"
