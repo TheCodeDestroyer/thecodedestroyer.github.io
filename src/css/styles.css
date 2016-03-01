@@ -931,8 +931,8 @@ textarea.form-control {
   height: 280px; }
 
 /* MAIL CONTENT */
-#mailContent::before {
+.mailContent::before {
   content: 'the.code.destroyer' '\0040'; }
 
-#mailContent::after {
+.mailContent::after {
   content: 'gmail.com'; }
