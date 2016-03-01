@@ -1,5 +1,7 @@
 <section class="timeline profile-infos">
 
+    {% assign timelineData = site.data[include.timelineData] %}
+
     <!-- VERTICAL MARGIN (necessary for the timeline effect) -->
     <div class="line row timeline-margin">
         <div class="content-wrap">
@@ -11,25 +13,25 @@
     <!-- /VERTICAL MARGIN -->
 
     <!-- SECTION TITLE -->
-    {% include content/profile/info/title.html %}
+    {% include content/timeline/title.html %}
     <!-- /SECTION TITLE -->
 
-    {% for info in site.data.profile.infoList %}
+    {% for timelineEntry in timelineData.list %}
     <div class="line row">
         <!-- Margin Collums (necessary for the timeline effect) -->
         <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-        <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>
+        <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height {{ timelineData.listType }}"></div>
         <!-- /Margin Collums -->
         <!-- Item Content -->
         <div class="col-md-8 content-wrap bg1">
             <div class="line-content">
                 <!-- Subtitle -->
-                <h3 class="section-item-title-1">{{ info.title }}</h3>
+                <h3 class="section-item-title-1">{{ timelineEntry.title }}</h3>
                 <!-- /Subtitle -->
                 <!-- content -->
-                <p class="{{ info.class }}">
-                    {{ info.value }}
-                    {% include {{ info.partialPath }} %}
+                <p class="{{ timelineEntry.class }}">
+                    {{ timelineEntry.value }}
+                    {% include {{ timelineEntry.partialPath }} %}
                 </p>
                 <!-- /Content -->
             </div>
