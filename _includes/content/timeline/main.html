@@ -1,6 +1,6 @@
-<section class="timeline profile-infos">
+{% assign timelineData = site.data[include.timelineData] %}
 
-    {% assign timelineData = site.data[include.timelineData] %}
+<section class="timeline {{ timelineData.sectionClass }}" id="{{ timelineData.sectionId }}">
 
     <!-- VERTICAL MARGIN (necessary for the timeline effect) -->
     {% include content/timeline/margin.html %}
@@ -18,15 +18,30 @@
         <!-- /Margin Collums -->
         <!-- Item Content -->
         <div class="col-md-8 content-wrap bg1">
-            <div class="line-content">
+            <div class="line-content {{ timelineData.contentType }}">
                 <!-- Subtitle -->
                 <h3 class="section-item-title-1">{{ timelineEntry.title }}</h3>
                 <!-- /Subtitle -->
-                <!-- content -->
-                <p class="{{ timelineEntry.class }}">
-                    {{ timelineEntry.value }}
-                    {% include {{ timelineEntry.partialPath }} %}
-                </p>
+                <!-- Activity time -->
+                {% if timelineEntry.activity != null %}
+                <h4 class="{{ timelineEntry.activity.type }}">
+                    <i class="fa fa-flag"></i>
+                    <span>
+                        {{ timelineEntry.activity.title }}
+                    </span>
+                    <span class="{{ timelineEntry.activity.type }}-date">
+                        {{ timelineEntry.activity.date }}
+                    </span>
+                </h4>
+                {% endif %}
+                <!-- /Activity time -->
+                <!-- Content -->
+                <div class="{{ timelineEntry.divClass }}">
+                    <p class="{{ timelineEntry.paragraphClass }}">
+                        {{ timelineEntry.value }}
+                        {% include {{ timelineEntry.partialPath }} %}
+                    </p>
+                </div>
                 <!-- /Content -->
             </div>
         </div>
