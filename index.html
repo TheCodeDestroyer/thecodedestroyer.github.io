@@ -146,56 +146,14 @@ layout: default
 
 
                     <!-- ====>> SECTION: THANK YOU <<====-->
-                    <section class="timeline profile-infos">
-
-                        <!-- VERTICAL MARGIN (necessary for the timeline effect) -->
-                        <div class="line row timeline-margin timeline-margin-big">
-                            <div class="content-wrap">
-                                <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-                                <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height"></div>
-                                <div class="col-md-9 bg1 full-height"></div>
-                            </div>
-                        </div>
-                        <!-- /VERTICAL MARGIN -->
-
-                        <!-- SECTION ITEM -->
-                        <div class="line row line-thank-you">
-                            <!-- Margin Collums (necessary for the timeline effect) -->
-                            <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-                            <div class="col-md-2 timeline-progress hidden-sm hidden-xs full-height timeline-point "></div>
-                            <!-- /Margin Collums -->
-                            <!-- Item Content -->
-                            <div class="col-md-8 content-wrap bg1">
-                                <div class="line-content">
-                                    <!-- Subtitle -->
-                                    <h3 class="thank-you">Thank You!</h3>
-                                    <!-- /Subtitle -->
-                                </div>
-                            </div>
-                            <!-- /Item Content -->
-                            <!-- Margin Collum-->
-                            <div class="col-md-1 bg1 timeline-space full-height hidden-sm hidden-xs"></div>
-                            <!-- / Margin Collum-->
-                        </div>
-                        <!-- /SECTION ITEM -->
-                    </section>
+                    {% include content/thankYou.html %}
                     <!-- ==>> /SECTION: PROFILE INFOS -->
                 </div>
             </div>
             <!-- ============  /TIMELINE ================= -->
 
             <!-- ============  FOOTER ================= -->
-            <footer id="footer" class="row">
-                <!-- Put your Quote Here-->
-                <p class="quote">
-                    “Any fool can write code that a computer can understand.<br>
-                    Good programmers write code that humans can understand”
-                </p>
-                <!-- /Quote -->
-                <!-- Quote Autor -->
-                <p class="author">Martin Fowler</p>
-                <!-- /Quote Autor -->
-            </footer>
+            {% include content/footer.html %}
             <!-- ============  /FOOTER ================= -->
         </div>
     </div>
