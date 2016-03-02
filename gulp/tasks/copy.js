@@ -37,7 +37,7 @@ gulp.task('copyJsLibs', function () {
         './jspm_packages/github/imakewebthings/jquery-waypoints@2.0.5/waypoints.min.js',
         './jspm_packages/github/gilbitron/Nivo-Lightbox@1.2.0/nivo-lightbox.min.js',
         './jspm_packages/github/stevenwanderski/bxslider-4@4.2.5/dist/jquery.bxslider.min.js',
-        './jspm_packages/github/jamesallardice/Placeholders.js@4.0.1/dist/placeholders.jquery.js',
+        './jspm_packages/github/jamesallardice/Placeholders.js@4.0.1/dist/placeholders.jquery.min.js',
         './jspm_packages/github/crucifyer/css-browser-selector@master/css_browser_selector.min.js'
 
     ])
