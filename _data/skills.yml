@@ -1,0 +1,25 @@
+listTitle: "Skills"
+listType: "timeline-point"
+contentType: ""
+sectionClass: "skills"
+sectionId: "skills"
+list:
+- title: "Professional Skills"
+  partialPath: "main/empty.html"
+  divClass: ""
+  value: ""
+  skillList:
+    - name: "Communication"
+      percentage: "90"
+      progressBarType: "progress-bar-1"
+    - name: "Leadership"
+      percentage: "70"
+      progressBarType: "progress-bar-2"
+    - name: "Confidence"
+      percentage: "70"
+      progressBarType: "progress-bar-3"
+    - name: "Work-Life Balance"
+      percentage: "80"
+      progressBarType: "progress-bar-1"
+
+
