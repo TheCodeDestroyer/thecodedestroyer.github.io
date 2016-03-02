@@ -7,7 +7,6 @@ list:
 - title: "Professional Skills"
   partialPath: "content/skillList.html"
   divClass: ""
-  value: ""
   skillList:
     - name: "Communication"
       percentage: "90"
@@ -24,7 +23,6 @@ list:
 - title: "Software Skills"
   partialPath: "content/skillList.html"
   divClass: ""
-  value: ""
   skillList:
     - name: "Adobe Photoshop"
       percentage: "40"
@@ -53,7 +51,6 @@ list:
 - title: "Code Skills"
   partialPath: "content/skillList.html"
   divClass: ""
-  value: ""
   skillList:
     - name: "HTML5 / CSS3"
       percentage: "95"

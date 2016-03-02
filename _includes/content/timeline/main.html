@@ -37,10 +37,13 @@
                 <!-- /Activity time -->
                 <!-- Content -->
                 <div class="{{ timelineEntry.divClass }}">
+                    {% if timelineEntry.partialPath != null %}
+                        {% include {{ timelineEntry.partialPath }} %}
+                    {% else %}
                     <p class="{{ timelineEntry.paragraphClass }}">
                         {{ timelineEntry.value }}
-                        {% include {{ timelineEntry.partialPath }} %}
                     </p>
+                    {% endif %}
                 </div>
                 <!-- /Content -->
             </div>

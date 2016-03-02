@@ -9,7 +9,6 @@ list:
     type: "job"
     title: " Senior Frontend Developer - "
     date: "Dec 2014 - Current"
-  partialPath: "main/empty.html"
   divClass: "job-description"
   value: "ČETRTA POT has a lot of different projects. The main project here is the 'Personnel information system',
           which has different modules such as: Employee management, time tracking,
@@ -27,7 +26,6 @@ list:
     type: "job"
     title: " Volunteer Mobile Developer - "
     date: "Apr 2014 - Aug 2014"
-  partialPath: "main/empty.html"
   divClass: "job-description"
   value: "LOKACOM has a windows mobile application which is quite extensive and has many interesting features
           including vending, asset management, sales force, employee management, sales
@@ -39,7 +37,6 @@ list:
     type: "job"
     title: " Senior Developer - "
     date: "Apr 2012 - Apr 2014"
-  partialPath: "main/empty.html"
   divClass: "job-description"
   value: "At PIXI* SOFTWARE I was a part of an internal \"startup\" team, which had a
           goal to migrate a desktop application to a web application.
@@ -58,7 +55,6 @@ list:
     type: "job"
     title: " Web Developer - "
     date: "Nov 2010 - Apr 2012"
-  partialPath: "main/empty.html"
   divClass: "job-description"
   value: "E-SOFT has quite a lot of different projects. It mainly deals with
           development of web pages with CMS and some business web applications.
@@ -70,7 +66,6 @@ list:
     type: "job"
     title: " Windows Desktop Developer - "
     date: "Sep 2008 - Aug 2010"
-  partialPath: "main/empty.html"
   divClass: "job-description"
   value: "INFOTRANS was the first development company I worked for and it had one product.
           In short it is a Logistics and Transport application which has a lot of

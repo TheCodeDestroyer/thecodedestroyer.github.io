@@ -14,13 +14,10 @@ sectionId: ""
 list:
 - title: "Name"
   value: *name
-  partialPath: "main/empty.html"
 - title: "Born"
   value: "17 March 1989 - Kranj, Slovenia"
-  partialPath: "main/empty.html"
 - title: "Email"
   paragraphClass: "mailContent"
   value: ""
-  partialPath: "main/empty.html"
 - title: "Find Me On"
   partialPath: "content/social.html"
