@@ -1,0 +1,44 @@
+listTitle: "Interests"
+listType: "timeline-point"
+contentType: ""
+sectionClass: ""
+sectionId: "interests"
+list:
+- title: "Coding"
+  value: "Like I stated above a huge part of my life is coding, when I was young(er) I
+          found myself doing many different jobs
+          like working in factories, fast food delivery, working on a radio station,
+          working in a kitchen, working on roofs to name but a few.
+          Then I became a developer and I fell in love with my job, it's where I enjoyed
+          myself and didn't become bored of it.
+          I try to be a hipster, which means that I try to follow all news about new
+          libraries and frameworks and then try them out."
+  partialPath: "main/empty.html"
+- title: "Blogging"
+  value: "Like my love for finding out new things and trying them out. I also love to share
+          my acquired knowledge.
+          Don't get me wrong I'm no expert in writing blogs, I just recently decided that
+          I would like to share my thoughts and
+          findings on blogs and social media."
+  partialPath: "main/empty.html"
+- title: "Sports"
+  value: "I was always interested in different sports I also trained in many like handball,
+          football, indoor climbing, basketball, volleyball, hockey (I could probably find a few more!).
+          After workI like to get some fresh oxygen to my brain which means I go for a run
+          or jump on a bicycle.
+          Sometimes I take my dog and go rollerblading. At the weekend I like to relax by
+          going into nature, on a road trip or going hiking."
+  partialPath: "main/empty.html"
+- title: "Games"
+  value: "From time time I also like to shut my brain off by playing some video games. I
+          love adventure, action, strategy or RPG games.
+          I guess my favorite games that I play the most are MineCraft, League of Legends,
+          Team Fortress 2 and Hearthstone.
+          I also love playing board games like Pictionary, Activity, Monopoly, etc."
+  partialPath: "main/empty.html"
+- title: "Books"
+  value: "I always loved to read books but lately I haven't had much time to read with all
+          the activities I have in my weekly routine.
+          Usually I read when I go on vacation. I love psychological, fictional and
+          sometimes horror books."
+  partialPath: "main/empty.html"
