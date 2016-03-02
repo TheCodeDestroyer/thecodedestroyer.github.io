@@ -23,4 +23,4 @@ list:
   value: ""
   partialPath: "main/empty.html"
 - title: "Find Me On"
-  partialPath: "content/profile/social.html"
+  partialPath: "content/social.html"

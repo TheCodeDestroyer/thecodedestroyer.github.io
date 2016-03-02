@@ -5,7 +5,7 @@ sectionClass: "skills"
 sectionId: "skills"
 list:
 - title: "Professional Skills"
-  partialPath: "main/empty.html"
+  partialPath: "content/skillList.html"
   divClass: ""
   value: ""
   skillList:
@@ -22,7 +22,7 @@ list:
       percentage: "80"
       progressBarType: "progress-bar-1"
 - title: "Software Skills"
-  partialPath: "main/empty.html"
+  partialPath: "content/skillList.html"
   divClass: ""
   value: ""
   skillList:
@@ -51,7 +51,7 @@ list:
       percentage: "65"
       progressBarType: "progress-bar-2"
 - title: "Code Skills"
-  partialPath: "main/empty.html"
+  partialPath: "content/skillList.html"
   divClass: ""
   value: ""
   skillList:

@@ -1,0 +1,9 @@
+listTitle: "Portfólio"
+listType: "timeline-point"
+contentType: ""
+sectionClass: "portfolio"
+sectionId: "portfolio"
+list:
+- title: "Some Works"
+  value: ""
+  partialPath: "main/empty.html"
