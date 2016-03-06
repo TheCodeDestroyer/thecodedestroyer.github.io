@@ -15,5 +15,5 @@ list:
       thumbnailPath: "/src/img/portfolio/c4p-thumb.png"
     - title: "Bus tracking"
       description: "You can find it here https://minasplus.e-karta.si/info/alpetour"
-      imagePath: "/src/img/portfolio/bus-tracking-thumb.png"
-      thumbnailPath: "/src/img/portfolio/bus-tracking-zoom.png"
+      imagePath: "/src/img/portfolio/bus-tracking-zoom.png"
+      thumbnailPath: "/src/img/portfolio/bus-tracking-thumb.png"
