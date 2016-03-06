@@ -22,6 +22,19 @@ gulp.task('copyFontLibs', function () {
     .pipe(gulp.dest(paths.lib + 'fonts'));
 });
 
+gulp.task('copyNivoLightBoxImages', function () {
+    'use strict';
+
+    return gulp.src([
+        './jspm_packages/github/gilbitron/Nivo-Lightbox@1.2.0/themes/default/close.png',
+        './jspm_packages/github/gilbitron/Nivo-Lightbox@1.2.0/themes/default/loading.gif',
+        './jspm_packages/github/gilbitron/Nivo-Lightbox@1.2.0/themes/default/next.png',
+        './jspm_packages/github/gilbitron/Nivo-Lightbox@1.2.0/themes/default/prev.png'
+
+    ])
+    .pipe(gulp.dest(paths.lib + 'css'));
+});
+
 gulp.task('copyJsLibs', function () {
     'use strict';
 

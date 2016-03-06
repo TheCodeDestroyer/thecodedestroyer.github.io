@@ -26,6 +26,7 @@ gulp.task('copy', function(done) {
 
     runSequence(
         'copyCssLibs',
+        'copyNivoLightBoxImages',
         'copyFontLibs',
         'copyJsLibs',
         done
