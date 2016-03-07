@@ -936,3 +936,11 @@ textarea.form-control {
 
 .mailContent::after {
   content: 'gmail.com'; }
+
+::selection {
+  background: #249991;
+  color: #fafafa; }
+
+::-moz-selection {
+  background: #249991;
+  color: #fafafa; }
