@@ -6,7 +6,7 @@ sectionId: "portfolio"
 list:
 - title: "Some Works"
   value: ""
-  divClass: "portfolio-itens clearfix"
+  divClass: "portfolio-items clearfix"
   partialPath: "content/portfolio.html"
   portfolioList:
     - title: "<strong>Nace's</strong><br/> blog"

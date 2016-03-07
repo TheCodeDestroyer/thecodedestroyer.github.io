@@ -41,7 +41,7 @@
         });
 
         //Bxslider -see options at http://bxslider.com/
-        $('.portfolio-itens').bxSlider({
+        $('.portfolio-items').bxSlider({
             slideWidth: 200,
             minSlides: 1,
             maxSlides: 4,
