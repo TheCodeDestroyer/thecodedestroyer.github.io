@@ -10,6 +10,7 @@ gulp.task('build', function(done) {
         'copy',
         'uglify',
         'concat',
+        'imgMin',
         done
     );
 });
@@ -23,11 +24,20 @@ gulp.task('lint', function(done) {
     );
 });
 
+gulp.task('concat', function(done) {
+    'use strict';
+
+    runSequence(
+        'concatJsLibs',
+        'concatCssLibs',
+        done
+    );
+});
+
 gulp.task('copy', function(done) {
     'use strict';
 
     runSequence(
-        'copyCssLibs',
         'copyNivoLightBoxImages',
         'copyFontLibs',
         'copyJsLibs',
