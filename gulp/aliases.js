@@ -8,6 +8,8 @@ gulp.task('build', function(done) {
         'jshint',
         'sass',
         'copy',
+        'uglify',
+        'concat',
         done
     );
 });
