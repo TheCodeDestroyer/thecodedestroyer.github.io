@@ -1,10 +1,9 @@
 var appRoot = './src/',
-    outputRoot = './build/',
+    outputRoot = './assets/',
     gulpRoot = './gulp/';
 
 module.exports = {
     root: appRoot,
-    lib: appRoot + 'lib/',
     source: appRoot + '**/*.js',
     html: appRoot + '**/*.html',
     sass: appRoot + 'sass/styles.scss',
