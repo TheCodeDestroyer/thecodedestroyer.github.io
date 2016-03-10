@@ -21,13 +21,5 @@ gulp.task('copyNivoLightBoxImages', function () {
     .pipe(gulp.dest(paths.output + 'css'));
 });
 
-gulp.task('copyJsLibs', function () {
-    'use strict';
 
-    return gulp.src([
-        './jspm_packages/github/aFarkas/html5shiv@3.7.3/dist/html5shiv.min.js',
-        './jspm_packages/github/scottjehl/Respond@1.4.2/respond.js'
-    ])
-    .pipe(gulp.dest(paths.output + 'js'));
-});
 
