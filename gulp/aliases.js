@@ -6,10 +6,9 @@ gulp.task('build', function(done) {
 
     runSequence(
         'jshint',
-        'sass',
+        'css',
         'copy',
-        'uglify',
-        'concat',
+        'js',
         'imgMin',
         done
     );
@@ -24,12 +23,26 @@ gulp.task('lint', function(done) {
     );
 });
 
-gulp.task('concat', function(done) {
+gulp.task('js', function(done) {
     'use strict';
 
     runSequence(
-        'concatJsLibs',
-        'concatCssLibs',
+        'minifyMain',
+        'minifyJsLibs',
+        'minifyAltJsLibs',
+        done
+    );
+});
+
+gulp.task('css', function(done) {
+    'use strict';
+
+    runSequence(
+        'buildTheme',
+        'buildFontAwesome',
+        'minifyTheme',
+        'minifyCssLibs',
+        //'injectStyles',
         done
     );
 });
@@ -40,7 +53,6 @@ gulp.task('copy', function(done) {
     runSequence(
         'copyNivoLightBoxImages',
         'copyFontLibs',
-        'copyJsLibs',
         done
     );
 });
