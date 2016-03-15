@@ -15,7 +15,7 @@ list:
       percentage: "70"
       progressBarType: "progress-bar-2"
     - name: "Confidence"
-      percentage: "70"
+      percentage: "90"
       progressBarType: "progress-bar-3"
     - name: "Work-Life Balance"
       percentage: "80"
