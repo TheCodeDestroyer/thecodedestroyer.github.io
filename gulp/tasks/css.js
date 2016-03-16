@@ -29,7 +29,7 @@ gulp.task('minifyTheme', function() {
     return gulp.src(paths.sassTheme + 'main.css')
     .pipe(rename('main.min.css'))
     .pipe(cssnano({ discardComments: { removeAll: true } }))
-    .pipe(gulp.dest(paths.output + 'css'));
+    .pipe(gulp.dest(paths.temp + 'css'));
 });
 
 gulp.task('minifyCssLibs', function() {
@@ -44,6 +44,6 @@ gulp.task('minifyCssLibs', function() {
     ])
     .pipe(concat('libBundle.min.css'))
     .pipe(cssnano({ discardComments: { removeAll: true } }))
-    .pipe(gulp.dest(paths.output + 'css'));
+    .pipe(gulp.dest(paths.temp + 'css'));
 });
 
