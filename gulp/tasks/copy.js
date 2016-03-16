@@ -18,8 +18,5 @@ gulp.task('copyNivoLightBoxImages', function () {
         './jspm_packages/github/gilbitron/Nivo-Lightbox@1.2.0/themes/default/prev.png'
 
     ])
-    .pipe(gulp.dest(paths.output + 'css'));
+    .pipe(gulp.dest(paths.root));
 });
-
-
-
