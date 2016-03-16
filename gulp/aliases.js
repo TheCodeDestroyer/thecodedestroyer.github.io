@@ -43,7 +43,7 @@ gulp.task('css', function(done) {
         'buildFontAwesome',
         'minifyTheme',
         'minifyCssLibs',
-        //'injectStyles',
+        'injectStyles',
         done
     );
 });
