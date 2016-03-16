@@ -34,7 +34,7 @@ Primary use:	CV / Resume
 
 body {
     @extend .font1;
-    background: $color2 url('../img/background2.jpg') repeat-x fixed center top;
+    background: $color2 url('/assets/img/background2.jpg') repeat-x fixed center top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -476,8 +476,8 @@ p {
 }
 
 .resume-container {
-    background: url('../img/paper-bg2.png') no-repeat top left,
-    url('../img/paper-bg-bot.png') no-repeat bottom right, $bgcolor;
+    background: url('/assets/img/paper-bg2.png') no-repeat top left,
+    url('/assets/img/paper-bg-bot.png') no-repeat bottom right, $bgcolor;
 }
 
 /* ==========================================================
@@ -528,7 +528,7 @@ p {
 .timeline-bg {
     background: $bgcolor;
     @media #{$laptop} {
-        background: url('../img/timeline-bg.png') repeat-x center center fixed;
+        background: url('/assets/img/timeline-bg.png') repeat-x center center fixed;
     }
 }
 
@@ -537,32 +537,32 @@ p {
 }
 
 .timeline-progress {
-    background: url('../img/progress-bar.png') repeat-y center;
+    background: url('/assets/img/progress-bar.png') repeat-y center;
     background-size: 400px 9px;
 }
 
 .timeline-point {
-    background: url('../img/progress-point.png') center center;
+    background: url('/assets/img/progress-point.png') center center;
     background-size: 400px 500px;
 }
 
 .timeline-education {
-    background: url('../img/progress-education4.png') no-repeat center center;
+    background: url('/assets/img/progress-education4.png') no-repeat center center;
     background-size: 400px 500px;
 }
 
 .timeline-work {
-    background: url('../img/progress-work3.png') no-repeat center center;
+    background: url('/assets/img/progress-work3.png') no-repeat center center;
     background-size: 400px 500px;
 }
 
 .timeline-mail {
-    background: url('../img/progress-mail3.png') no-repeat center center;
+    background: url('/assets/img/progress-mail3.png') no-repeat center center;
     background-size: 400px 500px;
 }
 
 .timeline-title {
-    background: url('../img/progress-section-title3.png') no-repeat center center;
+    background: url('/assets/img/progress-section-title3.png') no-repeat center center;
     background-size: 400px 500px;
 }
 
