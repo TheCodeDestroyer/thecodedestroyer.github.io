@@ -1,12 +1,15 @@
-var appRoot = './src/',
-    outputRoot = './assets/';
+var sourceRoot = './src/',
+    outputRoot = './assets/',
+    tempRoot = './temp/',
+    webRoot = './';
 
 module.exports = {
-    root: appRoot,
-    source: appRoot + '**/*.js',
-    html: appRoot + '**/*.html',
-    sassTheme: appRoot + 'sass/theme/',
-    sassFa: appRoot + 'sass/fa/',
+    source: sourceRoot,
+    js: sourceRoot + '**/*.js',
+    html: sourceRoot + '**/*.html',
+    sassTheme: sourceRoot + 'sass/theme/',
+    sassFa: sourceRoot + 'sass/fa/',
     output: outputRoot,
-    temp: './temp/'
+    temp: tempRoot,
+    root: webRoot
 };
