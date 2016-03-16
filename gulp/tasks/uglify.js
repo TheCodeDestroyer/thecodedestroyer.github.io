@@ -21,7 +21,7 @@ gulp.task('minifyJsLibs', function () {
     .pipe(gulp.dest(paths.temp + 'js'));
 });
 
-gulp.task('concatJs', function () {
+gulp.task('concatAndMinifyJs', function () {
     'use strict';
 
     return gulp.src([
@@ -39,6 +39,7 @@ gulp.task('concatJs', function () {
         paths.temp + 'js/main.min.js'
     ])
     .pipe(concat('main.min.js'))
+    .pipe(uglify())
     .pipe(gulp.dest(paths.output + 'js'));
 });
 

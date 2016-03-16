@@ -30,7 +30,7 @@ gulp.task('js', function(done) {
         'minifyMain',
         'minifyJsLibs',
         'minifyAltJsLibs',
-        'concatJs',
+        'concatAndMinifyJs',
         done
     );
 });
