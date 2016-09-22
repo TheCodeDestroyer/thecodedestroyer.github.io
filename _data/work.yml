@@ -4,11 +4,22 @@ contentType: "line-content-job"
 sectionClass: "work-experience"
 sectionId: "works"
 list:
+- title: "SRC Infonet d.o.o."
+  activity:
+    type: "job"
+    title: "Senior Software Developer"
+    date: "Avg 2016 - Current"
+  divClas: "job-description"
+  value: "SRC Infonet is a company that develops software for Slovenian healthcare system. 
+          It has a leading position among healthcare software providers in Slovenia.
+          The software mainly targets healthcare institutions, healthcare professionals and patients.
+          My roles here are to help with CI automatization, Frontend development, Serverside development
+          and sometimes Dekstop Client development."
 - title: "Četrta pot d.o.o."
   activity:
     type: "job"
     title: " Senior Frontend Developer - "
-    date: "Dec 2014 - Current"
+    date: "Dec 2014 - Jul 2016"
   divClass: "job-description"
   value: "ČETRTA POT has a lot of different projects. The main project here is the 'Personnel information system',
           which has different modules such as: Employee management, time tracking,
