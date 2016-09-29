@@ -10,7 +10,7 @@ list:
   partialPath: "content/portfolio.html"
   portfolioList:
     - title: "<strong>Nace's</strong><br/> blog"
-      description: "You can find it here http://coding4passion.org"
+      description: "You can find it here https://coding4passion.org"
       imagePath: "/assets/img/portfolio/c4p-zoom.png"
       thumbnailPath: "/assets/img/portfolio/c4p-thumb.png"
     - title: "Bus Tracking - 2015"
@@ -18,7 +18,7 @@ list:
       imagePath: "/assets/img/portfolio/bus-tracking-zoom.png"
       thumbnailPath: "/assets/img/portfolio/bus-tracking-thumb.png"
     - title: "KADRIS4 - 2016"
-      description: "You can find more info here http://www.cetrtapot.si/en/solutions"
+      description: "You can find more info here https://www.cetrtapot.si/en/solutions"
       imagePath: "/assets/img/portfolio/kadris-zoom.png"
       thumbnailPath: "/assets/img/portfolio/kadris-thumb.png"
     - title: "Tourism Škofja Loka - 2011"
