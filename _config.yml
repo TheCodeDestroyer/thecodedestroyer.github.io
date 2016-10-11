@@ -6,6 +6,6 @@ description: "As stated above my name is <strong>Nace</strong>, pronounced 'Nats
               CSS, HTML and JS."
 url: "https://thecodedestroyer.com"
 
-
-
-
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
