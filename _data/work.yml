@@ -9,7 +9,7 @@ list:
     type: "job"
     title: " Senior Software Developer - "
     date: "Avg 2016 - Current"
-  divClas: "job-description"
+  divClass: "job-description"
   value: "SRC Infonet is a company that develops software for Slovenian healthcare system. 
           It has a leading position among healthcare software providers in Slovenia.
           The software mainly targets healthcare institutions, healthcare professionals and patients.
