@@ -4,11 +4,18 @@ contentType: "line-content-job"
 sectionClass: "work-experience"
 sectionId: "works"
 list:
+- title: "3fs d.o.o."
+  activity:
+    type: "job"
+    title: " Senior Frontend Developer - "
+    date: "Apr 2017 - Current"
+  divClass: "job-description"
+  value: ""
 - title: "SRC Infonet d.o.o."
   activity:
     type: "job"
     title: " Senior Software Developer - "
-    date: "Avg 2016 - Current"
+    date: "Avg 2016 - Apr 2017"
   divClass: "job-description"
   value: "SRC Infonet is a company that develops software for Slovenian healthcare system. 
           It has a leading position among healthcare software providers in Slovenia.
