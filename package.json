@@ -34,7 +34,7 @@
     "jshint-stylish": "^2.1.0",
     "jspm": "^0.16.29",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.5",
+    "run-sequence": "^2.2.1",
     "yargs": "^4.1.0"
   },
   "jspm": {
