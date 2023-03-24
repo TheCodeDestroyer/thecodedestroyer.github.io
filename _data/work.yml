@@ -4,13 +4,28 @@ contentType: "line-content-job"
 sectionClass: "work-experience"
 sectionId: "works"
 list:
+- title: "Bird Buddy d.o.o."
+  activity:
+    type: "job"
+    title: " Senior Software Developer - "
+    date: "Feb 2017 - Current"
+  divClass: "job-description"
+  value: "Bird Buddy d.o.o. is a technology company that produces a bird feeder house
+          with an AI-powered camera capable of recognizing bird species.
+          The camera sends notifications to the user's app when new bird visitors arrive,
+          and users can track and learn about different bird species through the app.
+          Bird Buddy d.o.o. merges technology with nature, making birdwatching a more interactive and educational experience."
 - title: "3fs d.o.o."
   activity:
     type: "job"
     title: " Senior Frontend Developer - "
-    date: "Apr 2017 - Current"
+    date: "Apr 2017 - Jan 2023"
   divClass: "job-description"
-  value: "-- Description coming soon --"
+  value: "3fs d.o.o. is an agency company that provides full-stack solutions, to its clients.
+          At 3fs d.o.o., I worked as a developer on business applications for clients such as Ericsson and Getinge.
+          Additionally, I was a part of an internal blockchain startup, Iryo d.o.o., where I worked on developing a cloud-based healthcare software.
+          In this role, I not only contributed to the development of the software but also played a key role in architecting the codebase,
+          establishing best practices, and ensuring a positive developer experience."
 - title: "SRC Infonet d.o.o."
   activity:
     type: "job"
