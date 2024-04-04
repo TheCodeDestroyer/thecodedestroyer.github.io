@@ -1,4 +1,4 @@
-# About me page v2
+# About me page
 
 ## Setup
 
