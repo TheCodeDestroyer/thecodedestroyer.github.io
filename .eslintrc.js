@@ -16,4 +16,8 @@ module.exports = {
       version: "detect",
     },
   },
+  rules: {
+    "no-duplicate-imports": "off",
+    "@typescript-eslint/naming-convention": "off"
+  }
 };
