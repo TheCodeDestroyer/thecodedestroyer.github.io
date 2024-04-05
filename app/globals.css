@@ -2,9 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  @apply bg-black text-white font-space-grotesk;
+  @apply bg-black font-space-grotesk text-white;
+  min-width: 375px;
+  overflow: auto;
+}
+
+.elipsis {
+  width: 42rem;
+  border-radius: 100%;
+  filter: blur(200px);
+  transform: rotate(24deg);
+  opacity: 0.25;
+}
+
+.elipsis-1 {
+  height: 22.5rem;
+  bottom: 15rem;
+  left: 0.5rem;
+  background: #b6f09c;
+}
+
+.elipsis-2 {
+  height: 19.5rem;
+  bottom: 6rem;
+  left: 20rem;
+  background: #ffebd3;
 }
 
 @layer utilities {

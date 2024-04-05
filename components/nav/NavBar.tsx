@@ -1,7 +1,6 @@
 'use client';
 
 import { Disclosure } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { clsx } from 'clsx';
 import type { FC } from 'react';
 import { Fragment } from 'react';
@@ -16,13 +15,13 @@ const navigation = [
 ];
 
 export const NavBar: FC = () => (
-  <Disclosure as="nav">
+  <Disclosure as="nav" className="fixed inset-x-0 top-0 h-25 bg-black">
     {({ open }) => (
       <Fragment>
-        <div className="h-25 mx-auto max-w-7xl p-4 sm:p-8">
+        <div className="mx-auto max-w-10xl p-4 sm:p-8">
           <div className="flex justify-between">
             <div className="flex">
-              <div className="text-accent flex flex-shrink-0 items-center text-3xl font-medium">
+              <div className="flex flex-shrink-0 items-center text-3xl font-medium text-accent">
                 Nace Logar
               </div>
             </div>
@@ -33,7 +32,7 @@ export const NavBar: FC = () => (
                     key={item.name}
                     href={item.href}
                     className={clsx(
-                      'hover:text-accent px-5 text-2xl font-medium',
+                      'px-5 text-2xl font-medium hover:text-accent',
                       {
                         'text-white': !item.current,
                         'text-accent': item.current
@@ -46,7 +45,7 @@ export const NavBar: FC = () => (
                 ))}
               </div>
               <div className="hidden items-center lg:flex">
-                <Button text="Contact me" />
+                <Button text="Contact me" color="primaryOutlined" />
               </div>
               <div className="mx-2 flex items-center lg:hidden">
                 <MenuToggleButton isOpen={open} />
@@ -64,7 +63,7 @@ export const NavBar: FC = () => (
                   as="a"
                   href={item.href}
                   className={clsx(
-                    'hover:text-accent block rounded-md px-3 py-2 text-base font-medium',
+                    'block rounded-md px-3 py-2 text-base font-medium hover:text-accent',
                     {
                       'text-white': !item.current,
                       'text-accent': item.current

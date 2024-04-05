@@ -5,8 +5,6 @@ import type { FC, PropsWithChildren } from 'react';
 
 import './globals.css';
 
-const inter = Space_Grotesk({ subsets: ['latin'] });
-
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',

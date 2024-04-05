@@ -5,23 +5,36 @@ import { clsx } from 'clsx';
 import type { ButtonHTMLAttributes, FC } from 'react';
 
 export const buttonVariants = cva(
-  'rounded-xl select-none ring-1 h-12 px-6 py-2 transition-colors text-center font-semibold tracking-button font-plus-jakarta-sans fill-current',
+  'rounded-xl select-none transition-colors text-center font-semibold tracking-button font-plus-jakarta-sans fill-current',
   {
     variants: {
       color: {
         primary: [
           'border-none',
+          'text-black',
+          'bg-accent',
+          'hover:bg-white',
+          'hover:text-black'
+        ],
+        primaryOutlined: [
+          'border-none',
           'text-accent',
+          'ring-1',
           'ring-accent',
           'hover:bg-accent',
           'hover:text-black'
         ]
+      },
+      size: {
+        sm: 'h-11 px-2.5 py-0',
+        md: 'h-12 px-6 py-2'
       }
     }
   }
 );
 
 export interface ButtonProps extends VariantProps<typeof buttonVariants> {
+  children?: ButtonHTMLAttributes<HTMLButtonElement>['children'];
   text?: string;
   onClick?: ButtonHTMLAttributes<HTMLButtonElement>['onClick'];
   type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
@@ -32,11 +45,13 @@ export interface ButtonProps extends VariantProps<typeof buttonVariants> {
 }
 
 export const Button: FC<ButtonProps> = ({
+  children,
   text,
   onClick,
   type = 'button',
   disabled = false,
   color = 'primary',
+  size = 'md',
   title,
   loading,
   className
@@ -47,9 +62,9 @@ export const Button: FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled || loading}
       title={title}
-      className={clsx(buttonVariants({ color }), className)}
+      className={clsx(buttonVariants({ color, size }), className)}
     >
-      {text}
+      {children ? children : text}
     </button>
   );
 };
