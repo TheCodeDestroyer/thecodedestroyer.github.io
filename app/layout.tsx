@@ -1,10 +1,23 @@
+import { clsx } from 'clsx';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google';
 import type { FC, PropsWithChildren } from 'react';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Space_Grotesk({ subsets: ['latin'] });
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-space_grotesk'
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-plus_jakarta_sans'
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +27,9 @@ export const metadata: Metadata = {
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={clsx(spaceGrotesk.variable, plusJakartaSans.variable)}>
+        {children}
+      </body>
     </html>
   );
 };
