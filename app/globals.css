@@ -3,15 +3,14 @@
 @tailwind utilities;
 
 body {
-  @apply bg-black font-space-grotesk text-white;
+  @apply bg-black font-space-grotesk text-white ;
   min-width: 375px;
-  overflow: auto;
 }
 
 .elipsis {
   width: 42rem;
   border-radius: 100%;
-  filter: blur(200px);
+  filter: blur(12.5rem);
   transform: rotate(24deg);
   opacity: 0.25;
 }

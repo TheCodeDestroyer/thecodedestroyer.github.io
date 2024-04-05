@@ -61,6 +61,10 @@ const config: Config = {
       },
       blur: {
         '20xl': '200px'
+      },
+      zIndex: {
+        '100': '100',
+        '200': '200'
       }
     }
   },
