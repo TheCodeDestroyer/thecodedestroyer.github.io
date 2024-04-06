@@ -31,7 +31,7 @@ const config: Config = {
             fontWeight: '500'
           }
         ],
-        '3xl': [
+        '4xl': [
           '2.125rem',
           {
             lineHeight: '2.625rem',

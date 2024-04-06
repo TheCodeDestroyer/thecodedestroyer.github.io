@@ -7,14 +7,6 @@ body {
   min-width: 375px;
 }
 
-.elipsis {
-  width: 42rem;
-  border-radius: 100%;
-  filter: blur(12.5rem);
-  transform: rotate(24deg);
-  opacity: 0.25;
-}
-
 .elipsis-1 {
   height: 22.5rem;
   bottom: 15rem;
@@ -30,7 +22,11 @@ body {
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .elipsis {
+    width: 42rem;
+    border-radius: 100%;
+    filter: blur(12.5rem);
+    transform: rotate(24deg);
+    opacity: 0.25;
   }
 }
