@@ -14,6 +14,7 @@ import { Button } from '@components/Button';
 import { GitHubIcon } from '@components/icon/GitHubIcon';
 import { LinkedInIcon } from '@components/icon/LinkedInIcon';
 import { BackgroundPatternImage } from '@components/img/BackgroundPatternImage';
+import { SectionWrapper } from '@components/sections/SectionWrapper';
 
 import image from '@public/profile.png';
 
@@ -30,14 +31,7 @@ export const SectionMe: FC = () => {
   }, [control, inView]);
 
   return (
-    <motion.section
-      id="me"
-      className="relative h-screen snap-center snap-always overflow-hidden"
-      ref={ref}
-      variants={sectionAnimation}
-      initial="hidden"
-      animate={control}
-    >
+    <SectionWrapper id="me">
       <div className="relative block h-screen w-full overflow-hidden">
         <BackgroundPatternImage className="absolute bottom-0 right-0" />
       </div>
@@ -64,13 +58,13 @@ export const SectionMe: FC = () => {
           src={image}
           quality={70}
           alt="profile picture"
-          height={856}
-          className="z-100 scale-x-[-1] object-fill"
+          height={650}
+          className="z-100 scale-x-[-1] transform-gpu object-fill"
           priority
         />
       </div>
       <div className="elipsis elipsis-1 absolute z-30 block" />
       <div className="elipsis elipsis-2 absolute z-10 block" />
-    </motion.section>
+    </SectionWrapper>
   );
 };

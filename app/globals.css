@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-black font-space-grotesk text-white ;
+  @apply bg-black font-space-grotesk text-white;
   min-width: 375px;
 }
 
@@ -28,5 +28,13 @@ body {
     filter: blur(12.5rem);
     transform: rotate(24deg);
     opacity: 0.25;
+  }
+
+  .max-supported-width {
+    max-width: 120rem;
+  }
+
+  .navbar-padding {
+    padding-top: 6.25rem;
   }
 }

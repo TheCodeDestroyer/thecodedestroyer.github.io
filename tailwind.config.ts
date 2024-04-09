@@ -65,6 +65,16 @@ const config: Config = {
       zIndex: {
         '100': '100',
         '200': '200'
+      },
+      animation: {
+        'border-spin': 'border-spin 10s linear infinite'
+      },
+      keyframes: {
+        'border-spin': {
+          '100%': {
+            transform: 'rotate(-360deg)'
+          }
+        }
       }
     }
   },
