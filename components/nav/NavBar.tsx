@@ -11,17 +11,17 @@ import { MenuToggleButton } from '@components/nav/MenuToggleButton';
 const navigation = [
   { name: 'Me', href: '#me', current: true },
   { name: 'Technologies', href: '#technologies', current: false },
-  { name: 'Previous work', href: '#', current: false }
+  { name: 'My experience', href: '#experience', current: false }
 ];
 
 export const NavBar: FC = () => (
-  <Disclosure as="nav" className="z-200 h-25 fixed inset-x-0 top-0 bg-black">
+  <Disclosure as="nav" className="fixed inset-x-0 top-0 z-200 h-25 bg-black">
     {({ open }) => (
       <Fragment>
         <div className="max-supported-width mx-auto p-4 sm:p-8">
           <div className="flex justify-between">
             <div className="flex">
-              <div className="text-accent flex flex-shrink-0 items-center text-4xl font-medium">
+              <div className="flex flex-shrink-0 items-center text-4xl font-medium text-accent">
                 Nace Logar
               </div>
             </div>
@@ -32,7 +32,7 @@ export const NavBar: FC = () => (
                     key={item.name}
                     href={item.href}
                     className={clsx(
-                      'hover:text-accent px-5 text-2xl font-medium',
+                      'px-5 text-2xl font-medium hover:text-accent',
                       {
                         'text-white': !item.current,
                         'text-accent': item.current
@@ -63,7 +63,7 @@ export const NavBar: FC = () => (
                   as="a"
                   href={item.href}
                   className={clsx(
-                    'hover:text-accent block rounded-md px-3 py-2 text-base font-medium',
+                    'block rounded-md px-3 py-2 text-base font-medium hover:text-accent',
                     {
                       'text-white': !item.current,
                       'text-accent': item.current

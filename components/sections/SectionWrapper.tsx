@@ -1,14 +1,11 @@
 'use client';
 
-import {
-  sectionAnimation,
-  sectionAnimationThreshold
-} from '@constants/section-animation.constant';
+import { sectionAnimation } from '@constants/section-animation.constant';
 import { clsx } from 'clsx';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import type { FC, PropsWithChildren } from 'react';
+import { useRef } from 'react';
 import { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
 
 interface SectionWrapperProps extends PropsWithChildren {
   id?: string;
@@ -17,19 +14,21 @@ interface SectionWrapperProps extends PropsWithChildren {
 
 export const SectionWrapper: FC<SectionWrapperProps> = ({
   children,
-  className,
-  id
+  id,
+  className
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const control = useAnimation();
-  const [ref, inView] = useInView({ threshold: sectionAnimationThreshold });
+
+  const isInView = useInView(containerRef);
 
   useEffect(() => {
-    if (inView) {
-      control.start('visible');
+    if (isInView) {
+      void control.start('visible');
     } else {
-      control.start('hidden');
+      void control.start('hidden');
     }
-  }, [control, inView]);
+  }, [control, isInView]);
 
   return (
     <motion.section
@@ -38,7 +37,7 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
         'max-supported-width navbar-padding relative mx-auto h-screen snap-center snap-always overflow-hidden',
         className
       )}
-      ref={ref}
+      ref={containerRef}
       variants={sectionAnimation}
       initial="hidden"
       animate={control}

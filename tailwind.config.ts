@@ -23,7 +23,17 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
+      boxShadow: {
+        '2lg': '0px 12px 24px -16px #0000001A'
+      },
       fontSize: {
+        lg: [
+          '1.125rem',
+          {
+            lineHeight: '1.625rem',
+            fontWeight: '400'
+          }
+        ],
         '2xl': [
           '1.625rem',
           {
@@ -38,17 +48,32 @@ const config: Config = {
             fontWeight: '500'
           }
         ],
+        '8xl': [
+          '3.125rem',
+          {
+            lineHeight: '3.875rem',
+            fontWeight: '500'
+          }
+        ],
         '9xl': [
           '3.875rem',
           {
             lineHeight: '4.5rem',
             fontWeight: '500'
           }
+        ],
+        '10xl': [
+          '7.875rem',
+          {
+            lineHeight: '8.75rem',
+            fontWeight: '500'
+          }
         ]
       },
       colors: {
         black: '#030405',
-        accent: '#B6F09C'
+        accent: '#B6F09C',
+        subtext: '#9FA0A2'
       },
       letterSpacing: {
         button: '0.009em'
@@ -58,6 +83,14 @@ const config: Config = {
         '9xl': '96rem',
         '10xl': '104rem',
         '11xl': '112rem'
+      },
+      minWidth: {
+        '1/3': '33%',
+        '1/4': '25%',
+        '1/5': '20%',
+        '4/5': '80%',
+        '100': '28rem',
+        '75': '18.75rem'
       },
       blur: {
         '20xl': '200px'
