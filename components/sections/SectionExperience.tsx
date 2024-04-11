@@ -3,7 +3,9 @@
 import { previousWork } from '@constants/work.constant';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+
+import { useMount } from '@hooks/effect.hook';
 
 import { WorkCard } from '@components/WorkCard';
 import { SecondaryBackgroundPatternImage } from '@components/img/SecondaryBackgroundPatternImage';
@@ -14,12 +16,12 @@ export const SectionExperience: FC = () => {
 
   const [leftDragConstraint, setLeftDragConstraint] = useState<number>(0);
 
-  useEffect(() => {
+  useMount(() => {
     if (!carousel.current) return;
     setLeftDragConstraint(
       carousel.current.scrollWidth - carousel.current.offsetWidth
     );
-  }, []);
+  });
 
   return (
     <SectionWrapper id="experience" className="overflow-hidden">
