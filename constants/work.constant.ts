@@ -1,4 +1,4 @@
-import type { Work } from '@interface/work.interface';
+import type { Work } from '@utils/types/work.interface';
 
 export const previousWork: Work[] = [
   {
@@ -12,7 +12,7 @@ export const previousWork: Work[] = [
       'Developed ad-centric user landing page, to improve user acquisition by optimizing marketing efforts.',
       'Launched feeder guest invite management feature, streamlining user flows and enhancing user experience.',
       'Optimized CMS backend with NestJS and Prisma, maintaining robust, scalable server-side operations.',
-      'Integrated GraphQL API via Apollo Client, ensuring efficient data fetching and seamless user interface.',
+      'Integrated GraphQL API via Apollo Client, ensuring efficient data fetching and seamless user types.',
       'Collaborated for new feature integration into CMS, prioritizing stability and performance, enhancing cross-functional team synergy.'
     ]
   },
@@ -53,7 +53,7 @@ export const previousWork: Work[] = [
       'Enhanced Java deployment process and streamlined operations on-premise by introducing Docker to the development team.',
       'Optimized CI/CD deployments and improved team efficiency by leading the internal deployment of GitLab, transitioning from Subversion.',
       'Launched first version of dozdravnika.si, achieving seamless doctor appointment bookings by integrating with existing deployments.',
-      'Built dozdravnika.si employing Angular.js, resulting in a user-friendly login/registration interface through a custom Keycloak authentication adapter.',
+      'Built dozdravnika.si employing Angular.js, resulting in a user-friendly login/registration types through a custom Keycloak authentication adapter.',
       'Designed a straightforward calendar system within dozdravnika.si, enabling patients to book appointments with healthcare providers effortlessly.',
       'Expanded technical proficiency by learning Pascal, contributing to the resolution of some bugs in desktop applications utilized by healthcare centers across Slovenia.'
     ]

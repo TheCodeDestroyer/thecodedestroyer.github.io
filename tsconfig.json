@@ -23,9 +23,8 @@
       "@icon/*": ["icon/*"],
       "@public/*": ["public/*"],
       "@utils/*": ["utils/*"],
-      "@constants/*": ["utils/constants/*"],
-      "@interface/*": ["utils/interface/*"],
-      "@hooks/*": ["utils/hooks/*"],
+      "@constants/*": ["constants/*"],
+      "@hooks/*": ["hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

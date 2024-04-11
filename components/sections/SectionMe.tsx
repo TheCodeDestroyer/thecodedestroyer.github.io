@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import { Button } from '@components/Button';
+import { ButtonLink } from '@components/ButtonLink';
 import { GitHubIcon } from '@components/icon/GitHubIcon';
 import { LinkedInIcon } from '@components/icon/LinkedInIcon';
 import { BackgroundPatternImage } from '@components/img/BackgroundPatternImage';
@@ -24,12 +24,12 @@ export const SectionMe: FC = () => (
         <span>Slovenia</span>
       </div>
       <div className="mt-8 flex flex-row space-x-5">
-        <Button size="sm">
+        <ButtonLink href="https://github.com/TheCodeDestroyer">
           <GitHubIcon />
-        </Button>
-        <Button size="sm">
+        </ButtonLink>
+        <ButtonLink href="https://www.linkedin.com/in/thecodedestroyer">
           <LinkedInIcon />
-        </Button>
+        </ButtonLink>
       </div>
     </div>
     <div className="absolute bottom-0 right-0 z-100 hidden xl:block">

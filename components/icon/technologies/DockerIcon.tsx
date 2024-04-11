@@ -1,10 +1,6 @@
 import type { FC } from 'react';
 
-interface DockerIconProps {
-  className?: string;
-}
-
-export const DockerIcon: FC<DockerIconProps> = ({ className }) => (
+export const DockerIcon: FC = () => (
   <a
     href="https://www.docker.com/"
     target="_blank"
