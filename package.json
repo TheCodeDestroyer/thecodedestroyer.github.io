@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "base:prettier": "prettier './**/*.{ts,tsx,html,json,md,css}' --config .prettierrc --cache",
+    "base:prettier": "prettier './**/*.{ts,tsx,html,json,md,css,svg}' --config .prettierrc --cache",
     "base:eslint": "eslint ./ --ext .js,.ts,.tsx --cache",
     "lint:prettier": "pnpm base:prettier --check",
     "lint:eslint": "pnpm base:eslint",
