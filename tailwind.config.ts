@@ -16,7 +16,8 @@ const config: Config = {
         '25': '6.25rem'
       },
       padding: {
-        '25': '6.25rem'
+        '25': '6.25rem',
+        '29': '7.25rem'
       },
       backgroundImage: {
         'pattern-1': "url('/bg-1.svg')",
