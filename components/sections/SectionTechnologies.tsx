@@ -21,7 +21,7 @@ export const SectionTechnologies: FC = () => {
     <SectionWrapper
       id={Sections.Technologies}
       className={clsx(
-        'bg-pattern-2 bg-position-technologies h-full bg-no-repeat',
+        'h-full bg-pattern-2 bg-position-technologies bg-no-repeat',
         'flex flex-col items-center justify-center space-y-12',
         ' xl:flex-row xl:space-x-12 xl:space-y-0'
       )}

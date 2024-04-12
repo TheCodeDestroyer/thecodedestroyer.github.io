@@ -27,7 +27,7 @@ export const SectionExperience: FC = () => {
   return (
     <SectionWrapper
       id={Sections.Experience}
-      className="bg-pattern-2 bg-position-experience overflow-hidden bg-no-repeat"
+      className="overflow-hidden bg-pattern-2 bg-position-experience bg-no-repeat"
     >
       <h1 className="px-6 text-8xl text-white md:px-20 md:text-10xl">
         Experience

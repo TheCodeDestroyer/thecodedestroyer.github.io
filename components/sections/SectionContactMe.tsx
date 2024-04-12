@@ -8,10 +8,10 @@ import { SectionWrapper } from '@components/sections/SectionWrapper';
 export const SectionContactMe: FC = () => (
   <SectionWrapper
     id={Sections.ContactMe}
-    className="bg-pattern-1 bg-position-about w-full bg-no-repeat transition"
+    className="w-full bg-pattern-1 bg-position-about bg-no-repeat transition"
   >
     <div className="flex h-full items-end justify-center">
-      <div className="pb-29 flex flex-col">
+      <div className="flex flex-col pb-29">
         <p className=" text-8xl text-white">Want to work with me?</p>
         <div className="mt-8 flex justify-center">
           <Button text="Contact me" />

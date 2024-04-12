@@ -13,7 +13,7 @@ import image from '@public/profile.png';
 export const SectionMe: FC = () => (
   <SectionWrapper
     id={Sections.Me}
-    className="bg-pattern-1 bg-position-me flex flex-row justify-between bg-no-repeat"
+    className="flex flex-row justify-between bg-pattern-1 bg-position-me bg-no-repeat"
   >
     <div className="ml-6 flex h-full flex-col items-start justify-end pb-10 md:ml-32 md:pb-32">
       <div className="text-9xl">

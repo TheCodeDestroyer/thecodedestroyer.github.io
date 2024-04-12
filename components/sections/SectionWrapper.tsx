@@ -1,16 +1,14 @@
 'use client';
 
 import { clsx } from 'clsx';
-import {
-  type Variants,
-  motion,
-  useAnimation,
-  useInView,
-  useMotionValue
-} from 'framer-motion';
+import { type Variants, motion, useAnimation, useInView } from 'framer-motion';
 import type { FC, PropsWithChildren } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+
+import type { Sections } from '@utils/types/section.enum';
+
+import { useCurrentSectionStore } from '@store/common.store';
 
 export const animationVariants: Variants = {
   hidden: { scale: 0.5, opacity: 0 },
@@ -22,7 +20,7 @@ export const animationVariants: Variants = {
 };
 
 interface SectionWrapperProps extends PropsWithChildren {
-  id?: string;
+  id: Sections;
   className?: string;
 }
 
@@ -31,7 +29,7 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
   id,
   className
 }) => {
-  const isMounted = useMotionValue(false);
+  const { setCurrentSection } = useCurrentSectionStore();
   const containerRef = useRef<HTMLDivElement>(null);
   const control = useAnimation();
 
@@ -40,10 +38,11 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
   useEffect(() => {
     if (isInView) {
       void control.start('visible');
+      setCurrentSection(id);
     } else {
       void control.start('hidden');
     }
-  }, [control, id, isInView, isMounted]);
+  }, [control, id, isInView, setCurrentSection]);
 
   return (
     <motion.section
