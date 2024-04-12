@@ -1,6 +1,8 @@
 import { clsx } from 'clsx';
 import type { FC } from 'react';
 
+import { Sections } from '@utils/types/section.enum';
+
 import { CypressIcon } from '@components/icon/technologies/CypressIcon';
 import { DockerIcon } from '@components/icon/technologies/DockerIcon';
 import { GitIcon } from '@components/icon/technologies/GitIcon';
@@ -17,7 +19,7 @@ export const SectionTechnologies: FC = () => {
 
   return (
     <SectionWrapper
-      id="technologies"
+      id={Sections.Technologies}
       className={clsx(
         'bg-pattern-2 bg-position-technologies h-full bg-no-repeat',
         'flex flex-col items-center justify-center space-y-12',

@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
+import { Sections } from '@utils/types/section.enum';
+
 import { ButtonLink } from '@components/ButtonLink';
 import { GitHubIcon } from '@components/icon/GitHubIcon';
 import { LinkedInIcon } from '@components/icon/LinkedInIcon';
@@ -10,8 +12,8 @@ import image from '@public/profile.png';
 
 export const SectionMe: FC = () => (
   <SectionWrapper
-    id="me"
-    className="flex flex-row justify-between bg-pattern-1 bg-position-me bg-no-repeat"
+    id={Sections.Me}
+    className="bg-pattern-1 bg-position-me flex flex-row justify-between bg-no-repeat"
   >
     <div className="ml-6 flex h-full flex-col items-start justify-end pb-10 md:ml-32 md:pb-32">
       <div className="text-9xl">

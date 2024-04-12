@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useRef, useState } from 'react';
 
+import { Sections } from '@utils/types/section.enum';
+
 import { useMount } from '@hooks/effect.hook';
 
 import { WorkCard } from '@components/WorkCard';
@@ -24,8 +26,8 @@ export const SectionExperience: FC = () => {
 
   return (
     <SectionWrapper
-      id="experience"
-      className="overflow-hidden bg-pattern-2 bg-position-experience bg-no-repeat"
+      id={Sections.Experience}
+      className="bg-pattern-2 bg-position-experience overflow-hidden bg-no-repeat"
     >
       <h1 className="px-6 text-8xl text-white md:px-20 md:text-10xl">
         Experience

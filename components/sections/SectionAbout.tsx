@@ -1,11 +1,13 @@
 import type { FC } from 'react';
 
+import { Sections } from '@utils/types/section.enum';
+
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
 export const SectionAbout: FC = () => (
   <SectionWrapper
-    id="about"
-    className="w-full bg-pattern-1 bg-position-about bg-no-repeat"
+    id={Sections.About}
+    className="bg-pattern-1 bg-position-about w-full bg-no-repeat"
   >
     <div className="absolute inset-0 grid place-items-center">
       <p className="mx-6 text-4xl text-accent md:mx-32 xl:text-9xl">

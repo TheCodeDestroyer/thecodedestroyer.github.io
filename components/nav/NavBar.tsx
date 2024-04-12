@@ -5,13 +5,16 @@ import { clsx } from 'clsx';
 import type { FC } from 'react';
 import { Fragment } from 'react';
 
+import type { NabBarNavigation } from '@utils/types/navbar.interface';
+import { Sections } from '@utils/types/section.enum';
+
 import { Button } from '@components/Button';
 import { MenuToggleButton } from '@components/nav/MenuToggleButton';
 
-const navigation = [
-  { name: 'Me', href: '#me', current: true },
-  { name: 'Technologies', href: '#technologies', current: false },
-  { name: 'My experience', href: '#experience', current: false }
+const navigation: NabBarNavigation[] = [
+  { name: 'Me', sectionId: Sections.Me, current: true },
+  { name: 'Technologies', sectionId: Sections.Technologies, current: false },
+  { name: 'My experience', sectionId: Sections.Experience, current: false }
 ];
 
 export const NavBar: FC = () => (
@@ -30,7 +33,7 @@ export const NavBar: FC = () => (
                 {navigation.map((item) => (
                   <a
                     key={item.name}
-                    href={item.href}
+                    href={`#${item.sectionId}`}
                     className={clsx(
                       'px-5 text-2xl font-medium hover:text-accent',
                       {
@@ -61,7 +64,7 @@ export const NavBar: FC = () => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
-                  href={item.href}
+                  href={`#${item.sectionId}`}
                   className={clsx(
                     'block rounded-md px-3 py-2 text-base font-medium hover:text-accent',
                     {
