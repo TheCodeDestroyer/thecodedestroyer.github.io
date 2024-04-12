@@ -1,6 +1,11 @@
+import { clsx } from 'clsx';
 import type { FC } from 'react';
 
-export const CypressIcon: FC = () => (
+interface CypressIconProps {
+  className?: string;
+}
+
+export const CypressIcon: FC<CypressIconProps> = ({ className }) => (
   <a
     href="https://www.cypress.io"
     target="_blank"
@@ -14,7 +19,7 @@ export const CypressIcon: FC = () => (
       width="93px"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className="fill-current text-white"
+      className={clsx('fill-current text-white', className)}
     >
       <linearGradient
         id="cypressGradient"

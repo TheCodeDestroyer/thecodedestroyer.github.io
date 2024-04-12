@@ -1,6 +1,10 @@
 import type { FC } from 'react';
 
-export const StorybookIcon: FC = () => (
+interface StorybookIconProps {
+  className?: string;
+}
+
+export const StorybookIcon: FC<StorybookIconProps> = ({ className }) => (
   <a
     href="https://storybook.js.org"
     target="_blank"
@@ -16,6 +20,7 @@ export const StorybookIcon: FC = () => (
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       preserveAspectRatio="xMidYMid"
+      className={className}
     >
       <defs>
         <path

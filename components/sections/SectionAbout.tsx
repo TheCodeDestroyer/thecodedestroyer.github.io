@@ -5,10 +5,10 @@ import { SectionWrapper } from '@components/sections/SectionWrapper';
 export const SectionAbout: FC = () => (
   <SectionWrapper
     id="about"
-    className="bg-pattern-1 bg-position-about bg-no-repeat"
+    className="w-full bg-pattern-1 bg-position-about bg-no-repeat"
   >
     <div className="absolute inset-0 grid place-items-center">
-      <p className="mx-6 text-4xl text-accent md:mx-32 md:text-9xl">
+      <p className="mx-6 text-4xl text-accent md:mx-32 xl:text-9xl">
         <em className="text-white">As a Senior Frontend Developer,</em> I excel
         in creating pixel-perfect digital experiences that meet user needs with
         precision.

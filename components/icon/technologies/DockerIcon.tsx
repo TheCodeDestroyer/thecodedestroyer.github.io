@@ -1,6 +1,11 @@
+import { clsx } from 'clsx';
 import type { FC } from 'react';
 
-export const DockerIcon: FC = () => (
+interface DockerIconProps {
+  className?: string;
+}
+
+export const DockerIcon: FC<DockerIconProps> = ({ className }) => (
   <a
     href="https://www.docker.com/"
     target="_blank"
@@ -16,7 +21,10 @@ export const DockerIcon: FC = () => (
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       preserveAspectRatio="xMidYMid"
-      className="fill-current text-[#2396ED] group-hover:text-accent"
+      className={clsx(
+        'fill-current text-[#2396ED] group-hover:text-accent',
+        className
+      )}
     >
       <g>
         <path

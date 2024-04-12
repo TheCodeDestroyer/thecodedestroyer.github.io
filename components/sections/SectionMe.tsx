@@ -9,8 +9,11 @@ import { SectionWrapper } from '@components/sections/SectionWrapper';
 import image from '@public/profile.png';
 
 export const SectionMe: FC = () => (
-  <SectionWrapper id="me" className="bg-pattern-1 bg-position-me bg-no-repeat">
-    <div className="absolute bottom-10 left-6 z-100 m-0 md:bottom-32 md:left-32">
+  <SectionWrapper
+    id="me"
+    className="flex flex-row justify-between bg-pattern-1 bg-position-me bg-no-repeat"
+  >
+    <div className="ml-6 flex h-full flex-col items-start justify-end pb-10 md:ml-32 md:pb-32">
       <div className="text-9xl">
         <h1>{`Hi, I'm`}</h1>
         <h1 className="text-accent">Nace Logar!</h1>
@@ -28,17 +31,17 @@ export const SectionMe: FC = () => (
         </ButtonLink>
       </div>
     </div>
-    <div className="absolute bottom-0 right-0 z-100 hidden xl:block">
+    <div className="hidden h-full items-end xl:z-100 xl:flex">
       <Image
         src={image}
         quality={70}
         alt="profile picture"
         height={650}
-        className="z-100 scale-x-[-1] transform-gpu object-fill"
+        className="scale-x-[-1] transform-gpu object-fill"
         priority
       />
     </div>
-    <div className="elipsis elipsis-1 absolute z-30 block" />
-    <div className="elipsis elipsis-2 absolute z-10 block" />
+    <div className="elipsis elipsis-1 absolute -z-10 block" />
+    <div className="elipsis elipsis-2 absolute -z-10 block" />
   </SectionWrapper>
 );

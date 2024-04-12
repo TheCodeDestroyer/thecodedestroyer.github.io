@@ -1,6 +1,10 @@
 import type { FC } from 'react';
 
-export const GitIcon: FC = () => (
+interface GitIconProps {
+  className?: string;
+}
+
+export const GitIcon: FC<GitIconProps> = ({ className }) => (
   <a
     href="https://git-scm.com"
     target="_blank"
@@ -14,6 +18,7 @@ export const GitIcon: FC = () => (
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M2.58536 17.4132C1.80488 16.6327 1.80488 15.3673 2.58536 14.5868L14.5868 2.58536C15.3673 1.80488 16.6327 1.80488 17.4132 2.58536L29.4146 14.5868C30.1951 15.3673 30.1951 16.6327 29.4146 17.4132L17.4132 29.4146C16.6327 30.1951 15.3673 30.1951 14.5868 29.4146L2.58536 17.4132Z"

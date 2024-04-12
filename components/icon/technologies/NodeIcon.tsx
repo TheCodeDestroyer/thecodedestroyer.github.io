@@ -1,6 +1,10 @@
 import type { FC } from 'react';
 
-export const NodeIcon: FC = () => (
+interface NodeIconProps {
+  className?: string;
+}
+
+export const NodeIcon: FC<NodeIconProps> = ({ className }) => (
   <a
     href="https://nodejs.org"
     target="_blank"
@@ -16,6 +20,7 @@ export const NodeIcon: FC = () => (
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       preserveAspectRatio="xMidYMid"
+      className={className}
     >
       <g>
         <path
