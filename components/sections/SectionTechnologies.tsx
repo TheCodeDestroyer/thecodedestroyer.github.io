@@ -10,16 +10,15 @@ import { ReactIcon } from '@components/icon/technologies/ReactIcon';
 import { ReduxIcon } from '@components/icon/technologies/ReduxIcon';
 import { StorybookIcon } from '@components/icon/technologies/StorybookIcon';
 import { TailwindIcon } from '@components/icon/technologies/TailwindIcon';
-import { BackgroundPatternImage } from '@components/img/BackgroundPatternImage';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
 export const SectionTechnologies: FC = () => (
-  <SectionWrapper id="technologies">
-    <div className="relative block h-screen w-full overflow-hidden">
-      <BackgroundPatternImage className="absolute -bottom-[25rem] -right-[30rem] rotate-[-27deg]" />
-    </div>
+  <SectionWrapper
+    id="technologies"
+    className="bg-pattern-2 bg-position-technologies bg-no-repeat"
+  >
     <div className="absolute right-[14rem] top-1/3 z-10 flex flex-row items-center justify-center space-x-12">
-      <h3 className="text-4xl text-white">I work with</h3>
+      <h3 className="text-4xl text-white">I work the most with</h3>
       <div
         className={clsx(
           'relative h-[28rem] w-[33rem] overflow-hidden rounded p-1',

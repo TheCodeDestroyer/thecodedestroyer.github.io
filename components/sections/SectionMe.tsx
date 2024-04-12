@@ -4,16 +4,12 @@ import type { FC } from 'react';
 import { ButtonLink } from '@components/ButtonLink';
 import { GitHubIcon } from '@components/icon/GitHubIcon';
 import { LinkedInIcon } from '@components/icon/LinkedInIcon';
-import { BackgroundPatternImage } from '@components/img/BackgroundPatternImage';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
 import image from '@public/profile.png';
 
 export const SectionMe: FC = () => (
-  <SectionWrapper id="me">
-    <div className="relative block h-screen w-full overflow-hidden">
-      <BackgroundPatternImage className="absolute bottom-0 right-0" />
-    </div>
+  <SectionWrapper id="me" className="bg-pattern-1 bg-position-me bg-no-repeat">
     <div className="absolute bottom-10 left-6 z-100 m-0 md:bottom-32 md:left-32">
       <div className="text-9xl">
         <h1>{`Hi, I'm`}</h1>

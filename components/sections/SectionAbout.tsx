@@ -1,13 +1,12 @@
 import type { FC } from 'react';
 
-import { BackgroundPatternImage } from '@components/img/BackgroundPatternImage';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
 export const SectionAbout: FC = () => (
-  <SectionWrapper id="about">
-    <div className="relative block h-screen w-full overflow-hidden">
-      <BackgroundPatternImage className="absolute -left-[18rem] -top-[13rem]" />
-    </div>
+  <SectionWrapper
+    id="about"
+    className="bg-pattern-1 bg-position-about bg-no-repeat"
+  >
     <div className="absolute inset-0 grid place-items-center">
       <p className="mx-6 text-4xl text-accent md:mx-32 md:text-9xl">
         <em className="text-white">As a Senior Frontend Developer,</em> I excel

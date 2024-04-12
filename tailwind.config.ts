@@ -19,9 +19,14 @@ const config: Config = {
         '25': '6.25rem'
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+        'pattern-1': "url('/bg-1.svg')",
+        'pattern-2': "url('/bg-2.svg')"
+      },
+      backgroundPosition: {
+        'position-me': 'bottom -6rem right 0rem',
+        'position-about': 'left -18rem top -7rem',
+        'position-technologies': 'bottom -26rem right -28rem',
+        'position-experience': 'bottom -28rem right -10rem'
       },
       boxShadow: {
         '2lg': '0px 12px 24px -16px #0000001A'

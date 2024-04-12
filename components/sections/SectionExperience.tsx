@@ -8,7 +8,6 @@ import { useRef, useState } from 'react';
 import { useMount } from '@hooks/effect.hook';
 
 import { WorkCard } from '@components/WorkCard';
-import { SecondaryBackgroundPatternImage } from '@components/img/SecondaryBackgroundPatternImage';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
 export const SectionExperience: FC = () => {
@@ -24,10 +23,10 @@ export const SectionExperience: FC = () => {
   });
 
   return (
-    <SectionWrapper id="experience" className="overflow-hidden">
-      <div className="absolute z-[-1] block h-screen w-full overflow-hidden">
-        <SecondaryBackgroundPatternImage className="absolute -bottom-[25rem] -right-[20rem] -z-[-3] rotate-[-27deg]" />
-      </div>
+    <SectionWrapper
+      id="experience"
+      className="overflow-hidden bg-pattern-2 bg-position-experience bg-no-repeat"
+    >
       <h1 className="px-6 text-8xl text-white md:px-20 md:text-10xl">
         Experience
       </h1>
