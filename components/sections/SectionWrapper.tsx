@@ -1,11 +1,25 @@
 'use client';
 
-import { sectionAnimation } from '@constants/section-animation.constant';
 import { clsx } from 'clsx';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import {
+  type Variants,
+  motion,
+  useAnimation,
+  useInView,
+  useMotionValue
+} from 'framer-motion';
 import type { FC, PropsWithChildren } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+
+export const animationVariants: Variants = {
+  hidden: { scale: 0.5, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.35, ease: 'easeOut' }
+  }
+};
 
 interface SectionWrapperProps extends PropsWithChildren {
   id?: string;
@@ -17,10 +31,11 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
   id,
   className
 }) => {
+  const isMounted = useMotionValue(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const control = useAnimation();
 
-  const isInView = useInView(containerRef);
+  const isInView = useInView(containerRef, { amount: 0.9 });
 
   useEffect(() => {
     if (isInView) {
@@ -28,17 +43,18 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
     } else {
       void control.start('hidden');
     }
-  }, [control, isInView]);
+  }, [control, id, isInView, isMounted]);
 
   return (
     <motion.section
       id={id}
       className={clsx(
-        'max-supported-width navbar-padding relative mx-auto h-screen snap-center snap-always overflow-hidden',
+        'max-supported-width navbar-padding relative mx-auto h-screen',
+        'snap-center snap-always overflow-hidden',
         className
       )}
       ref={containerRef}
-      variants={sectionAnimation}
+      variants={animationVariants}
       initial="hidden"
       animate={control}
     >
