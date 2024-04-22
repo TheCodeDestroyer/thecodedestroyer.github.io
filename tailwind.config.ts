@@ -21,13 +21,17 @@ const config: Config = {
       },
       backgroundImage: {
         'pattern-1': "url('/bg-1.svg')",
-        'pattern-2': "url('/bg-2.svg')"
+        'pattern-2': "url('/bg-2.svg')",
+        halo: 'radial-gradient(85rem circle at var(--mouse-x) var(--mouse-y), rgba(255, 235, 211, 0.18), transparent 40%)'
       },
       backgroundPosition: {
         'position-me': 'bottom -6rem right 0rem',
         'position-about': 'left -18rem top -7rem',
         'position-technologies': 'bottom -26rem right -28rem',
         'position-experience': 'bottom -28rem right -10rem'
+      },
+      borderRadius: {
+        inherit: 'inherit'
       },
       boxShadow: {
         '2lg': '0px 12px 24px -16px #0000001A'
