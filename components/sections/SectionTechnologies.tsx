@@ -22,8 +22,8 @@ export const SectionTechnologies: FC = () => {
       id={Sections.Technologies}
       className={clsx(
         'h-full bg-pattern-2 bg-position-technologies bg-no-repeat',
-        'flex flex-col items-center justify-center space-y-12',
-        ' xl:flex-row xl:space-x-12 xl:space-y-0'
+        'flex flex-col items-center justify-start space-y-12 md:justify-center',
+        'xl:flex-row xl:space-x-12 xl:space-y-0'
       )}
     >
       <h3 className="px-10 text-center text-4xl text-white md:text-left">

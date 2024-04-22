@@ -1,7 +1,6 @@
 import { clsx } from 'clsx';
-import type { MotionStyle, MotionValue } from 'framer-motion';
+import { type MotionStyle, type MotionValue, motion } from 'framer-motion';
 import { useMotionTemplate, useMotionValue } from 'framer-motion';
-import { motion } from 'framer-motion';
 import type { FC, MouseEvent } from 'react';
 
 import type { Work } from '@utils/types/work.interface';
@@ -36,12 +35,12 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
       onMouseMove={handleOnMouseMove}
       style={style}
       className={clsx(
-        'relative flex min-h-full min-w-75 select-none flex-col shadow-2lg md:min-w-1/3',
+        'lg:min-w-1/2 relative flex max-h-full min-w-75 select-none flex-col shadow-2lg xl:min-w-1/3',
         'rounded-2xl border border-white border-opacity-10',
         'overflow-hidden bg-white bg-opacity-10 p-6',
-        'text-sm md:text-lg',
+        'text-sm lg:text-lg',
         'before:absolute before:left-0 before:top-0 before:z-200 before:h-full before:w-full before:rounded-inherit',
-        'before:bg-halo before:opacity-0 before:hover:opacity-100'
+        'before:bg-halo before:opacity-0 before:xl:hover:opacity-100'
       )}
     >
       <h5 className="text-2xl">{company}</h5>
@@ -49,9 +48,9 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
         {to ? `${from} - ${to}` : 'Current'}
       </span>
       <span className="mt-3 text-accent">{position}</span>
-      <ul className="list-disc space-y-3 pl-5 marker:text-[1.125rem] marker:text-accent ">
-        {tasks.map((task) => (
-          <li className="last:hidden" key={task}>
+      <ul className="group mt-3 list-disc space-y-3 pl-5 marker:text-[1.125rem] marker:text-accent">
+        {tasks.map((task, index) => (
+          <li key={task} className={clsx({})}>
             {task}
           </li>
         ))}

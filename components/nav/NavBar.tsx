@@ -23,10 +23,13 @@ export const NavBar: FC = () => {
   const { currentSection } = useCurrentSectionStore();
 
   return (
-    <Disclosure as="nav" className="fixed inset-x-0 top-0 z-200 h-25 bg-black">
+    <Disclosure
+      as="nav"
+      className="fixed inset-x-0 top-0 z-200 h-16 bg-black lg:h-25"
+    >
       {({ open }) => (
         <Fragment>
-          <div className="max-supported-width mx-auto p-4 sm:p-8">
+          <div className="max-supported-width mx-auto h-full p-4 sm:p-8">
             <div className="flex justify-between">
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center text-4xl font-medium text-accent">
@@ -66,7 +69,7 @@ export const NavBar: FC = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="lg:hidden">
+          <Disclosure.Panel className="z-100 bg-black shadow-2lg shadow-black lg:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                 {navigation.map((item) => {

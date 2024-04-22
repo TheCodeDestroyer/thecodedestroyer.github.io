@@ -12,7 +12,9 @@ export const SectionContactMe: FC = () => (
   >
     <div className="flex h-full items-end justify-center">
       <div className="flex flex-col pb-29">
-        <p className=" text-8xl text-white">Want to work with me?</p>
+        <p className=" text-center text-8xl text-white">
+          Want to work with me?
+        </p>
         <div className="mt-8 flex justify-center">
           <Button text="Contact me" />
         </div>

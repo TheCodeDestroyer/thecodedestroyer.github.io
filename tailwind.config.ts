@@ -15,6 +15,10 @@ const config: Config = {
       height: {
         '25': '6.25rem'
       },
+      maxHeight: {
+        '3/4': '75%',
+        '4/5': '80%'
+      },
       padding: {
         '25': '6.25rem',
         '29': '7.25rem'
@@ -28,7 +32,8 @@ const config: Config = {
         'position-me': 'bottom -6rem right 0rem',
         'position-about': 'left -18rem top -7rem',
         'position-technologies': 'bottom -26rem right -28rem',
-        'position-experience': 'bottom -28rem right -10rem'
+        'position-experience': 'bottom -28rem right -10rem',
+        'position-interests': 'left -18rem top -7rem'
       },
       borderRadius: {
         inherit: 'inherit'
@@ -89,12 +94,14 @@ const config: Config = {
         button: '0.009em'
       },
       maxWidth: {
+        88: '88rem',
         '8xl': '88rem',
         '9xl': '96rem',
         '10xl': '104rem',
         '11xl': '112rem'
       },
       minWidth: {
+        '1/2': '50%',
         '1/3': '33%',
         '1/4': '25%',
         '1/5': '20%',

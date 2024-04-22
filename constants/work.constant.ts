@@ -7,13 +7,12 @@ export const previousWork: Work[] = [
     from: 'Feb 2023',
     to: 'Feb 2024',
     tasks: [
-      'Led CMS platform migration to Turborepo & Next.js, enhancing scalability and content management capabilities.',
-      "Introduced Editor's Choice feature in CMS, resulting in improved content engagement and discoverability.",
-      'Developed ad-centric user landing page, to improve user acquisition by optimizing marketing efforts.',
-      'Launched feeder guest invite management feature, streamlining user flows and enhancing user experience.',
-      'Optimized CMS backend with NestJS and Prisma, maintaining robust, scalable server-side operations.',
-      'Integrated GraphQL API via Apollo Client, ensuring efficient data fetching and seamless user types.',
-      'Collaborated for new feature integration into CMS, prioritizing stability and performance, enhancing cross-functional team synergy.'
+      'Migrated CMS to Turborepo & Next.js, enhancing scalability.',
+      "Introduced 'Editor's Choice' in CMS, boosting content engagement.",
+      'Developed ad-centric landing page to optimize marketing.',
+      'Launched guest invite management in feeder, enhancing user experience.',
+      'Managed CMS backend with NestJS and Prisma for robust operations.',
+      'Collaborated on new CMS features, focusing on stability and team synergy.'
     ]
   },
   {
@@ -22,12 +21,11 @@ export const previousWork: Work[] = [
     from: 'Jan 2019',
     to: 'Feb 2023',
     tasks: [
-      'Led a team of 2 frontend developers in the development of Moshi, a comprehensive cloud-based healthcare application, enhancing patient and dental care management.',
-      'Implemented electronic signatures and a dynamic questionnaire, increasing data collection efficiency.',
-      'Employed React, Redux, and TailwindCSS to deliver a responsive UI.',
-      'Established a customer support channel via Intercom, ensuring immediate assistance and enhancing user satisfaction.',
-      'Ensured application reliability and bug-free releases by executing comprehensive automated testing with Cypress and Jest.',
-      'Contributed to the continuous improvement of the application by actively participating in code reviews, mentoring junior developers, and promoting best coding practices.'
+      'Led an FE team to develop Moshi, a cloud-based app enhancing healthcare management.',
+      'Implemented e-signatures and dynamic questionnaires to increase data efficiency.',
+      'Used React, Redux, and TailwindCSS for responsive UI design.',
+      'Established customer support via Intercom, enhancing user satisfaction.',
+      'Ensured app reliability through automated testing with Cypress and Jest.'
     ]
   },
   {
@@ -36,12 +34,12 @@ export const previousWork: Work[] = [
     from: 'May 2017',
     to: 'Feb 2023',
     tasks: [
-      'Developed 2 major web applications, handling projects with scope including IoT marketplace and custom healthcare solutions.',
-      'Helped launch a remote monitoring application for patient ventilators, enhancing patient care in critical healthcare scenarios.',
-      "Engaged in Agile methodologies by participating in retrospectives, planning sessions, and reviews, contributing to the team's continuous improvement process.",
-      'Standardized coding practices across multiple projects by implementing a company-wide code style guide using ESLint.',
-      "Enhanced team's technical skills by delivering impactful talks on JavaScript and React, contributing to organizational knowledge sharing.",
-      'Mentored developers and participated in pair programming to promote knowledge sharing and improve team capabilities.'
+      'Developed major web apps in IoT marketplace and healthcare.',
+      'Launched a remote monitoring app for patient ventilators, improving critical care.',
+      'Engaged in Agile methodologies for continuous team improvement.',
+      'Standardized coding practices across projects using ESLint.',
+      'Delivered talks on JavaScript and React, enhancing team skills.',
+      'Mentored developers and engaged in pair programming for team growth.'
     ]
   },
   {
@@ -50,12 +48,11 @@ export const previousWork: Work[] = [
     from: 'Aug 2016',
     to: 'May 2017',
     tasks: [
-      'Enhanced Java deployment process and streamlined operations on-premise by introducing Docker to the development team.',
-      'Optimized CI/CD deployments and improved team efficiency by leading the internal deployment of GitLab, transitioning from Subversion.',
-      'Launched first version of dozdravnika.si, achieving seamless doctor appointment bookings by integrating with existing deployments.',
-      'Built dozdravnika.si employing Angular.js, resulting in a user-friendly login/registration types through a custom Keycloak authentication adapter.',
-      'Designed a straightforward calendar system within dozdravnika.si, enabling patients to book appointments with healthcare providers effortlessly.',
-      'Expanded technical proficiency by learning Pascal, contributing to the resolution of some bugs in desktop applications utilized by healthcare centers across Slovenia.'
+      'Enhanced Java deployment process by introducing Docker to the development team.',
+      'Streamlined Java operations with Docker.',
+      'Optimized CI/CD with GitLab, enhancing team efficiency.',
+      'Built dozdravnika.si for seamless doctor appointments using Angular.js, enhancing user login via Keycloak.',
+      'Expanded technical skills by learning Pascal, resolving healthcare bugs.'
     ]
   },
   {
@@ -64,10 +61,10 @@ export const previousWork: Work[] = [
     from: 'Dec 2014',
     to: 'Jul 2016',
     tasks: [
-      'Developed a web application using Angular.js, enabling users to select bus routes and track bus locations in real-time on a Leaflet map, including expected arrival times at selected stops.',
-      'Drove the migration of an outdated website, Kadris, to a modern, efficient single page application utilizing Angular.js, collaborating closely with backend developers to streamline and expedite the transition.',
-      'Implemented Jenkins for continuous integration and continuous deployment (CI/CD) processes, enhancing the internal deployment workflow for the web application.',
-      'Developed a user-friendly Angular.js website that utilizes WebSockets (WS) to display live information about runners, including their times at checkpoints, using NFC wristband technology for data collection.'
+      'Developed a web app with Angular.js for real-time bus tracking and arrival times using a Leaflet map.',
+      'Migrated Kadris to a modern, single-page app with Angular.js, enhancing efficiency and streamlining processes.',
+      'Implemented Jenkins for CI/CD, improving web application deployment workflows.',
+      'Created an Angular.js site displaying live runner data via WebSockets and NFC technology.'
     ]
   },
   {
@@ -76,10 +73,10 @@ export const previousWork: Work[] = [
     from: 'Apr 2012',
     to: 'Apr 2014',
     tasks: [
-      'Directed a team of 10, transitioning to a scrum-based approach with a later focus on leading a streamlined team of 5 for increased agility and efficiency.',
-      'Played a pivotal role in the complete overhaul of a desktop application designed for inventory management, packaging, and dispatch processes tailored to the needs of web store sellers, with a focus on Amazon Marketplace participants.',
-      "Engineered the application's full stack using ASP.NET MVC, incorporating Razor, jQuery, and LESS for a robust and responsive frontend design.",
-      'Actively contributed to a hackathon focused on reimagining the application’s frontend using Angular.js and Bootstrap to improve user experience and system performance.'
+      'Led a team of 10 in a transition to a scrum-based approach, later focusing on a streamlined team of 5.',
+      'Overhauled a desktop application for inventory management tailored to web store sellers.',
+      "Developed the application's full stack using ASP.NET MVC for a responsive design.",
+      'Contributed to a hackathon to reimagine the application’s frontend using Angular.js.'
     ]
   },
   {
@@ -88,9 +85,9 @@ export const previousWork: Work[] = [
     from: 'Nov 2010',
     to: 'Apr 2012',
     tasks: [
-      'Acquired comprehensive knowledge in web page construction, focusing on CMS webpage development using an internally developed ASP.NET MVC platform.',
-      'Enhanced expertise in CSS and JavaScript, with a strong emphasis on jQuery and ASP.NET MVC, through collaborative learning with skilled team members.',
-      'Gained practical experience in DevOps practices, including the maintenance of hosted domains and websites on premises servers via Active Directory and Microsoft IIS.'
+      'Acquired comprehensive knowledge in web page construction, focusing on creating CMS webpages using an internally developed ASP.NET MVC platform.',
+      'Enhanced my skills in CSS and JavaScript, with a strong emphasis on collaborative learning alongside experienced team members.',
+      'Gained practical experience in DevOps practices, including the maintenance and management of hosted domains and websites on premises servers using Active Directory and Microsoft IIS.'
     ]
   },
   {
@@ -99,11 +96,11 @@ export const previousWork: Work[] = [
     from: 'Sep 2008',
     to: 'Aug 2010',
     tasks: [
-      'Gained comprehensive knowledge in software development, focusing on desktop applications for logistics management, from foundational learning to advanced feature development.',
-      'Played a key role in a project aimed at assisting logistics companies with order management, transition state monitoring, warehouse organization, and customer billing.',
-      'Progressed to a mentorship role, guiding new employees through the technical and operational aspects of our projects, fostering a supportive and knowledge-sharing environment.',
-      'Provided customer support through phone and Microsoft Remote Desktop Connection, demonstrating a commitment to resolving issues promptly and maintaining high customer satisfaction.',
-      'Responsible for the continuous enhancement of existing modules by integrating new features and maintaining the overall software quality, ensuring seamless operational flow.'
+      'Acquired deep knowledge in software development for desktop logistics applications.',
+      'Key contributor to a logistics management project enhancing operational efficiency.',
+      'Advanced to mentorship, guiding new employees technically and operationally.',
+      'Provided customer support through direct communication and Remote Desktop.',
+      'Continuously improved software modules, maintaining high operational standards.'
     ]
   }
 ];

@@ -3,5 +3,6 @@ export enum Sections {
   About = 'about',
   Technologies = 'technologies',
   Experience = 'experience',
+  Hobbies = 'hobbies',
   ContactMe = 'contact'
 }
