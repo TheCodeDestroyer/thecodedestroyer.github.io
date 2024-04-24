@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 
 import { Sections } from '@utils/types/section.enum';
@@ -19,7 +21,18 @@ export const SectionContactMe: FC = () => (
           Want to work with me?
         </p>
         <div className="mt-8 flex justify-center">
-          <Button text="Contact me" color="secondaryAlt" />
+          <Button
+            text="Contact me"
+            color="secondaryAlt"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                // eslint-disable-next-line no-alert
+                window.alert(
+                  'Heads up!\n\n My contact form is under construction at the moment.\n In the meantime, please connect with me on LinkedIn.\n\n I look forward to hearing from you!'
+                );
+              }
+            }}
+          />
         </div>
       </div>
     </div>
