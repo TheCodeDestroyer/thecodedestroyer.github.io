@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black font-space-grotesk text-white selection:bg-accent selection:text-black;
+  min-width: 375px;
+}
+
+@layer utilities {
+  .elipsis {
+    border-radius: 100%;
+    filter: blur(200px);
+    opacity: 0.25;
+  }
+
+  .max-supported-width {
+    max-width: 120rem;
+  }
+
+  .navbar-padding {
+    padding-top: 6.25rem;
+  }
+}
