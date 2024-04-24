@@ -15,7 +15,7 @@ export const SectionMe: FC = () => (
     id={Sections.Me}
     className="flex flex-row justify-between bg-pattern-1 bg-position-me bg-no-repeat"
   >
-    <div className="ml-6 flex h-full flex-col items-start justify-end pb-10 md:ml-32 md:pb-32">
+    <div className="ml-6 flex h-full flex-col items-start justify-center pb-10 md:ml-32 md:justify-end md:pb-32">
       <div className="text-9xl">
         <h1>{`Hi, I'm`}</h1>
         <h1 className="text-accent">Nace Logar!</h1>
