@@ -1,4 +1,4 @@
-import type { Interest } from '@utils/types/section.interface';
+import type { Interest } from '@utils/types/interest.interface';
 
 export const interests: Interest[] = [
   {

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { Interest } from '@utils/types/section.interface';
+import type { Interest } from '@utils/types/interest.interface';
 
 export const InterestCard: FC<Interest> = ({ title, description }) => {
   return (
