@@ -30,7 +30,7 @@ export const SectionExperience: FC = () => {
       id={Sections.Experience}
       className="overflow-x-hidden bg-pattern-2 bg-position-experience bg-no-repeat"
     >
-      <h1 className="px-6 text-2xl text-white md:mt-28 md:text-8xl lg:px-20 lg:text-10xl">
+      <h1 className="mt-4 px-6 text-2xl text-white md:mt-48 md:text-8xl lg:px-20 lg:text-10xl">
         Experience
       </h1>
       <motion.div

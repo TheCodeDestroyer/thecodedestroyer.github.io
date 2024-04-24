@@ -3,8 +3,10 @@
 import { clsx } from 'clsx';
 import { type Variants, motion, useAnimation, useInView } from 'framer-motion';
 import type { FC, PropsWithChildren } from 'react';
+import { useCallback } from 'react';
 import { useDeferredValue, useLayoutEffect } from 'react';
 import { useRef } from 'react';
+import { isMobile } from 'react-device-detect';
 
 import type { Sections } from '@utils/types/section.enum';
 
@@ -43,27 +45,38 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
 
   const deferredIsInView = useDeferredValue(isInView);
 
+  const triggerAnimation = useCallback(
+    (name: 'visible' | 'hidden'): void => {
+      if (isMobile) {
+        return;
+      }
+
+      void control.start(name);
+    },
+    [control]
+  );
+
   useLayoutEffect(() => {
     if (deferredIsInView) {
-      void control.start('visible');
+      triggerAnimation('visible');
       setCurrentSection(id);
     } else {
-      void control.start('hidden');
+      triggerAnimation('hidden');
     }
-  }, [control, id, deferredIsInView, setCurrentSection]);
+  }, [triggerAnimation, id, deferredIsInView, setCurrentSection]);
 
   return (
     <motion.section
       id={id}
       className={clsx(
         'max-supported-width md:navbar-padding relative mx-auto',
-        'snap-center snap-always overflow-hidden',
+        'snap-always overflow-hidden md:snap-center',
         className,
         heightClassName
       )}
       ref={containerRef}
       variants={getAnimationVariants(animationDuration)}
-      initial="hidden"
+      initial={isMobile ? 'visible' : 'hidden'}
       animate={control}
     >
       {children}

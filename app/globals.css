@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-black font-space-grotesk text-white selection:bg-accent selection:text-black;
+  @apply scroll-smooth bg-black font-space-grotesk text-white selection:bg-accent selection:text-black;
   min-width: 375px;
 }
 

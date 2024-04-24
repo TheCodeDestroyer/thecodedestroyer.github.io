@@ -69,7 +69,7 @@ export const NavBar: FC = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="z-100 bg-black shadow-2lg shadow-black lg:hidden">
+          <Disclosure.Panel className="z-200 bg-black shadow-2lg shadow-black lg:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                 {navigation.map((item) => {

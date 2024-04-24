@@ -39,7 +39,7 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
         'rounded-2xl border border-white border-opacity-10',
         'overflow-hidden bg-white bg-opacity-10 p-6',
         'text-sm lg:text-lg',
-        'before:absolute before:left-0 before:top-0 before:z-200 before:h-full before:w-full before:rounded-inherit',
+        'before:absolute before:left-0 before:top-0 before:z-50 before:h-full before:w-full before:rounded-inherit',
         'before:bg-halo before:opacity-0 before:xl:hover:opacity-100'
       )}
     >

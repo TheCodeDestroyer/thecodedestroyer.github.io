@@ -33,7 +33,7 @@ export const SectionMe: FC = () => (
         </ButtonLink>
       </div>
     </div>
-    <div className="hidden h-full items-end xl:z-100 xl:flex">
+    <div className="hidden h-full items-end xl:z-10 xl:flex">
       <Image
         src={image}
         quality={70}

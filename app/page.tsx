@@ -11,7 +11,7 @@ import { SectionTechnologies } from '@components/sections/SectionTechnologies';
 const Home: FC = () => {
   return (
     <main>
-      <div className="h-screen w-full overflow-y-scroll scroll-smooth md:snap-y md:snap-mandatory">
+      <div className="h-screen w-full overflow-y-scroll md:snap-y md:snap-mandatory">
         <NavBar />
         <SectionMe />
         <SectionAbout />

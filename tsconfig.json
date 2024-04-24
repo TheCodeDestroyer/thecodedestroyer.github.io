@@ -28,6 +28,12 @@
       "@store/*": ["store/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.png", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.png",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
