@@ -7,26 +7,10 @@ body {
   min-width: 375px;
 }
 
-.elipsis-1 {
-  height: 22.5rem;
-  bottom: 15rem;
-  left: 0.5rem;
-  background: #b6f09c;
-}
-
-.elipsis-2 {
-  height: 19.5rem;
-  bottom: 6rem;
-  left: 20rem;
-  background: #ffebd3;
-}
-
 @layer utilities {
   .elipsis {
-    width: 42rem;
     border-radius: 100%;
-    filter: blur(12.5rem);
-    transform: rotate(24deg);
+    filter: blur(200px);
     opacity: 0.25;
   }
 

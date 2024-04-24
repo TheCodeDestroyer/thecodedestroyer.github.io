@@ -35,7 +35,7 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
       onMouseMove={handleOnMouseMove}
       style={style}
       className={clsx(
-        'lg:min-w-1/2 relative flex max-h-full min-w-75 select-none flex-col shadow-2lg xl:min-w-1/3',
+        'relative flex max-h-full min-w-75 select-none flex-col shadow-2lg lg:min-w-1/2 xl:min-w-1/3',
         'rounded-2xl border border-white border-opacity-10',
         'overflow-hidden bg-white bg-opacity-10 p-6',
         'text-sm lg:text-lg',
@@ -49,7 +49,7 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
       </span>
       <span className="mt-3 text-accent">{position}</span>
       <ul className="group mt-3 list-disc space-y-3 pl-5 marker:text-[1.125rem] marker:text-accent">
-        {tasks.map((task, index) => (
+        {tasks.map((task) => (
           <li key={task} className={clsx({})}>
             {task}
           </li>

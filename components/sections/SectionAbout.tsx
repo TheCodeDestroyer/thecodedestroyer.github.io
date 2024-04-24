@@ -11,7 +11,7 @@ export const SectionAbout: FC = () => (
     animationDuration={0.5}
   >
     <div className="grid h-full place-items-start md:place-items-center">
-      <p className="mx-6 text-4xl text-accent md:mx-32 md:text-9xl">
+      <p className="mx-6 text-4xl text-accent md:mx-32 md:px-20 md:text-9xl">
         <em className="text-white">As a Senior Frontend Developer,</em> I excel
         in creating pixel-perfect digital experiences that meet user needs with
         precision.
@@ -20,5 +20,7 @@ export const SectionAbout: FC = () => (
         intuitive and responsive websites and web applications.
       </p>
     </div>
+    <div className="elipsis absolute left-[10rem] top-[25rem] -z-10 block h-[22.75rem] w-[31.125rem] bg-anakiwa-300" />
+    <div className="elipsis absolute left-[41rem] top-[25rem] -z-10 block h-[22.75rem] w-[31.125rem] bg-accent" />
   </SectionWrapper>
 );

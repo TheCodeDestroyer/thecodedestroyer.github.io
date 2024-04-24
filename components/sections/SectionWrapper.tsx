@@ -2,14 +2,9 @@
 
 import { clsx } from 'clsx';
 import { type Variants, motion, useAnimation, useInView } from 'framer-motion';
-import {
-  FC,
-  PropsWithChildren,
-  useDeferredValue,
-  useLayoutEffect
-} from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { useDeferredValue, useLayoutEffect } from 'react';
 import { useRef } from 'react';
-import { useEffect } from 'react';
 
 import type { Sections } from '@utils/types/section.enum';
 

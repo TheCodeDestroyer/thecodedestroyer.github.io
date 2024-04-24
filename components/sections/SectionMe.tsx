@@ -28,7 +28,7 @@ export const SectionMe: FC = () => (
         <ButtonLink href="https://github.com/TheCodeDestroyer">
           <GitHubIcon />
         </ButtonLink>
-        <ButtonLink href="https://www.linkedin.com/in/thecodedestroyer">
+        <ButtonLink href="https://linkedin.com/in/thecodedestroyer">
           <LinkedInIcon />
         </ButtonLink>
       </div>
@@ -43,7 +43,7 @@ export const SectionMe: FC = () => (
         priority
       />
     </div>
-    <div className="elipsis elipsis-1 absolute -z-10 block" />
-    <div className="elipsis elipsis-2 absolute -z-10 block" />
+    <div className="elipsis absolute bottom-60 left-2 -z-10 block h-[22.5rem] w-[42rem] rotate-[24deg] bg-accent" />
+    <div className="elipsis absolute bottom-24 left-80 -z-10 block h-[19.5rem] w-[42rem] rotate-[24deg] bg-karry-100" />
   </SectionWrapper>
 );

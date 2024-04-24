@@ -21,8 +21,8 @@ export const SectionTechnologies: FC = () => {
     <SectionWrapper
       id={Sections.Technologies}
       className={clsx(
-        'h-full bg-pattern-2 bg-position-technologies bg-no-repeat',
-        'flex flex-col items-center justify-start space-y-12 md:justify-center',
+        'h-full bg-pattern-1 bg-position-technologies bg-no-repeat',
+        'flex flex-col items-center justify-center space-y-12',
         'xl:flex-row xl:space-x-12 xl:space-y-0'
       )}
     >
@@ -31,7 +31,7 @@ export const SectionTechnologies: FC = () => {
       </h3>
       <div
         className={clsx(
-          'relative mx-4 overflow-hidden rounded p-1 xl:m-0',
+          'relative mx-4 overflow-hidden rounded p-1 drop-shadow-lg xl:m-0',
           'before:absolute before:left-[-30%] before:top-[-30%] before:-z-10',
           'before:block before:h-[160%] before:w-[160%]',
           'before:bg-[conic-gradient(#B6F09C_0deg,transparent_60deg)]',
@@ -50,6 +50,8 @@ export const SectionTechnologies: FC = () => {
           <DockerIcon className={iconClassName} />
         </div>
       </div>
+      <div className="elipsis absolute -top-[5rem] left-[8rem] -z-10 block h-[40rem] w-[31.125rem] bg-anakiwa-300" />
+      <div className="elipsis absolute right-0 top-[55rem] -z-10 block h-[41rem] w-[44rem] bg-accent" />
     </SectionWrapper>
   );
 };

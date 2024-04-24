@@ -40,7 +40,7 @@ export const SectionExperience: FC = () => {
         dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
         dragConstraints={{ right: 0, left: -leftDragConstraint }}
         className={clsx(
-          'max-h-4/5 mr-6 mt-4 flex cursor-grab flex-row items-stretch space-x-5 pl-6 active:cursor-grabbing md:mr-20 md:mt-10 md:mt-20 md:pl-20'
+          'mr-6 mt-4 flex max-h-4/5 cursor-grab flex-row items-stretch space-x-5 pl-6 active:cursor-grabbing md:mr-20 md:mt-10 md:mt-20 md:pl-20'
         )}
       >
         {previousWork.map((work) => (

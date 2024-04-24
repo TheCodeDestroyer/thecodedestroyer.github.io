@@ -89,7 +89,13 @@ const config: Config = {
       colors: {
         black: '#030405',
         accent: '#B6F09C',
-        subtext: '#9FA0A2'
+        subtext: '#9FA0A2',
+        karry: {
+          100: '#ffebd3'
+        },
+        anakiwa: {
+          300: '#82dbf7'
+        }
       },
       letterSpacing: {
         button: '0.009em'
