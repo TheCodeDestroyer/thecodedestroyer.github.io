@@ -96,7 +96,17 @@ export const NavBar: FC = () => {
               </div>
               <div className="border-t border-gray-700 pb-3 pt-4">
                 <div className="flex items-center px-5 sm:px-6">
-                  <Button text="Contact me" />
+                  <Button
+                    text="Contact me"
+                    onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        // eslint-disable-next-line no-alert
+                        window.alert(
+                          'Heads up!\n\n My contact form is under construction at the moment.\n In the meantime, please connect with me on LinkedIn.\n\n I look forward to hearing from you!'
+                        );
+                      }
+                    }}
+                  />
                 </div>
               </div>
             </div>
