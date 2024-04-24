@@ -16,13 +16,24 @@ export const buttonVariants = cva(
           'hover:bg-white',
           'hover:text-black'
         ],
-        primaryOutlined: [
+        secondary: [
           'border-none',
           'text-accent',
+          'bg-black',
           'ring-1',
           'ring-accent',
           'hover:bg-accent',
           'hover:text-black'
+        ],
+        secondaryAlt: [
+          'border-none',
+          'text-accent',
+          'bg-black',
+          'ring-1',
+          'ring-accent',
+          'hover:bg-white',
+          'hover:text-black',
+          'hover:ring-0'
         ]
       },
       size: {

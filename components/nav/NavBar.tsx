@@ -60,7 +60,7 @@ export const NavBar: FC = () => {
                   })}
                 </div>
                 <div className="hidden items-center lg:flex">
-                  <Button text="Contact me" color="primaryOutlined" />
+                  <Button text="Contact me" color="secondary" />
                 </div>
                 <div className="mx-2 flex items-center lg:hidden">
                   <MenuToggleButton isOpen={open} />

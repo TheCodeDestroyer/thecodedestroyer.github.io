@@ -26,14 +26,15 @@ const config: Config = {
       backgroundImage: {
         'pattern-1': "url('/bg-1.svg')",
         'pattern-2': "url('/bg-2.svg')",
-        halo: 'radial-gradient(85rem circle at var(--mouse-x) var(--mouse-y), rgba(255, 235, 211, 0.18), transparent 40%)'
+        halo: 'radial-gradient(85rem circle at var(--mouse-x) var(--mouse-y), rgba(255, 235, 211, 0.18), transparent 40%)',
+        contact: 'linear-gradient(45deg, #82dbf7 0%, #b6f09c 100%)'
       },
       backgroundPosition: {
         'position-me': 'bottom -6rem right 0rem',
         'position-about': 'left -18rem top -7rem',
         'position-technologies': 'bottom -26rem right -28rem',
         'position-experience': 'bottom -28rem right -10rem',
-        'position-interests': 'left -18rem top -7rem'
+        'position-interests': 'left -25rem top -18rem'
       },
       borderRadius: {
         inherit: 'inherit'
