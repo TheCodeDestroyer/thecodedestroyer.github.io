@@ -28,7 +28,7 @@ export const SectionContactMe: FC = () => (
               if (typeof window !== 'undefined') {
                 // eslint-disable-next-line no-alert
                 window.alert(
-                  'Heads up!\n\n My contact form is under construction at the moment.\n In the meantime, please connect with me on LinkedIn.\n\n I look forward to hearing from you!'
+                  'Heads up!\n\nMy contact form is under construction at the moment.\nIn the meantime, please connect with me on LinkedIn.\n\nI look forward to hearing from you!'
                 );
               }
             }}
