@@ -2,6 +2,8 @@
 
 import { Disclosure } from '@headlessui/react';
 import { clsx } from 'clsx';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import type { FC } from 'react';
 import { Fragment } from 'react';
 
@@ -21,6 +23,7 @@ const navigation: NabBarNavigation[] = [
 
 export const NavBar: FC = () => {
   const { currentSection } = useCurrentSectionStore();
+  const { push } = useRouter();
 
   return (
     <Disclosure
@@ -32,9 +35,12 @@ export const NavBar: FC = () => {
           <div className="max-supported-width mx-auto h-full p-4 sm:p-8">
             <div className="flex justify-between">
               <div className="flex">
-                <div className="flex flex-shrink-0 items-center text-4xl font-medium text-accent">
+                <Link
+                  href="/"
+                  className="flex flex-shrink-0 items-center text-4xl font-medium text-accent"
+                >
                   Nace Logar
-                </div>
+                </Link>
               </div>
               <div className="flex items-center">
                 <div className="hidden md:ml-4 md:items-center lg:flex lg:flex-shrink-0">
@@ -60,7 +66,13 @@ export const NavBar: FC = () => {
                   })}
                 </div>
                 <div className="hidden items-center lg:flex">
-                  <Button text="Contact me" color="secondary" />
+                  <Button
+                    text="Contact me"
+                    color="secondary"
+                    onClick={(): void => {
+                      push('/contact');
+                    }}
+                  />
                 </div>
                 <div className="mx-2 flex items-center lg:hidden">
                   <MenuToggleButton isOpen={open} />
@@ -99,12 +111,7 @@ export const NavBar: FC = () => {
                   <Button
                     text="Contact me"
                     onClick={() => {
-                      if (typeof window !== 'undefined') {
-                        // eslint-disable-next-line no-alert
-                        window.alert(
-                          'Heads up!\n\nMy contact form is under construction at the moment.\nIn the meantime, please connect with me on LinkedIn.\n\nI look forward to hearing from you!'
-                        );
-                      }
+                      push('/contact');
                     }}
                   />
                 </div>
