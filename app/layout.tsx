@@ -1,4 +1,5 @@
 import { META_DESCRIPTION, META_TITLE } from '@constants/meta.constant';
+import { Analytics } from '@vercel/analytics/react';
 import { clsx } from 'clsx';
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google';
@@ -28,6 +29,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
     <html lang="en">
       <body className={clsx(spaceGrotesk.variable, plusJakartaSans.variable)}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
