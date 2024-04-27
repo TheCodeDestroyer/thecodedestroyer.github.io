@@ -1,8 +1,10 @@
 'use client';
 
+import { ArrowPathIcon } from '@heroicons/react/20/solid';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import type { FC } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -22,6 +24,7 @@ interface ContactFormData {
 
 export const ContactForm: FC = () => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   const { handleSubmit, control } = useForm<ContactFormData>({
     values: {
       email: '',
@@ -31,14 +34,20 @@ export const ContactForm: FC = () => {
   });
 
   const submitHandler = async (data: ContactFormData): Promise<void> => {
-    await fetch('/api/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
-    router.push('/success', { scroll: false });
+    setIsLoading(true);
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+    } finally {
+      setIsLoading(false);
+    }
+
+    router.push('/email-sent');
   };
 
   return (
@@ -62,7 +71,17 @@ export const ContactForm: FC = () => {
         wrapperClassName="mt-8"
       />
       <div className="mt-12 px-4 md:mt-16">
-        <Button type="submit" text="Send" className="w-full" />
+        <Button
+          type="submit"
+          text="Send"
+          className="w-full"
+          loading={isLoading}
+        >
+          <div className="flex flex-row items-center justify-center space-x-2">
+            {isLoading && <ArrowPathIcon className="h-6 w-6 animate-spin" />}
+            <span>{isLoading ? 'Sending...' : 'Send'}</span>
+          </div>
+        </Button>
       </div>
     </form>
   );

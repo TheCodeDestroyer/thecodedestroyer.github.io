@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 import type { ButtonHTMLAttributes, FC } from 'react';
 
 export const buttonVariants = cva(
-  'rounded-xl select-none transition-colors text-center font-semibold tracking-button font-plus-jakarta-sans fill-current',
+  'rounded-xl select-none transition-colors text-center font-semibold tracking-button disabled:opacity-60 disabled:cursor-not-allowed font-plus-jakarta-sans fill-current',
   {
     variants: {
       color: {
