@@ -34,7 +34,8 @@ const config: Config = {
         'position-about': 'left -18rem top -7rem',
         'position-technologies': 'bottom -26rem right -28rem',
         'position-experience': 'bottom -28rem right -10rem',
-        'position-interests': 'left -25rem top -18rem'
+        'position-interests': 'left -25rem top -18rem',
+        'position-contact': 'left -55rem top 0'
       },
       borderRadius: {
         inherit: 'inherit'
@@ -135,7 +136,7 @@ const config: Config = {
       }
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/forms')]
 };
 
 export default config;
