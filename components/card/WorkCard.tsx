@@ -43,7 +43,7 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
         'before:bg-halo before:opacity-0 before:xl:hover:opacity-100'
       )}
     >
-      <h4 className="text-2xl">{company}</h4>
+      <h2 className="text-2xl">{company}</h2>
       <span className="mt-1 text-subtext">
         {to ? `${from} - ${to}` : 'Current'}
       </span>

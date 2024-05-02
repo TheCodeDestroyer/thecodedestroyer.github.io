@@ -45,7 +45,7 @@ export const SectionMe: FC = () => (
         quality={70}
         alt="profile picture"
         height={650}
-        className="scale-x-[-1] transform-gpu object-fill"
+        className="hidden scale-x-[-1] transform-gpu object-fill xl:block"
         priority
       />
     </div>

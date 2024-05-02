@@ -26,9 +26,9 @@ export const SectionTechnologies: FC = () => {
         'xl:flex-row xl:space-x-12 xl:space-y-0'
       )}
     >
-      <h3 className="px-10 text-center text-4xl text-white md:text-left">
+      <h1 className="px-10 text-center text-4xl text-white md:text-left">
         I have the most experience with
-      </h3>
+      </h1>
       <div
         className={clsx(
           'relative mx-4 overflow-hidden rounded p-1 drop-shadow-lg xl:m-0',
