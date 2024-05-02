@@ -25,10 +25,16 @@ export const SectionMe: FC = () => (
         <span>Slovenia</span>
       </div>
       <div className="mt-8 flex flex-row space-x-5">
-        <ButtonLink href="https://github.com/TheCodeDestroyer">
+        <ButtonLink
+          ariaLabel="Visit GitHub profile"
+          href="https://github.com/TheCodeDestroyer"
+        >
           <GitHubIcon />
         </ButtonLink>
-        <ButtonLink href="https://linkedin.com/in/thecodedestroyer">
+        <ButtonLink
+          ariaLabel="Visit LinkedIn profile"
+          href="https://linkedin.com/in/thecodedestroyer"
+        >
           <LinkedInIcon />
         </ButtonLink>
       </div>
