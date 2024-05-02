@@ -91,7 +91,7 @@ export const NavBar: FC = () => {
                     <Disclosure.Button
                       key={item.name}
                       as="a"
-                      href={`#${item.sectionId}`}
+                      href={`/#${item.sectionId}`}
                       className={clsx(
                         'block rounded-md px-3 py-2 text-base font-medium hover:text-accent',
                         {
