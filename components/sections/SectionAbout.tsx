@@ -24,3 +24,5 @@ export const SectionAbout: FC = () => (
     <div className="elipsis absolute left-[41rem] top-[25rem] -z-10 block h-[22.75rem] w-[31.125rem] bg-accent" />
   </SectionWrapper>
 );
+
+export default SectionAbout;

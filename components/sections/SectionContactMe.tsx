@@ -38,3 +38,5 @@ export const SectionContactMe: FC = () => {
     </SectionWrapper>
   );
 };
+
+export default SectionContactMe;

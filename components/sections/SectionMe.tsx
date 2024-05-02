@@ -53,3 +53,5 @@ export const SectionMe: FC = () => (
     <div className="elipsis absolute bottom-24 left-80 -z-10 block h-[19.5rem] w-[42rem] rotate-[24deg] bg-karry-100" />
   </SectionWrapper>
 );
+
+export default SectionMe;

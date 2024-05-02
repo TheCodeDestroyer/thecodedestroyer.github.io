@@ -50,3 +50,5 @@ export const SectionExperience: FC = () => {
     </SectionWrapper>
   );
 };
+
+export default SectionExperience;

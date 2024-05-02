@@ -55,3 +55,5 @@ export const SectionTechnologies: FC = () => {
     </SectionWrapper>
   );
 };
+
+export default SectionTechnologies;

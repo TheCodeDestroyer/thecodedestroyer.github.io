@@ -25,3 +25,5 @@ export const SectionInterests: FC = () => (
     </div>
   </SectionWrapper>
 );
+
+export default SectionInterests;
