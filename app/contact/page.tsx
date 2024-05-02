@@ -13,7 +13,7 @@ const ContactPage: FC = () => (
         <ContactForm />
       </BotGuard>
     </div>
-    <div className="absolute size-full overflow-hidden">
+    <div className="absolute -z-10 size-full overflow-hidden">
       <div className="elipsis absolute -top-[5rem] right-[8rem] -z-10 block h-[40rem] w-[31.125rem] bg-anakiwa-300" />
       <div className="elipsis absolute  left-0 top-[55rem] -z-10 block h-[41rem] w-[44rem] bg-accent" />
     </div>
