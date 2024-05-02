@@ -10,7 +10,7 @@ export const SectionAbout: FC = () => (
     className="w-full bg-pattern-1 bg-position-about bg-no-repeat"
     animationDuration={0.5}
   >
-    <div className="grid h-full place-items-start md:place-items-center">
+    <div className="grid h-full place-items-center">
       <p className="mx-6 text-2xl text-accent sm:text-4xl md:mx-32 md:text-9xl xl:px-20">
         <em className="text-white">As a Senior Frontend Engineer,</em> I excel
         in creating pixel-perfect digital experiences that meet user needs with
