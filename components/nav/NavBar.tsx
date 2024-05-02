@@ -48,9 +48,9 @@ export const NavBar: FC = () => {
                     const isCurrent = item.sectionId === currentSection;
 
                     return (
-                      <a
+                      <Link
                         key={item.name}
-                        href={`#${item.sectionId}`}
+                        href={`/#${item.sectionId}`}
                         className={clsx(
                           'px-5 text-2xl font-medium hover:text-accent',
                           {
@@ -61,7 +61,7 @@ export const NavBar: FC = () => {
                         aria-current={isCurrent ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
