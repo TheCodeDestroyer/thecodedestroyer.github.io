@@ -9,7 +9,7 @@ export const interests: Interest[] = [
   {
     title: 'Books',
     description:
-      'Reading is a passion of mine, with a particular fondness for fantasy novels that transport me to other worlds, especially during vacations. Throughout the year, I maintain a steady pace of reading, aiming to finish a new book each month. My interests are diverse, spanning biographies, self-help, historical accounts, and various other enlightening topics.'
+      'Reading is a passion of mine, with a particular fondness for fantasy novels that transport me to other worlds, especially during vacations. Throughout the year, I maintain a steady pace of reading, aiming to finish a new book each month. My interests are diverse, spanning biographies, psychology, self-help, historical accounts, and various other enlightening topics.'
   },
   {
     title: 'Gaming',
