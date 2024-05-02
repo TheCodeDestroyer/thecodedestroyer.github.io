@@ -2,7 +2,7 @@ export enum Sections {
   Me = 'me',
   About = 'about',
   Technologies = 'technologies',
-  Experience = 'experience',
+  Career = 'career',
   Hobbies = 'hobbies',
   ContactMe = 'contact'
 }

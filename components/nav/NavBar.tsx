@@ -18,7 +18,7 @@ import { MenuToggleButton } from '@components/nav/MenuToggleButton';
 const navigation: NabBarNavigation[] = [
   { name: 'Me', sectionId: Sections.Me },
   { name: 'Technologies', sectionId: Sections.Technologies },
-  { name: 'My experience', sectionId: Sections.Experience }
+  { name: 'Career', sectionId: Sections.Career }
 ];
 
 export const NavBar: FC = () => {

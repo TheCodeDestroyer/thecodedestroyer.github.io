@@ -13,7 +13,7 @@ import { useMount } from '@hooks/effect.hook';
 import { WorkCard } from '@components/card/WorkCard';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
-export const SectionExperience: FC = () => {
+export const SectionCareer: FC = () => {
   const carousel = useRef<HTMLDivElement>(null);
 
   const [leftDragConstraint, setLeftDragConstraint] = useState<number>(0);
@@ -27,11 +27,11 @@ export const SectionExperience: FC = () => {
 
   return (
     <SectionWrapper
-      id={Sections.Experience}
+      id={Sections.Career}
       className="overflow-x-hidden bg-pattern-2 bg-position-experience bg-no-repeat"
     >
       <h1 className="mt-4 px-6 text-2xl text-white md:mt-48 md:text-8xl lg:px-20 lg:text-10xl">
-        Experience
+        Career
       </h1>
       <motion.div
         drag="x"
@@ -51,4 +51,4 @@ export const SectionExperience: FC = () => {
   );
 };
 
-export default SectionExperience;
+export default SectionCareer;

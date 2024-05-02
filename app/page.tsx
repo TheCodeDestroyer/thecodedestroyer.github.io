@@ -9,7 +9,7 @@ const SectionContactMe = dynamic(
   () => import('@components/sections/SectionContactMe')
 );
 const SectionExperience = dynamic(
-  () => import('@components/sections/SectionExperience')
+  () => import('@components/sections/SectionCareer')
 );
 const SectionInterests = dynamic(
   () => import('@components/sections/SectionInterests')
