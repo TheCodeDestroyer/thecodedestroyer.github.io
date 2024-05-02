@@ -15,7 +15,7 @@ import { TailwindIcon } from '@components/icon/technologies/TailwindIcon';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
 export const SectionTechnologies: FC = () => {
-  const iconClassName = 'h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20';
+  const iconClassName = 'size-12 sm:size-16 md:size-20';
 
   return (
     <SectionWrapper

@@ -78,7 +78,7 @@ export const ContactForm: FC = () => {
           loading={isLoading}
         >
           <div className="flex flex-row items-center justify-center space-x-2">
-            {isLoading && <ArrowPathIcon className="h-6 w-6 animate-spin" />}
+            {isLoading && <ArrowPathIcon className="size-6 animate-spin" />}
             <span>{isLoading ? 'Sending...' : 'Send'}</span>
           </div>
         </Button>
