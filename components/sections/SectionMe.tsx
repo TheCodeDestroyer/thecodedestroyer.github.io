@@ -43,7 +43,7 @@ export const SectionMe: FC = () => (
       <Image
         src={image}
         quality={70}
-        alt="profile picture"
+        alt="profile"
         height={650}
         className="scale-x-[-1] transform-gpu object-fill"
         priority
