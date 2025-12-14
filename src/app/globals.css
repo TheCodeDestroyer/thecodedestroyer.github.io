@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+
+@variant hover (&:hover);
+
+@theme inline {
+  --font-space-grotesk: var(--font-space_grotesk);
+  --font-plus-jakarta-sans: var(--font-plus_jakarta_sans);
+}
+
+@theme {
+  /* Colors */
+  --color-black: #030405;
+  --color-accent: #b6f09c;
+  --color-subtext: #9fa0a2;
+  --color-karry-100: #ffebd3;
+  --color-anakiwa-300: #82dbf7;
+
+  /* Spacing */
+  --spacing-19_5: 19.5rem;
+  --spacing-25: 6.25rem;
+  --spacing-29: 7.25rem;
+  --spacing-90: 22.5rem;
+
+  /* Width */
+  --width-2xl: 42rem;
+
+  /* Rotate */
+  --rotate-24: 24deg;
+
+  /* Background Images */
+  --background-image-pattern-1: url('/bg-1.svg');
+  --background-image-pattern-2: url('/bg-2.svg');
+  --background-image-halo: radial-gradient(
+    85rem circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 235, 211, 0.18),
+    transparent 40%
+  );
+  --background-image-contact: linear-gradient(45deg, #82dbf7 0%, #b6f09c 100%);
+
+  /* Border Radius */
+  --radius-inherit: inherit;
+
+  /* Box Shadow */
+  --shadow-2lg: 0px 12px 24px -16px #0000001a;
+
+  /* Font Sizes */
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.625rem;
+  --text-lg--font-weight: 400;
+
+  --text-2xl: 1.625rem;
+  --text-2xl--line-height: 2.25rem;
+  --text-2xl--font-weight: 500;
+
+  --text-4xl: 2.125rem;
+  --text-4xl--line-height: 2.625rem;
+  --text-4xl--font-weight: 500;
+
+  --text-8xl: 3.125rem;
+  --text-8xl--line-height: 3.875rem;
+  --text-8xl--font-weight: 500;
+
+  --text-9xl: 3.875rem;
+  --text-9xl--line-height: 4.5rem;
+  --text-9xl--font-weight: 500;
+
+  --text-10xl: 7.875rem;
+  --text-10xl--line-height: 8.75rem;
+  --text-10xl--font-weight: 500;
+
+  /* Letter Spacing */
+  --tracking-button: 0.009em;
+
+  /* Max Width */
+  --max-width-88: 88rem;
+  --max-width-8xl: 88rem;
+  --max-width-9xl: 96rem;
+  --max-width-10xl: 104rem;
+  --max-width-11xl: 112rem;
+
+  /* Min Width */
+  --min-width-100: 28rem;
+  --min-width-75: 18.75rem;
+
+  /* Blur */
+  --blur-20xl: 200px;
+
+  /* Animations */
+  --animate-border-spin: border-spin 10s linear infinite;
+
+  @keyframes border-spin {
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+}
+
+/* Utilities */
+@utility ellipsis {
+  border-radius: 100%;
+  filter: blur(200px);
+  opacity: 0.25;
+}
+
+@utility max-supported-width {
+  max-width: 120rem;
+}
+
+@utility navbar-padding {
+  padding-top: 6.25rem;
+}
+
+@utility halo-effect-gradient {
+  background-image: radial-gradient(
+    85rem circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 235, 211, 0.18),
+    transparent 40%
+  );
+}
