@@ -2,6 +2,19 @@ import type { Work } from '@shared/types/work.types';
 
 export const previousWork: Work[] = [
   {
+    company: 'Optiweb d.o.o.',
+    position: 'Senior Software Developer',
+    from: 'Mar 2025',
+    to: 'Present',
+    tasks: [
+      'Introduced monorepo structure for agency projects, enabling code reuse and accelerating development.',
+      'Implemented Vercel for front-end deployments, streamlining development workflows.',
+      'Redesigned Optiweb.com using headless CMS with Payload and Next.js, leveraging static generation for enhanced performance.',
+      'Contributed to CPQ-based projects, developing sales configuration and pricing tools.',
+      'Educated team on AI tools and best practices, improving productivity and fostering innovative AI adoption.',
+    ],
+  },
+  {
     company: 'Bird Buddy d.o.o.',
     position: 'Senior Software Developer',
     from: 'Feb 2023',
