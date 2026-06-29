@@ -4,14 +4,17 @@ import { clsx } from 'clsx';
 
 import { Sections } from '@shared/types/section.types';
 
+import { ClaudeCodeIcon } from '@components/icon/technologies/ClaudeCodeIcon';
+import { ConvexIcon } from '@components/icon/technologies/ConvexIcon';
 import { CypressIcon } from '@components/icon/technologies/CypressIcon';
 import { DockerIcon } from '@components/icon/technologies/DockerIcon';
 import { GitIcon } from '@components/icon/technologies/GitIcon';
 import { NextIcon } from '@components/icon/technologies/NextIcon';
 import { NodeIcon } from '@components/icon/technologies/NodeIcon';
+import { OpenAIIcon } from '@components/icon/technologies/OpenAIIcon';
 import { ReactIcon } from '@components/icon/technologies/ReactIcon';
-import { ReduxIcon } from '@components/icon/technologies/ReduxIcon';
 import { StorybookIcon } from '@components/icon/technologies/StorybookIcon';
+import { SupabaseIcon } from '@components/icon/technologies/SupabaseIcon';
 import { TailwindIcon } from '@components/icon/technologies/TailwindIcon';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
@@ -27,9 +30,9 @@ export const SectionTechnologies: FC = () => {
         'xl:flex-row xl:space-y-0 xl:space-x-12',
       )}
     >
-      <h1 className="px-10 text-center text-4xl text-white md:text-left">
+      <h2 className="px-10 text-center text-4xl text-white md:text-left">
         I have the most experience with
-      </h1>
+      </h2>
       <div
         className={clsx(
           'relative mx-4 overflow-hidden rounded p-1 drop-shadow-lg xl:m-0',
@@ -39,14 +42,17 @@ export const SectionTechnologies: FC = () => {
           'before:animate-border-spin',
         )}
       >
-        <div className="grid grid-cols-3 grid-rows-3 gap-x-20 gap-y-16 rounded bg-black p-9 md:gap-y-12">
+        <div className="grid grid-cols-3 grid-rows-4 gap-x-20 gap-y-10 rounded bg-black p-9 md:gap-y-12">
           <ReactIcon className={iconClassName} />
           <NextIcon className={iconClassName} />
           <TailwindIcon className={iconClassName} />
-          <ReduxIcon className={iconClassName} />
           <CypressIcon className={iconClassName} />
           <StorybookIcon className={iconClassName} />
           <NodeIcon className={iconClassName} />
+          <ConvexIcon className={iconClassName} />
+          <SupabaseIcon className={iconClassName} />
+          <ClaudeCodeIcon className={iconClassName} />
+          <OpenAIIcon className={iconClassName} />
           <GitIcon className={iconClassName} />
           <DockerIcon className={iconClassName} />
         </div>

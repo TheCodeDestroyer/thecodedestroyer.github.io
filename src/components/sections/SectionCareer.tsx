@@ -31,9 +31,9 @@ export const SectionCareer: FC = () => {
       id={Sections.Career}
       className="overflow-x-hidden bg-pattern-2 bg-position-[bottom_-28rem_right_-10rem] bg-no-repeat"
     >
-      <h1 className="3xl:mt-48 3xl:text-10xl mt-4 px-6 text-2xl text-white xl:px-20 xl:text-8xl">
+      <h2 className="3xl:mt-48 3xl:text-10xl mt-4 px-6 text-2xl text-white xl:px-20 xl:text-8xl">
         Career
-      </h1>
+      </h2>
       <motion.div
         drag="x"
         ref={carousel}

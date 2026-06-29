@@ -1,15 +1,13 @@
 {
   "extends": ["@tcd-devkit/tsconfig/next"],
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@shared/*": ["src/lib/shared/*"],
-      "@server/*": ["src/lib/server/*"],
-      "@client/*": ["src/lib/client/*"],
-      "@public/*": ["public/*"],
-      "@global-style": ["src/app/globals.css"],
-      "@server/convex/*": ["convex/*"]
+      "@components/*": ["./src/components/*"],
+      "@shared/*": ["./src/lib/shared/*"],
+      "@server/*": ["./src/lib/server/*"],
+      "@client/*": ["./src/lib/client/*"],
+      "@public/*": ["./public/*"],
+      "@server/convex/*": ["./convex/*"]
     },
     "noEmit": true,
     "incremental": true,

@@ -45,7 +45,7 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
         'before:pointer-events-none before:opacity-0 hover:before:opacity-100',
       )}
     >
-      <h2 className="text-lg md:text-xl lg:text-2xl">{company}</h2>
+      <h3 className="text-lg md:text-xl lg:text-2xl">{company}</h3>
       <span className="mt-1 text-subtext">
         {to ? `${from} - ${to}` : 'Current'}
       </span>

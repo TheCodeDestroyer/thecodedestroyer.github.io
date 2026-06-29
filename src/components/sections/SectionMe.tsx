@@ -20,10 +20,10 @@ export const SectionMe: FC = () => (
     className="flex flex-row justify-between bg-pattern-1 bg-position-[bottom_-6rem_right_0rem] bg-no-repeat"
   >
     <div className="ml-6 flex h-full flex-col items-start justify-center pb-10 md:ml-32 md:justify-end md:pb-32">
-      <div className="text-9xl">
-        <h1>{`Hi, I'm`}</h1>
-        <h1 className="text-accent">Nace Logar!</h1>
-      </div>
+      <h1 className="text-9xl">
+        <span className="block">{`Hi, I'm`}</span>
+        <span className="block text-accent">Nace Logar!</span>
+      </h1>
       <div className="mt-8 flex flex-col text-2xl">
         <span>from</span>
         <span>Slovenia</span>
@@ -41,7 +41,7 @@ export const SectionMe: FC = () => (
       <Image
         src={image}
         quality={70}
-        alt="profile"
+        alt="Nace Logar, Senior Frontend Engineer"
         height={650}
         className="scale-x-[-1] transform-gpu object-fill"
         priority

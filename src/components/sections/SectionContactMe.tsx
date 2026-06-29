@@ -2,8 +2,9 @@
 
 import type { FC } from 'react';
 
-import { links } from '@shared/constants/link.types';
 import { Sections } from '@shared/types/section.types';
+
+import { goToContact } from '@client/utils/contact.util';
 
 import { Button } from '@components/Button';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
@@ -18,14 +19,14 @@ export const SectionContactMe: FC = () => (
     </div>
     <div className="flex h-full items-end justify-center">
       <div className="flex flex-col pb-14 md:pb-29">
-        <p className="text-center text-8xl text-black">Want to work with me?</p>
+        <h2 className="text-center text-8xl text-black">
+          Want to work with me?
+        </h2>
         <div className="mt-8 flex justify-center">
           <Button
             text="Contact me"
             color="secondaryAlt"
-            onClick={() => {
-              window.location.href = links.linkedin;
-            }}
+            onClick={goToContact}
           />
         </div>
       </div>

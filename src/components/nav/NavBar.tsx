@@ -6,12 +6,12 @@ import { Fragment } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { clsx } from 'clsx';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import type { NabBarNavigation } from '@shared/types/navbar.types';
 import { Sections } from '@shared/types/section.types';
 
 import { useCurrentSectionStore } from '@client/store/common.store';
+import { goToContact } from '@client/utils/contact.util';
 
 import { Button } from '@components/Button';
 import { MenuToggleButton } from '@components/nav/MenuToggleButton';
@@ -24,7 +24,6 @@ const navigation: NabBarNavigation[] = [
 
 export const NavBar: FC = () => {
   const { currentSection } = useCurrentSectionStore();
-  const { push } = useRouter();
 
   return (
     <Disclosure
@@ -70,9 +69,7 @@ export const NavBar: FC = () => {
                   <Button
                     text="Contact me"
                     color="secondary"
-                    onClick={(): void => {
-                      push('/contact');
-                    }}
+                    onClick={goToContact}
                   />
                 </div>
                 <div className="mx-2 flex items-center lg:hidden">
@@ -109,12 +106,7 @@ export const NavBar: FC = () => {
               </div>
               <div className="border-t border-gray-700 pt-4 pb-3">
                 <div className="flex items-center px-5 sm:px-6">
-                  <Button
-                    text="Contact me"
-                    onClick={() => {
-                      push('/contact');
-                    }}
-                  />
+                  <Button text="Contact me" onClick={goToContact} />
                 </div>
               </div>
             </div>
