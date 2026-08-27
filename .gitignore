@@ -43,3 +43,14 @@ next-env.d.ts
 
 # Env
 *.env
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/
+
+# Beads: track only config.yaml, metadata.json; ignore db/runtime/connection env
+.beads/*
+!.beads/config.yaml
+!.beads/metadata.json

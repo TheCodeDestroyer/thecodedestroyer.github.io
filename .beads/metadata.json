@@ -1,0 +1,11 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_server_host": "mini",
+  "dolt_server_port": 3306,
+  "dolt_database": "thecodedestroyer_github_io",
+  "project_id": "6ee7975c-616b-4e1c-b43c-cdaba0137bbd",
+  "global_dolt_database": "beads_global",
+  "global_project_id": "00000000-0000-0000-0000-000000000000"
+}
