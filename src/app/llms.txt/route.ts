@@ -20,7 +20,7 @@ export const GET = () => {
 
 > ${AUTHOR_NAME} (a.k.a. TheCodeDestroyer) is a Senior Frontend Engineer based in Slovenia with over 15 years of professional software development experience. He specializes in React, Next.js, and TypeScript, building pixel-perfect, responsive, and intuitive web applications across healthcare, e-commerce, cloud IoT, CMS, and logistics.
 
-${AUTHOR_NAME} currently works as a Senior Software Developer at Optiweb and is the co-founder and CTO of Tripora, an AI-powered travel planner. He focuses on precision-engineered front-end work, modern tooling, monorepos, and pragmatic AI adoption, and enjoys mentoring teams and giving talks on JavaScript and React.
+${AUTHOR_NAME} currently works as a Full Stack Developer at Spartan Development, a global software studio, and is the co-founder and CTO of Tripora, an AI-powered travel planner. He focuses on precision-engineered front-end work, modern tooling, monorepos, and pragmatic AI adoption, and enjoys mentoring teams and giving talks on JavaScript and React.
 
 This site (${SITE_URL}) is his personal portfolio. The content below summarizes his profile, experience, skills, and notable products for language models and other automated agents.
 

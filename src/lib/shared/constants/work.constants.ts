@@ -2,10 +2,23 @@ import type { Work } from '@shared/types/work.types';
 
 export const previousWork: Work[] = [
   {
+    company: 'Spartan Development d.o.o.',
+    position: 'Full Stack Developer',
+    from: 'Sep 2026',
+    to: 'Present',
+    tasks: [
+      'Shape the technical direction of the studio, from architecture and stack choices to engineering standards and delivery workflows.',
+      'Build product and client work end to end across the front-end and back-end.',
+      'Lead the adoption of AI engineering workflows, from agentic coding tools to reviewable, repeatable automation.',
+      'Educate the team on a modern web stack and modern development practices.',
+      'Mentor developers through code review and pair programming.',
+    ],
+  },
+  {
     company: 'Optiweb d.o.o.',
     position: 'Senior Software Developer',
     from: 'Mar 2025',
-    to: 'Present',
+    to: 'Aug 2026',
     tasks: [
       'Introduced monorepo structure for agency projects, enabling code reuse and accelerating development.',
       'Implemented Vercel for front-end deployments, streamlining development workflows.',
