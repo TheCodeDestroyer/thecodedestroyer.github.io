@@ -47,6 +47,24 @@ pnpm lint          # ESLint + Prettier + tsc
 pnpm format        # Prettier
 ```
 
+## Tests
+
+End-to-end only, with [Playwright](https://playwright.dev/). The suite lives in
+[`e2e/`](./e2e) and always runs against the production build; see
+[`playwright.config.ts`](./playwright.config.ts) for why.
+
+```sh
+pnpm exec playwright install chromium   # once, to fetch the browser
+pnpm test                               # boots `next start` on :3111, then runs
+```
+
+`playwright.config.ts` starts and stops the server itself, so no separate
+`pnpm start` is needed. Locally it reuses an already-running server on that port.
+
+When a CI run fails it uploads a `playwright-report` artifact. Open it with
+`pnpm exec playwright show-report <unzipped-dir>` — the report fetches its own
+data over HTTP, so opening `index.html` from `file://` shows an empty page.
+
 ### Dependency conventions
 
 - Every dependency is pinned exactly — no `^` or `~`.

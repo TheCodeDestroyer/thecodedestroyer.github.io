@@ -8,7 +8,8 @@
     "format": "tcd-scripts format",
     "postinstall": "next typegen",
     "lint": "tcd-scripts lint",
-    "start": "next start"
+    "start": "next start",
+    "test": "playwright test"
   },
   "dependencies": {
     "@headlessui/react": "2.2.10",
@@ -24,6 +25,7 @@
     "zustand": "5.0.15"
   },
   "devDependencies": {
+    "@playwright/test": "1.62.1",
     "@tailwindcss/postcss": "4.3.3",
     "@tcd-devkit/eslint-preset-next": "0.1.13",
     "@tcd-devkit/prettier-config-react": "0.1.7",

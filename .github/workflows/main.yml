@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,3 +41,26 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      # Keyed on the lockfile so a Playwright version bump busts the cache.
+      - name: Cache Playwright browsers
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      # `playwright.config.ts` boots `pnpm start` against the build above.
+      - name: Run E2E tests
+        id: e2e
+        run: pnpm test
+
+      - name: Upload Playwright report
+        if: failure() && steps.e2e.outcome == 'failure'
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
