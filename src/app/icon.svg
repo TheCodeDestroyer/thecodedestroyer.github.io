@@ -1,0 +1,24 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  width="64"
+  height="64"
+  role="img"
+  aria-label="TheCodeDestroyer"
+>
+  <rect width="64" height="64" rx="14" fill="#030405" />
+  <g
+    fill="none"
+    stroke="#b6f09c"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <rect x="8.5" y="8.5" width="47" height="47" rx="12" stroke-width="5" />
+    <g stroke-width="4">
+      <path d="M16 27v-6a5 5 0 0 1 5-5h6" />
+      <path d="M16 27v-6a5 5 0 0 1 5-5h6" transform="rotate(90 32 32)" />
+      <path d="M16 27v-6a5 5 0 0 1 5-5h6" transform="rotate(180 32 32)" />
+      <path d="M16 27v-6a5 5 0 0 1 5-5h6" transform="rotate(270 32 32)" />
+    </g>
+  </g>
+</svg>

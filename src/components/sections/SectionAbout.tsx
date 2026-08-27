@@ -7,7 +7,7 @@ import { SectionWrapper } from '@components/sections/SectionWrapper';
 export const SectionAbout: FC = () => (
   <SectionWrapper
     id={Sections.About}
-    className="w-full bg-pattern-1 bg-position-[left_-18rem_top_-7rem] bg-no-repeat"
+    className="w-full pattern-top-left"
     animationDuration={0.5}
   >
     <div className="grid h-full place-items-center">

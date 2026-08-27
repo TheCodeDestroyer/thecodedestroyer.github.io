@@ -2,7 +2,7 @@
 
 import type { FC } from 'react';
 
-import { Disclosure } from '@headlessui/react';
+import { DisclosureButton } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { clsx } from 'clsx';
 
@@ -11,7 +11,7 @@ interface MenuToggleButtonProps {
 }
 
 export const MenuToggleButton: FC<MenuToggleButtonProps> = ({ isOpen }) => (
-  <Disclosure.Button
+  <DisclosureButton
     className={clsx(
       'relative inline-flex items-center justify-center rounded-md p-2 text-white',
       'focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset',
@@ -24,5 +24,5 @@ export const MenuToggleButton: FC<MenuToggleButtonProps> = ({ isOpen }) => (
     ) : (
       <Bars3Icon className="block size-6" aria-hidden="true" />
     )}
-  </Disclosure.Button>
+  </DisclosureButton>
 );

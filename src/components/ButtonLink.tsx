@@ -1,8 +1,12 @@
 import type { AnchorHTMLAttributes, FC } from 'react';
 
+import type { VariantProps } from 'class-variance-authority';
 import { clsx } from 'clsx';
 
-export interface ButtonLinkProps {
+import { buttonVariants } from '@components/buttonVariants';
+
+/** A button-styled link to somewhere off-site. Internal links use `next/link`. */
+export interface ButtonLinkProps extends VariantProps<typeof buttonVariants> {
   children?: AnchorHTMLAttributes<HTMLAnchorElement>['children'];
   href: AnchorHTMLAttributes<HTMLAnchorElement>['href'];
   className?: AnchorHTMLAttributes<HTMLAnchorElement>['className'];
@@ -14,6 +18,8 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
   href,
   className,
   ariaLabel,
+  color,
+  size,
 }) => (
   <a
     href={href}
@@ -21,10 +27,8 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
     rel="noreferrer"
     aria-label={ariaLabel}
     className={clsx(
-      'h-11 rounded-xl border-none bg-accent fill-current select-none',
-      'px-2.5 py-2.5 text-center font-plus-jakarta-sans',
-      'font-semibold tracking-button text-black',
-      'transition-colors hover:bg-white hover:text-black',
+      'inline-flex items-center justify-center',
+      buttonVariants({ color, size }),
       className,
     )}
   >

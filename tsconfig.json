@@ -4,14 +4,12 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@shared/*": ["./src/lib/shared/*"],
-      "@server/*": ["./src/lib/server/*"],
       "@client/*": ["./src/lib/client/*"],
-      "@public/*": ["./public/*"],
-      "@server/convex/*": ["./convex/*"]
+      "@public/*": ["./public/*"]
     },
     "noEmit": true,
     "incremental": true,
-    // Remove once TS fixes that this checks node_modules
+    // Remove once the `Sections` enum in @shared/types/section.types.ts is gone
     "erasableSyntaxOnly": false
   },
   "include": ["**/*", "next-env.d.ts", ".next/types/**/*.ts"],

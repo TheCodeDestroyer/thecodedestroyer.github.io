@@ -1,8 +1,13 @@
 import type { FC, MouseEvent } from 'react';
 
 import { clsx } from 'clsx';
-import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import type { MotionStyle, MotionValue } from 'framer-motion';
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useReducedMotion,
+} from 'motion/react';
+import type { MotionStyle, MotionValue } from 'motion/react';
 
 import type { Work } from '@shared/types/work.types';
 
@@ -14,8 +19,15 @@ interface Style extends MotionStyle {
 export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const shouldReduceMotion = useReducedMotion();
 
   const handleOnMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    // The `motion-reduce:` class below is what hides the halo; this only avoids
+    // a layout read per mouse move for something nobody can see.
+    if (shouldReduceMotion) {
+      return;
+    }
+
     const { currentTarget: target } = e;
 
     const rect = target.getBoundingClientRect();
@@ -43,6 +55,9 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
         'before:absolute before:top-0 before:left-0 before:z-50 before:h-full before:w-full before:rounded-inherit before:content-[""]',
         'before:halo-effect-gradient',
         'before:pointer-events-none before:opacity-0 hover:before:opacity-100',
+        // The halo only reads as a halo while it follows the cursor, so it
+        // stays hidden rather than frozen in a corner when motion is reduced.
+        'motion-reduce:hover:before:opacity-0!',
       )}
     >
       <h3 className="text-lg md:text-xl lg:text-2xl">{company}</h3>
@@ -52,9 +67,7 @@ export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
       <span className="mt-2 text-accent">{position}</span>
       <ul className="group mt-2 list-disc space-y-2 pl-5 marker:text-[1.125rem] marker:text-accent">
         {tasks.map((task) => (
-          <li key={task} className={clsx({})}>
-            {task}
-          </li>
+          <li key={task}>{task}</li>
         ))}
       </ul>
     </motion.article>

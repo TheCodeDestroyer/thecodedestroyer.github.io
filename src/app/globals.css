@@ -2,6 +2,17 @@
 
 @variant hover (&:hover);
 
+/*
+ * The single definition of "no entrance animation here": too narrow for the
+ * snap-scroll layout, or the reader asked for reduced motion. Its exact
+ * complement is ENTRANCE_ANIMATION_QUERY in SectionWrapper.tsx.
+ */
+@custom-variant static-entrance {
+  @media (width < 48rem), (prefers-reduced-motion: reduce) {
+    @slot;
+  }
+}
+
 @theme inline {
   --font-space-grotesk: var(--font-space_grotesk);
   --font-plus-jakarta-sans: var(--font-plus_jakarta_sans);
@@ -9,6 +20,7 @@
 
 @theme {
   /* Colors */
+  /* Mirrored as THEME_COLOR in @shared/constants/meta.constants.ts. */
   --color-black: #030405;
   --color-accent: #b6f09c;
   --color-subtext: #9fa0a2;
@@ -30,11 +42,6 @@
   /* Background Images */
   --background-image-pattern-1: url('/bg-1.svg');
   --background-image-pattern-2: url('/bg-2.svg');
-  --background-image-halo: radial-gradient(
-    85rem circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 235, 211, 0.18),
-    transparent 40%
-  );
   --background-image-contact: linear-gradient(45deg, #82dbf7 0%, #b6f09c 100%);
 
   /* Border Radius */
@@ -71,19 +78,8 @@
   /* Letter Spacing */
   --tracking-button: 0.009em;
 
-  /* Max Width */
-  --max-width-88: 88rem;
-  --max-width-8xl: 88rem;
-  --max-width-9xl: 96rem;
-  --max-width-10xl: 104rem;
-  --max-width-11xl: 112rem;
-
   /* Min Width */
-  --min-width-100: 28rem;
   --min-width-75: 18.75rem;
-
-  /* Blur */
-  --blur-20xl: 200px;
 
   /* Animations */
   --animate-border-spin: border-spin 10s linear infinite;
@@ -110,10 +106,34 @@
   padding-top: 6.25rem;
 }
 
+/* The top-left `bg-1.svg` treatment, shared by three full-width sections. */
+@utility pattern-top-left {
+  background-image: var(--background-image-pattern-1);
+  background-position: left -18rem top -7rem;
+  background-repeat: no-repeat;
+}
+
 @utility halo-effect-gradient {
   background-image: radial-gradient(
     85rem circle at var(--mouse-x) var(--mouse-y),
     rgba(255, 235, 211, 0.18),
     transparent 40%
   );
+}
+
+/*
+ * Reduced Motion. This only neutralises CSS-driven animation, transition and
+ * scrolling. Motion writes `transform`/`opacity` as inline styles, which no
+ * rule here can reach - those are pinned per component by the
+ * `static-entrance:` and `motion-reduce:` utilities.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

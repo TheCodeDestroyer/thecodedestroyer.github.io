@@ -3,17 +3,21 @@
 import type { FC } from 'react';
 import { Fragment } from 'react';
 
-import { Disclosure } from '@headlessui/react';
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from '@headlessui/react';
 import { clsx } from 'clsx';
 import Link from 'next/link';
 
+import { links } from '@shared/constants/link.types';
 import type { NabBarNavigation } from '@shared/types/navbar.types';
 import { Sections } from '@shared/types/section.types';
 
 import { useCurrentSectionStore } from '@client/store/common.store';
-import { goToContact } from '@client/utils/contact.util';
 
-import { Button } from '@components/Button';
+import { ButtonLink } from '@components/ButtonLink';
 import { MenuToggleButton } from '@components/nav/MenuToggleButton';
 
 const navigation: NabBarNavigation[] = [
@@ -23,7 +27,9 @@ const navigation: NabBarNavigation[] = [
 ];
 
 export const NavBar: FC = () => {
-  const { currentSection } = useCurrentSectionStore();
+  const currentSection = useCurrentSectionStore(
+    (state) => state.currentSection,
+  );
 
   return (
     <Disclosure
@@ -66,11 +72,9 @@ export const NavBar: FC = () => {
                   })}
                 </div>
                 <div className="hidden items-center lg:flex">
-                  <Button
-                    text="Contact me"
-                    color="secondary"
-                    onClick={goToContact}
-                  />
+                  <ButtonLink href={links.linkedin} color="secondary">
+                    Contact me
+                  </ButtonLink>
                 </div>
                 <div className="mx-2 flex items-center lg:hidden">
                   <MenuToggleButton isOpen={open} />
@@ -79,14 +83,14 @@ export const NavBar: FC = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="z-200 bg-black shadow-2lg shadow-black lg:hidden">
+          <DisclosurePanel className="z-200 bg-black shadow-2lg shadow-black lg:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
               <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 {navigation.map((item) => {
                   const isCurrent = item.sectionId === currentSection;
 
                   return (
-                    <Disclosure.Button
+                    <DisclosureButton
                       key={item.name}
                       as="a"
                       href={`/#${item.sectionId}`}
@@ -100,17 +104,17 @@ export const NavBar: FC = () => {
                       aria-current={isCurrent ? 'page' : undefined}
                     >
                       {item.name}
-                    </Disclosure.Button>
+                    </DisclosureButton>
                   );
                 })}
               </div>
               <div className="border-t border-gray-700 pt-4 pb-3">
                 <div className="flex items-center px-5 sm:px-6">
-                  <Button text="Contact me" onClick={goToContact} />
+                  <ButtonLink href={links.linkedin}>Contact me</ButtonLink>
                 </div>
               </div>
             </div>
-          </Disclosure.Panel>
+          </DisclosurePanel>
         </Fragment>
       )}
     </Disclosure>

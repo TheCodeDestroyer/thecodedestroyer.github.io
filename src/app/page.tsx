@@ -1,31 +1,20 @@
 import type { FC } from 'react';
 
-import dynamic from 'next/dynamic';
-
 import { NavBar } from '@components/nav/NavBar';
+import SectionAbout from '@components/sections/SectionAbout';
+import SectionCareer from '@components/sections/SectionCareer';
+import SectionContactMe from '@components/sections/SectionContactMe';
+import SectionInterests from '@components/sections/SectionInterests';
 import SectionMe from '@components/sections/SectionMe';
-
-const SectionAbout = dynamic(() => import('@components/sections/SectionAbout'));
-const SectionContactMe = dynamic(
-  () => import('@components/sections/SectionContactMe'),
-);
-const SectionExperience = dynamic(
-  () => import('@components/sections/SectionCareer'),
-);
-const SectionInterests = dynamic(
-  () => import('@components/sections/SectionInterests'),
-);
-const SectionTechnologies = dynamic(
-  () => import('@components/sections/SectionTechnologies'),
-);
+import SectionTechnologies from '@components/sections/SectionTechnologies';
 
 const Home: FC = () => (
-  <main className="h-screen w-full overflow-y-scroll md:snap-y md:snap-mandatory">
+  <main className="h-screen w-full overflow-y-scroll scroll-smooth md:snap-y md:snap-mandatory">
     <NavBar />
     <SectionMe />
     <SectionAbout />
     <SectionTechnologies />
-    <SectionExperience />
+    <SectionCareer />
     <SectionInterests />
     <SectionContactMe />
   </main>

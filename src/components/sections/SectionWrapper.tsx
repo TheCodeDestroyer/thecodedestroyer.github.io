@@ -1,18 +1,25 @@
 'use client';
 
 import type { FC, PropsWithChildren } from 'react';
-import { useCallback, useDeferredValue, useLayoutEffect, useRef } from 'react';
+import { useCallback, useDeferredValue, useEffect, useRef } from 'react';
 
 import { clsx } from 'clsx';
-import { motion, useAnimation, useInView } from 'framer-motion';
-import type { Variants } from 'framer-motion';
-import { isMobile } from 'react-device-detect';
+import { motion, useAnimation, useInView } from 'motion/react';
+import type { Variants } from 'motion/react';
 
 import type { Sections } from '@shared/types/section.types';
 
 import { useCurrentSectionStore } from '@client/store/common.store';
 
-export const getAnimationVariants = (duration: number): Variants => ({
+/**
+ * The only condition under which the entrance animation runs. This is the exact
+ * complement of the `static-entrance` variant in globals.css, which pins the
+ * section to its resting state.
+ */
+const ENTRANCE_ANIMATION_QUERY =
+  '(width >= 48rem) and (prefers-reduced-motion: no-preference)';
+
+const getAnimationVariants = (duration: number): Variants => ({
   hidden: { scale: 0.5, opacity: 0 },
   visible: {
     scale: 1,
@@ -37,7 +44,9 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
   amount = 0.5,
   animationDuration = 0.35,
 }) => {
-  const { setCurrentSection } = useCurrentSectionStore();
+  const setCurrentSection = useCurrentSectionStore(
+    (state) => state.setCurrentSection,
+  );
   const containerRef = useRef<HTMLDivElement>(null);
   const control = useAnimation();
 
@@ -47,16 +56,14 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
 
   const triggerAnimation = useCallback(
     (name: 'visible' | 'hidden'): void => {
-      if (isMobile) {
-        return;
-      }
+      if (!window.matchMedia(ENTRANCE_ANIMATION_QUERY).matches) return;
 
       void control.start(name);
     },
     [control],
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (deferredIsInView) {
       triggerAnimation('visible');
       setCurrentSection(id);
@@ -71,12 +78,16 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
       className={clsx(
         'relative mx-auto max-supported-width md:navbar-padding',
         'snap-always overflow-hidden md:snap-center',
+        // What actually makes the resting state correct: `!important` here beats
+        // motion's inline styles, on the first paint, with no JS. The guard in
+        // triggerAnimation only saves the frames.
+        'static-entrance:transform-none! static-entrance:opacity-100!',
         className,
         heightClassName,
       )}
       ref={containerRef}
       variants={getAnimationVariants(animationDuration)}
-      initial={isMobile ? 'visible' : 'hidden'}
+      initial="hidden"
       animate={control}
     >
       {children}

@@ -8,12 +8,12 @@ Personal portfolio / about-me site, built with [Next.js](https://nextjs.org/) an
 - **React 19**
 - **TypeScript**
 - **Tailwind CSS 4**
-- **Framer Motion** for animations, **Zustand** for client state
+- **Motion** for animations, **Zustand** for client state
 - **Headless UI** + **Heroicons** for accessible UI primitives
 
 ## Prerequisites
 
-- **Node.js** — see [`.nvmrc`](./.nvmrc) (Node 22)
+- **Node.js** — see [`.nvmrc`](./.nvmrc) (Node 24)
 - **pnpm** — see the `packageManager` field in [`package.json`](./package.json)
 
 ```sh
@@ -43,9 +43,19 @@ pnpm start         # serve the production build
 ## Quality
 
 ```sh
-pnpm lint          # ESLint
+pnpm lint          # ESLint + Prettier + tsc
 pnpm format        # Prettier
 ```
+
+### Dependency conventions
+
+- Every dependency is pinned exactly — no `^` or `~`.
+- `pnpm-lock.yaml` is **Prettier-formatted and lint-checked**. A raw `pnpm install`
+  rewrites it in pnpm's own compact style and turns `pnpm lint` red, so run
+  `pnpm exec prettier --write pnpm-lock.yaml` after any install that changes it.
+- pnpm 10.25's default `minimumReleaseAge` is interpreted in _minutes_ (~840 days),
+  which blocks resolution of anything recent. Pass `--config.minimumReleaseAge=0`
+  when installing until this is settled repo-wide.
 
 ## Deployment
 
