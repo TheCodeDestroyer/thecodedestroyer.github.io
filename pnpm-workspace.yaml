@@ -2,3 +2,22 @@ onlyBuiltDependencies:
   - '@vercel/speed-insights'
   - sharp
   - unrs-resolver
+
+# Supply-chain cooldown: refuse to resolve any version published less than
+# 7 days ago, so a compromised release has time to be caught and unpublished.
+#
+# The unit is MINUTES, not seconds (pnpm computes
+# `Date.now() - minimumReleaseAge * 60 * 1000`), so 10080 = 7 days. A value
+# that looks like a seconds-based fortnight (1209600) is really ~840 days and
+# blocks essentially every package on npm.
+#
+# This is pinned here on purpose. pnpm itself ships no default, so without
+# this line the value is inherited from whatever each contributor happens to
+# have in their global pnpm rc — which is how the ~840-day lockout got in.
+#
+# To install something newer than the window (an urgent security patch):
+#   pnpm add <pkg> --config.minimumReleaseAge=0
+# For a package that needs a standing exemption, add a
+# `minimumReleaseAgeExclude` list here. CI is unaffected: `--frozen-lockfile`
+# skips resolution entirely.
+minimumReleaseAge: 10080

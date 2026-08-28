@@ -71,9 +71,19 @@ data over HTTP, so opening `index.html` from `file://` shows an empty page.
 - `pnpm-lock.yaml` is **Prettier-formatted and lint-checked**. A raw `pnpm install`
   rewrites it in pnpm's own compact style and turns `pnpm lint` red, so run
   `pnpm exec prettier --write pnpm-lock.yaml` after any install that changes it.
-- pnpm 10.25's default `minimumReleaseAge` is interpreted in _minutes_ (~840 days),
-  which blocks resolution of anything recent. Pass `--config.minimumReleaseAge=0`
-  when installing until this is settled repo-wide.
+- A 7-day supply-chain cooldown (`minimumReleaseAge`) is pinned in
+  [`pnpm-workspace.yaml`](./pnpm-workspace.yaml): pnpm will not resolve a version
+  published less than a week ago. Two traps worth knowing:
+  - **The unit is minutes, not seconds.** `10080` is 7 days; a seconds-shaped
+    `1209600` is ~840 days and blocks essentially all of npm.
+  - **pnpm ships no default for it**, so an unpinned repo silently inherits
+    whatever is in each contributor's global pnpm rc (`pnpm config list` shows
+    where a value came from). That is why it is pinned here rather than left off.
+
+  To pull something newer than the window — an urgent security patch, say — use
+  `pnpm add <pkg> --config.minimumReleaseAge=0`, or give a package a standing
+  exemption via `minimumReleaseAgeExclude`. CI installs with `--frozen-lockfile`,
+  which skips resolution, so it is never affected.
 
 ## Deployment
 
