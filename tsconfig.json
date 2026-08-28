@@ -8,9 +8,7 @@
       "@public/*": ["./public/*"]
     },
     "noEmit": true,
-    "incremental": true,
-    // Remove once the `Sections` enum in @shared/types/section.types.ts is gone
-    "erasableSyntaxOnly": false
+    "incremental": true
   },
   "include": ["**/*", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

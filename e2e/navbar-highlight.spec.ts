@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 import type { Locator, Page } from '@playwright/test';
 
 import { Sections } from '@shared/types/section.types';
+import type { Section } from '@shared/types/section.types';
 
 const navLink = (page: Page, name: string): Locator =>
   page.getByRole('navigation').getByRole('link', { name, exact: true });
@@ -12,10 +13,7 @@ const navLink = (page: Page, name: string): Locator =>
  * `scrollIntoView` walks to the nearest scrollable ancestor itself, so this
  * needs no knowledge of which element actually scrolls.
  */
-const scrollToSection = async (
-  page: Page,
-  section: Sections,
-): Promise<void> => {
+const scrollToSection = async (page: Page, section: Section): Promise<void> => {
   await page.evaluate((sectionId) => {
     const target = document.getElementById(sectionId);
 

@@ -1,13 +1,15 @@
-export enum Sections {
-  Me = 'me',
-  About = 'about',
-  Technologies = 'technologies',
-  Career = 'career',
-  Hobbies = 'hobbies',
-  ContactMe = 'contact',
-}
+export const Sections = {
+  Me: 'me',
+  About: 'about',
+  Technologies: 'technologies',
+  Career: 'career',
+  Hobbies: 'hobbies',
+  ContactMe: 'contact',
+} as const;
+
+export type Section = (typeof Sections)[keyof typeof Sections];
 
 export interface CurrentSectionState {
-  currentSection: Sections | null;
-  setCurrentSection: (section: Sections | null) => void;
+  currentSection: Section | null;
+  setCurrentSection: (section: Section | null) => void;
 }

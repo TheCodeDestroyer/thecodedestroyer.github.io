@@ -7,7 +7,7 @@ import { clsx } from 'clsx';
 import { motion, useAnimation, useInView } from 'motion/react';
 import type { Variants } from 'motion/react';
 
-import type { Sections } from '@shared/types/section.types';
+import type { Section } from '@shared/types/section.types';
 
 import { useCurrentSectionStore } from '@client/store/common.store';
 
@@ -29,7 +29,7 @@ const getAnimationVariants = (duration: number): Variants => ({
 });
 
 interface SectionWrapperProps extends PropsWithChildren {
-  id: Sections;
+  id: Section;
   className?: string;
   heightClassName?: string;
   amount?: number;
