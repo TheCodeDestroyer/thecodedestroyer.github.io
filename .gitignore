@@ -61,3 +61,6 @@ next-env.d.ts
 # `agentRules: false` in next.config.ts if these are unwanted entirely.
 /AGENTS.md
 /CLAUDE.md
+
+# Agent worktrees (git worktrees created under .claude by Claude Code)
+/.claude/worktrees/
