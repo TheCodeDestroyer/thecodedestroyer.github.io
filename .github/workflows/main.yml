@@ -24,7 +24,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -39,18 +39,40 @@ jobs:
       - name: Run TypeScript
         run: pnpm tcd-scripts lint --only=tsc
 
+      # Without this every run is a cold build: a full bundler compile, a fresh
+      # `next/font` fetch and a full sharp re-optimisation of the profile image.
+      - name: Cache Next build
+        uses: actions/cache@v6
+        with:
+          path: .next/cache
+          key: next-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('src/**', 'public/**', 'next.config.ts') }}
+          restore-keys: |
+            next-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+            next-${{ runner.os }}-
+
       - name: Build
         run: pnpm build
 
-      # Keyed on the lockfile so a Playwright version bump busts the cache.
+      # Keyed on the lockfile so a Playwright version bump busts the cache. The
+      # `restore-keys` prefix keeps the browsers on an unrelated dependency bump.
       - name: Cache Playwright browsers
+        id: playwright-cache
         uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
 
+      # The browser binaries are cached; the system libraries are not (the
+      # runner is fresh), so `install-deps` still runs on a cache hit.
       - name: Install Playwright Chromium
         run: pnpm exec playwright install --with-deps chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+
+      - name: Install Playwright system dependencies
+        run: pnpm exec playwright install-deps chromium
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
 
       # `playwright.config.ts` boots `pnpm start` against the build above.
       - name: Run E2E tests
