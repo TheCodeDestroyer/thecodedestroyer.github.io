@@ -26,11 +26,7 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
     target="_blank"
     rel="noreferrer"
     aria-label={ariaLabel}
-    className={clsx(
-      'inline-flex items-center justify-center',
-      buttonVariants({ color, size }),
-      className,
-    )}
+    className={clsx(buttonVariants({ color, size }), className)}
   >
     {children}
   </a>

@@ -5,6 +5,7 @@ import type { FC } from 'react';
 import Image from 'next/image';
 
 import { links } from '@shared/constants/link.types';
+import { AUTHOR_HEADLINE } from '@shared/constants/meta.constants';
 import { Sections } from '@shared/types/section.types';
 
 import { ButtonLink } from '@components/ButtonLink';
@@ -49,7 +50,7 @@ export const SectionMe: FC = () => (
       <Image
         src={image}
         quality={70}
-        alt="Nace Logar, Senior Frontend Engineer"
+        alt={AUTHOR_HEADLINE}
         height={650}
         className="scale-x-[-1] transform-gpu object-fill"
         priority

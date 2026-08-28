@@ -8,8 +8,7 @@ export const PROFILE_IMAGE_PATH = '/profile.png';
 export const AUTHOR_HEADLINE = `${AUTHOR_NAME}, ${JOB_TITLE}`;
 
 export const META_TITLE = `${AUTHOR_NAME}: ${JOB_TITLE} | React & NextJS Specialist | Slovenia`;
-export const META_DESCRIPTION =
-  'Nace Logar (TheCodeDestroyer) is a Senior Frontend Engineer in Slovenia specializing in React, NextJS, TypeScript and TailwindCSS, crafting pixel-perfect, responsive web apps.';
+export const META_DESCRIPTION = `${AUTHOR_NAME} (${SITE_NAME}) is a ${JOB_TITLE} in Slovenia specializing in React, NextJS, TypeScript and TailwindCSS, crafting pixel-perfect, responsive web apps.`;
 
 /** Mirrors `--color-black` in globals.css — the page background. */
 export const THEME_COLOR = '#030405';

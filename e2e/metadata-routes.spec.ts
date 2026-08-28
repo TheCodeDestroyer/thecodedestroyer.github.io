@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
 
+import { AUTHOR_NAME } from '@shared/constants/meta.constants';
+
 /**
  * The three machine-readable routes. They are prerendered at build time, so a
  * regression here is invisible in the UI and only shows up in a crawler log.
@@ -8,7 +10,7 @@ const METADATA_ROUTES = [
   {
     path: '/llms.txt',
     contentType: /^text\/plain\b/u,
-    contains: '# Nace Logar',
+    contains: `# ${AUTHOR_NAME}`,
   },
   { path: '/robots.txt', contentType: /^text\/plain\b/u, contains: 'Sitemap:' },
   {

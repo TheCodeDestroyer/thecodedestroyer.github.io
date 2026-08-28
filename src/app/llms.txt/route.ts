@@ -2,7 +2,12 @@ import { NextResponse } from 'next/server';
 
 import { interests } from '@shared/constants/interest.constants';
 import { links } from '@shared/constants/link.types';
-import { AUTHOR_NAME, SITE_URL } from '@shared/constants/meta.constants';
+import {
+  AUTHOR_NAME,
+  JOB_TITLE,
+  SITE_NAME,
+  SITE_URL,
+} from '@shared/constants/meta.constants';
 import { previousWork } from '@shared/constants/work.constants';
 
 // The content is fully static, so prerender at build time (like robots/sitemap)
@@ -16,9 +21,9 @@ const DOTFILES_REPO = 'https://github.com/TheCodeDestroyer/dotfiles';
 const TRIPORA_URL = 'https://tripora.app';
 
 export const GET = () => {
-  const content = `# ${AUTHOR_NAME} — Senior Frontend Engineer
+  const content = `# ${AUTHOR_NAME} — ${JOB_TITLE}
 
-> ${AUTHOR_NAME} (a.k.a. TheCodeDestroyer) is a Senior Frontend Engineer based in Slovenia with over 15 years of professional software development experience. He specializes in React, Next.js, and TypeScript, building pixel-perfect, responsive, and intuitive web applications across healthcare, e-commerce, cloud IoT, CMS, and logistics.
+> ${AUTHOR_NAME} (a.k.a. ${SITE_NAME}) is a ${JOB_TITLE} based in Slovenia with over 15 years of professional software development experience. He specializes in React, Next.js, and TypeScript, building pixel-perfect, responsive, and intuitive web applications across healthcare, e-commerce, cloud IoT, CMS, and logistics.
 
 ${AUTHOR_NAME} currently works as a Full Stack Developer at Spartan Development, a global software studio, and is the co-founder and CTO of Tripora, an AI-powered travel planner. He focuses on precision-engineered front-end work, modern tooling, monorepos, and pragmatic AI adoption, and enjoys mentoring teams and giving talks on JavaScript and React.
 
@@ -26,7 +31,7 @@ This site (${SITE_URL}) is his personal portfolio. The content below summarizes 
 
 ## Profile
 
-- [Portfolio](${SITE_URL}): Personal portfolio and CV of ${AUTHOR_NAME}, Senior Frontend Engineer.
+- [Portfolio](${SITE_URL}): Personal portfolio and CV of ${AUTHOR_NAME}, ${JOB_TITLE}.
 - [GitHub](${links.github}): Open-source work and personal projects.
 - [LinkedIn](${links.linkedin}): Professional profile and contact.
 

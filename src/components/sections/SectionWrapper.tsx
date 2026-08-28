@@ -1,7 +1,7 @@
 'use client';
 
 import type { FC, PropsWithChildren } from 'react';
-import { useCallback, useDeferredValue, useEffect, useRef } from 'react';
+import { useDeferredValue, useEffect, useRef } from 'react';
 
 import { clsx } from 'clsx';
 import { motion, useAnimation, useInView } from 'motion/react';
@@ -10,14 +10,6 @@ import type { Variants } from 'motion/react';
 import type { Section } from '@shared/types/section.types';
 
 import { useCurrentSectionStore } from '@client/store/common.store';
-
-/**
- * The only condition under which the entrance animation runs. This is the exact
- * complement of the `static-entrance` variant in globals.css, which pins the
- * section to its resting state.
- */
-const ENTRANCE_ANIMATION_QUERY =
-  '(width >= 48rem) and (prefers-reduced-motion: no-preference)';
 
 const getAnimationVariants = (duration: number): Variants => ({
   hidden: { scale: 0.5, opacity: 0 },
@@ -54,23 +46,13 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
 
   const deferredIsInView = useDeferredValue(isInView);
 
-  const triggerAnimation = useCallback(
-    (name: 'visible' | 'hidden'): void => {
-      if (!window.matchMedia(ENTRANCE_ANIMATION_QUERY).matches) return;
-
-      void control.start(name);
-    },
-    [control],
-  );
-
   useEffect(() => {
+    void control.start(deferredIsInView ? 'visible' : 'hidden');
+
     if (deferredIsInView) {
-      triggerAnimation('visible');
       setCurrentSection(id);
-    } else {
-      triggerAnimation('hidden');
     }
-  }, [triggerAnimation, id, deferredIsInView, setCurrentSection]);
+  }, [control, id, deferredIsInView, setCurrentSection]);
 
   return (
     <motion.section
@@ -78,9 +60,9 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
       className={clsx(
         'relative mx-auto max-supported-width md:navbar-padding',
         'snap-always overflow-hidden md:snap-center',
-        // What actually makes the resting state correct: `!important` here beats
-        // motion's inline styles, on the first paint, with no JS. The guard in
-        // triggerAnimation only saves the frames.
+        // The single definition of "no entrance animation here" lives in the
+        // `static-entrance` variant: `!important` beats motion's inline styles,
+        // on the first paint, with no JS.
         'static-entrance:transform-none! static-entrance:opacity-100!',
         className,
         heightClassName,

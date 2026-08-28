@@ -4,8 +4,8 @@
 
 /*
  * The single definition of "no entrance animation here": too narrow for the
- * snap-scroll layout, or the reader asked for reduced motion. Its exact
- * complement is ENTRANCE_ANIMATION_QUERY in SectionWrapper.tsx.
+ * snap-scroll layout, or the reader asked for reduced motion. Applied by
+ * SectionWrapper.tsx, whose `!important` utilities pin the resting state.
  */
 @custom-variant static-entrance {
   @media (width < 48rem), (prefers-reduced-motion: reduce) {
@@ -42,7 +42,11 @@
   /* Background Images */
   --background-image-pattern-1: url('/bg-1.svg');
   --background-image-pattern-2: url('/bg-2.svg');
-  --background-image-contact: linear-gradient(45deg, #82dbf7 0%, #b6f09c 100%);
+  --background-image-contact: linear-gradient(
+    45deg,
+    var(--color-anakiwa-300) 0%,
+    var(--color-accent) 100%
+  );
 
   /* Border Radius */
   --radius-inherit: inherit;

@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 
-import { clsx } from 'clsx';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -25,13 +24,7 @@ const NotFound: FC = () => (
         scroll away on the home page.
       </p>
       <div className="mt-10">
-        <Link
-          href="/"
-          className={clsx(
-            'inline-flex items-center justify-center',
-            buttonVariants(),
-          )}
-        >
+        <Link href="/" className={buttonVariants()}>
           Back to home
         </Link>
       </div>

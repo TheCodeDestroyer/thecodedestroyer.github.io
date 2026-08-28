@@ -1,19 +1,17 @@
 import { cva } from 'class-variance-authority';
 
 export const buttonVariants = cva(
-  'rounded-xl fill-current text-center font-plus-jakarta-sans font-semibold tracking-button transition-colors select-none disabled:cursor-not-allowed disabled:opacity-60',
+  'inline-flex items-center justify-center rounded-xl border-none fill-current text-center font-plus-jakarta-sans font-semibold tracking-button transition-colors select-none',
   {
     variants: {
       color: {
         primary: [
-          'border-none',
           'text-black',
           'bg-accent',
           'hover:bg-white',
           'hover:text-black',
         ],
         secondary: [
-          'border-none',
           'text-accent',
           'bg-black',
           'ring-1',
@@ -22,7 +20,6 @@ export const buttonVariants = cva(
           'hover:text-black',
         ],
         secondaryAlt: [
-          'border-none',
           'text-accent',
           'bg-black',
           'ring-1',

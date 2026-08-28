@@ -1,12 +1,7 @@
 import type { FC, MouseEvent } from 'react';
 
 import { clsx } from 'clsx';
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useReducedMotion,
-} from 'motion/react';
+import { motion, useMotionTemplate, useMotionValue } from 'motion/react';
 import type { MotionStyle, MotionValue } from 'motion/react';
 
 import type { Work } from '@shared/types/work.types';
@@ -19,15 +14,8 @@ interface Style extends MotionStyle {
 export const WorkCard: FC<Work> = ({ company, position, from, to, tasks }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const shouldReduceMotion = useReducedMotion();
 
   const handleOnMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    // The `motion-reduce:` class below is what hides the halo; this only avoids
-    // a layout read per mouse move for something nobody can see.
-    if (shouldReduceMotion) {
-      return;
-    }
-
     const { currentTarget: target } = e;
 
     const rect = target.getBoundingClientRect();
