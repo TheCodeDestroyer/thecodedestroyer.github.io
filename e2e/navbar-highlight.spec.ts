@@ -1,11 +1,20 @@
 import { expect, test } from '@playwright/test';
 import type { Locator, Page } from '@playwright/test';
 
+import { navSections } from '@shared/constants/section.constants';
 import { Sections } from '@shared/types/section.types';
 import type { Section } from '@shared/types/section.types';
 
-const navLink = (page: Page, name: string): Locator =>
-  page.getByRole('navigation').getByRole('link', { name, exact: true });
+/** Looks the link up by the label the navbar actually renders for that section. */
+const navLink = (page: Page, id: Section): Locator => {
+  const label = navSections.find((section) => section.id === id)?.label;
+
+  if (!label) throw new Error(`#${id} is not a nav section`);
+
+  return page
+    .getByRole('navigation')
+    .getByRole('link', { name: label, exact: true });
+};
 
 /**
  * `behavior: 'instant'` is the load-bearing part: `<main>` carries
@@ -27,8 +36,8 @@ test.describe('navbar highlight', () => {
   test('follows the section currently in view', async ({ page }) => {
     await page.goto('/');
 
-    const me = navLink(page, 'Me');
-    const technologies = navLink(page, 'Technologies');
+    const me = navLink(page, Sections.Me);
+    const technologies = navLink(page, Sections.Technologies);
 
     /* The first section is in view on load, so it owns the highlight. */
     await expect(me).toHaveAttribute('aria-current', 'page');
@@ -39,5 +48,30 @@ test.describe('navbar highlight', () => {
     /* The highlight moved with the scroll, and left the old link behind. */
     await expect(technologies).toHaveAttribute('aria-current', 'page');
     await expect(me).not.toHaveAttribute('aria-current', 'page');
+  });
+
+  test('highlights exactly one link, and none for the sections it omits', async ({
+    page,
+  }) => {
+    await page.goto('/');
+
+    const highlighted = page
+      .getByRole('navigation')
+      .locator('a[aria-current="page"]');
+
+    /* The sections the nav names, and by omission the ones it does not. */
+    const inNav: readonly Section[] = navSections.map(({ id }) => id);
+
+    /*
+     * The old rule let all six sections write the highlight from their own
+     * effect, so two in view at once meant whichever effect ran last won.
+     * Walking every section and pinning the count is what rules that out; the
+     * single hop above would pass under either rule.
+     */
+    for (const section of Object.values(Sections)) {
+      await scrollToSection(page, section);
+
+      await expect(highlighted).toHaveCount(inNav.includes(section) ? 1 : 0);
+    }
   });
 });

@@ -8,8 +8,3 @@ export const Sections = {
 } as const;
 
 export type Section = (typeof Sections)[keyof typeof Sections];
-
-export interface CurrentSectionState {
-  currentSection: Section | null;
-  setCurrentSection: (section: Section | null) => void;
-}

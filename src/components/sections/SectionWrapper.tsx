@@ -1,7 +1,12 @@
 'use client';
 
-import type { FC, PropsWithChildren } from 'react';
-import { useDeferredValue, useEffect, useRef } from 'react';
+import type { FC, PropsWithChildren, RefObject } from 'react';
+import {
+  useDeferredValue,
+  useEffect,
+  useRef,
+  useSyncExternalStore,
+} from 'react';
 
 import { clsx } from 'clsx';
 import { motion, useAnimation, useInView } from 'motion/react';
@@ -9,7 +14,35 @@ import type { Variants } from 'motion/react';
 
 import type { Section } from '@shared/types/section.types';
 
-import { useCurrentSectionStore } from '@client/store/common.store';
+import { useSectionSpy } from '@client/currentSection';
+
+/**
+ * When the entrance animation is worth running: the exact complement of the
+ * `static-entrance` variant in globals.css. That variant pins the resting state
+ * with `!important`, so below 48rem or under reduced motion every frame this
+ * component animates is discarded before it paints — the observer and the
+ * animation loop should not start there at all.
+ */
+const ENTRANCE_ANIMATION_QUERY =
+  '(width >= 48rem) and (prefers-reduced-motion: no-preference)';
+
+/** Never populated — handing this to `useInView` is how a section opts out. */
+const UNOBSERVED: RefObject<Element | null> = { current: null };
+
+const subscribeToEntranceAnimation = (onChange: () => void): (() => void) => {
+  const query = window.matchMedia(ENTRANCE_ANIMATION_QUERY);
+
+  query.addEventListener('change', onChange);
+
+  return () => query.removeEventListener('change', onChange);
+};
+
+const useEntranceAnimation = (): boolean =>
+  useSyncExternalStore(
+    subscribeToEntranceAnimation,
+    () => window.matchMedia(ENTRANCE_ANIMATION_QUERY).matches,
+    () => true,
+  );
 
 const getAnimationVariants = (duration: number): Variants => ({
   hidden: { scale: 0.5, opacity: 0 },
@@ -24,6 +57,11 @@ interface SectionWrapperProps extends PropsWithChildren {
   id: Section;
   className?: string;
   heightClassName?: string;
+  /**
+   * How much of the section must be on screen before it animates in. Purely an
+   * entrance-animation knob: which section the navbar highlights is decided by
+   * `@client/currentSection` against its own probe band, not by this.
+   */
   amount?: number;
   animationDuration?: number;
 }
@@ -36,23 +74,26 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
   amount = 0.5,
   animationDuration = 0.35,
 }) => {
-  const setCurrentSection = useCurrentSectionStore(
-    (state) => state.setCurrentSection,
-  );
   const containerRef = useRef<HTMLDivElement>(null);
   const control = useAnimation();
 
-  const isInView = useInView(containerRef, { amount });
+  const entranceAnimation = useEntranceAnimation();
+
+  const isInView = useInView(entranceAnimation ? containerRef : UNOBSERVED, {
+    amount,
+  });
 
   const deferredIsInView = useDeferredValue(isInView);
 
-  useEffect(() => {
-    void control.start(deferredIsInView ? 'visible' : 'hidden');
+  /* Being the current section is a global, exclusive decision, so it is made
+     once in one module rather than six times over from in here. */
+  useSectionSpy(id, containerRef);
 
-    if (deferredIsInView) {
-      setCurrentSection(id);
-    }
-  }, [control, id, deferredIsInView, setCurrentSection]);
+  useEffect(() => {
+    if (!entranceAnimation) return;
+
+    void control.start(deferredIsInView ? 'visible' : 'hidden');
+  }, [control, deferredIsInView, entranceAnimation]);
 
   return (
     <motion.section
