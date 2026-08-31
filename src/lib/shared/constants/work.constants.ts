@@ -1,11 +1,18 @@
 import type { Work } from '@shared/types/work.types';
 
+/**
+ * The `to` value that marks the role Nace is still in. It is both prose the
+ * card prints and the flag `llmsDocument` finds the current job by, so the two
+ * sides share the literal instead of re-typing it in a second file.
+ */
+export const ONGOING = 'Present';
+
 export const previousWork: Work[] = [
   {
     company: 'Spartan Development d.o.o.',
     position: 'Full Stack Developer',
     from: 'Sep 2026',
-    to: 'Present',
+    to: ONGOING,
     tasks: [
       'Shape the technical direction of the studio, from architecture and stack choices to engineering standards and delivery workflows.',
       'Build product and client work end to end across the front-end and back-end.',

@@ -11,7 +11,7 @@ import {
   technologiesIn,
   technologyCategories,
 } from '@shared/constants/technology.constants';
-import { previousWork } from '@shared/constants/work.constants';
+import { ONGOING, previousWork } from '@shared/constants/work.constants';
 
 const PORTFOLIO_REPO =
   'https://github.com/TheCodeDestroyer/thecodedestroyer.github.io';
@@ -26,12 +26,12 @@ const TRIPORA_URL = 'https://tripora.app';
  */
 
 /*
- * The role still marked `Present` in the work history. The opening paragraph
+ * The role still marked `ONGOING` in the work history. The opening paragraph
  * names it in prose, so deriving it here is what stops llms.txt announcing the
  * previous employer after a job change — the Experience section below renders
  * the same entry.
  */
-const currentWork = previousWork.find((work) => work.to === 'Present');
+const currentWork = previousWork.find((work) => work.to === ONGOING);
 
 const currentRole = currentWork
   ? `currently works as a ${currentWork.position} at ${currentWork.company}, a global software studio, and `
