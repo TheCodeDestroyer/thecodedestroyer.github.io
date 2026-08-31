@@ -20,7 +20,14 @@
 
 @theme {
   /* Colors */
-  /* Mirrored as THEME_COLOR in @shared/constants/meta.constants.ts. */
+  /*
+   * The brand palette's definition. Two of these hexes are re-typed where CSS
+   * cannot reach: `--color-black` as THEME_COLOR in
+   * @shared/constants/meta.constants.ts (metadata and the manifest need a
+   * literal), and both `--color-black` and `--color-accent` in
+   * src/app/icon.svg. Changing either hex means changing those too — see the
+   * note at the top of icon.svg.
+   */
   --color-black: #030405;
   --color-accent: #b6f09c;
   --color-subtext: #9fa0a2;

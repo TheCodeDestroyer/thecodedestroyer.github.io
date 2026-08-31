@@ -1,3 +1,10 @@
+<!--
+  The app icon, and the source the PNG icons are exported from — apple-icon.png
+  beside this file, and the three public/icon-*.png the web manifest lists.
+  Regenerate them by hand after editing this.
+  `fill` mirrors `--color-black` and `stroke` mirrors `--color-accent` in
+  globals.css; SVG cannot read a Tailwind theme token, so the hexes are copied.
+-->
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 64 64"
