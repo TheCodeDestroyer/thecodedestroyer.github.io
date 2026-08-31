@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import { JOB_TITLE } from '@shared/constants/meta.constants';
 import { Sections } from '@shared/types/section.types';
 
 import { SectionWrapper } from '@components/sections/SectionWrapper';
@@ -12,8 +13,8 @@ export const SectionAbout: FC = () => (
   >
     <div className="grid h-full place-items-center">
       <p className="mx-6 text-2xl text-accent sm:text-4xl md:mx-32 lg:text-9xl xl:px-20">
-        <em className="text-white">As a Senior Frontend Engineer,</em> I excel
-        in creating pixel perfect digital experiences that meet user needs with
+        <em className="text-white">{`As a ${JOB_TITLE},`}</em> I excel in
+        creating pixel perfect digital experiences that meet user needs with
         precision.
         <br />
         My passion for detail and technology drives me to over-deliver, crafting

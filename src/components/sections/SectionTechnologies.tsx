@@ -2,6 +2,8 @@ import type { FC } from 'react';
 
 import { clsx } from 'clsx';
 
+import type { FeaturedTechnologyName } from '@shared/constants/technology.constants';
+import { featuredTechnologyOrder } from '@shared/constants/technology.constants';
 import { Sections } from '@shared/types/section.types';
 
 import { ClaudeCodeIcon } from '@components/icon/technologies/ClaudeCodeIcon';
@@ -17,6 +19,27 @@ import { StorybookIcon } from '@components/icon/technologies/StorybookIcon';
 import { SupabaseIcon } from '@components/icon/technologies/SupabaseIcon';
 import { TailwindIcon } from '@components/icon/technologies/TailwindIcon';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
+
+/**
+ * The grid's only knowledge of its own contents. Keying by
+ * `FeaturedTechnologyName` is what stops this drifting from
+ * `featuredTechnologyOrder`: a name listed there with no icon here is a compile
+ * error, and an icon here for something not listed there is too.
+ */
+const icons: Record<FeaturedTechnologyName, FC<{ className?: string }>> = {
+  React: ReactIcon,
+  'Next.js': NextIcon,
+  TailwindCSS: TailwindIcon,
+  Cypress: CypressIcon,
+  Storybook: StorybookIcon,
+  'Node.js': NodeIcon,
+  Convex: ConvexIcon,
+  Supabase: SupabaseIcon,
+  'Claude Code': ClaudeCodeIcon,
+  'OpenAI API': OpenAIIcon,
+  Git: GitIcon,
+  Docker: DockerIcon,
+};
 
 export const SectionTechnologies: FC = () => {
   const iconClassName = 'size-12 sm:size-16 md:size-20';
@@ -42,19 +65,12 @@ export const SectionTechnologies: FC = () => {
           'before:animate-border-spin',
         )}
       >
-        <div className="grid grid-cols-3 grid-rows-4 gap-x-20 gap-y-10 rounded bg-black p-9 md:gap-y-12">
-          <ReactIcon className={iconClassName} />
-          <NextIcon className={iconClassName} />
-          <TailwindIcon className={iconClassName} />
-          <CypressIcon className={iconClassName} />
-          <StorybookIcon className={iconClassName} />
-          <NodeIcon className={iconClassName} />
-          <ConvexIcon className={iconClassName} />
-          <SupabaseIcon className={iconClassName} />
-          <ClaudeCodeIcon className={iconClassName} />
-          <OpenAIIcon className={iconClassName} />
-          <GitIcon className={iconClassName} />
-          <DockerIcon className={iconClassName} />
+        <div className="grid grid-cols-3 gap-x-20 gap-y-10 rounded bg-black p-9 md:gap-y-12">
+          {featuredTechnologyOrder.map((name) => {
+            const Icon = icons[name];
+
+            return <Icon key={name} className={iconClassName} />;
+          })}
         </div>
       </div>
       <div className="absolute -top-20 left-32 -z-10 block h-160 w-124.5 ellipsis bg-anakiwa-300" />

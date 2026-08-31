@@ -5,13 +5,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { clsx } from 'clsx';
 import type { Metadata, Viewport } from 'next';
 import { Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google';
-import type { Person, WithContext } from 'schema-dts';
 
-import { links } from '@shared/constants/link.types';
 import {
   AUTHOR_HEADLINE,
   AUTHOR_NAME,
-  JOB_TITLE,
   META_DESCRIPTION,
   META_TITLE,
   PROFILE_IMAGE_PATH,
@@ -19,6 +16,7 @@ import {
   SITE_URL,
   THEME_COLOR,
 } from '@shared/constants/meta.constants';
+import { personJsonLd } from '@shared/profile/personJsonLd';
 
 import './globals.css';
 
@@ -73,29 +71,6 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: THEME_COLOR,
-};
-
-const personJsonLd: WithContext<Person> = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: AUTHOR_NAME,
-  alternateName: SITE_NAME,
-  url: SITE_URL,
-  image: `${SITE_URL}${PROFILE_IMAGE_PATH}`,
-  jobTitle: JOB_TITLE,
-  description: META_DESCRIPTION,
-  address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'Slovenia',
-  },
-  sameAs: [links.github, links.linkedin],
-  knowsAbout: [
-    'React',
-    'Next.js',
-    'TypeScript',
-    'TailwindCSS',
-    'Frontend Engineering',
-  ],
 };
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {

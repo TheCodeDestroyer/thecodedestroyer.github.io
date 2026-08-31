@@ -1,8 +1,6 @@
-'use client';
-
 import type { FC } from 'react';
 
-import { links } from '@shared/constants/link.types';
+import { links } from '@shared/constants/link.constants';
 import { Sections } from '@shared/types/section.types';
 
 import { ButtonLink } from '@components/ButtonLink';

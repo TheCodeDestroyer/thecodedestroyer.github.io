@@ -1,11 +1,13 @@
-'use client';
-
 import type { FC } from 'react';
 
 import Image from 'next/image';
 
-import { links } from '@shared/constants/link.types';
-import { AUTHOR_HEADLINE } from '@shared/constants/meta.constants';
+import { links } from '@shared/constants/link.constants';
+import {
+  AUTHOR_COUNTRY,
+  AUTHOR_HEADLINE,
+  AUTHOR_NAME,
+} from '@shared/constants/meta.constants';
 import { Sections } from '@shared/types/section.types';
 
 import { ButtonLink } from '@components/ButtonLink';
@@ -23,11 +25,11 @@ export const SectionMe: FC = () => (
     <div className="ml-6 flex h-full flex-col items-start justify-center pb-10 md:ml-32 md:justify-end md:pb-32">
       <h1 className="text-9xl">
         <span className="block">{`Hi, I'm`}</span>
-        <span className="block text-accent">Nace Logar!</span>
+        <span className="block text-accent">{`${AUTHOR_NAME}!`}</span>
       </h1>
       <div className="mt-8 flex flex-col text-2xl">
         <span>from</span>
-        <span>Slovenia</span>
+        <span>{AUTHOR_COUNTRY}</span>
       </div>
       <div className="mt-8 flex flex-row space-x-5">
         <ButtonLink
