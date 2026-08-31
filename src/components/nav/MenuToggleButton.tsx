@@ -18,7 +18,7 @@ export const MenuToggleButton: FC<MenuToggleButtonProps> = ({ isOpen }) => (
     )}
   >
     <span className="absolute -inset-0.5" />
-    <span className="sr-only">Open main menu</span>
+    <span className="sr-only">{isOpen ? 'Close' : 'Open'} main menu</span>
     {isOpen ? (
       <XMarkIcon className="block size-6" aria-hidden="true" />
     ) : (
