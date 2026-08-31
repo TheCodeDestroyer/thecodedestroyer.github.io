@@ -55,11 +55,13 @@ End-to-end only, with [Playwright](https://playwright.dev/). The suite lives in
 
 ```sh
 pnpm exec playwright install chromium   # once, to fetch the browser
-pnpm test                               # boots `next start` on :3111, then runs
+pnpm test                               # boots `next start`, then runs
 ```
 
 `playwright.config.ts` starts and stops the server itself, so no separate
-`pnpm start` is needed. Locally it reuses an already-running server on that port.
+`pnpm start` is needed. It derives the port from this checkout's path, so
+parallel worktrees never end up testing each other's build, and locally reuses
+a server already listening on it. Set `E2E_PORT` to pin a port instead.
 
 When a CI run fails it uploads a `playwright-report` artifact. Open it with
 `pnpm exec playwright show-report <unzipped-dir>` — the report fetches its own
