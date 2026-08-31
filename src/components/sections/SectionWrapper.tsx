@@ -29,8 +29,20 @@ const ENTRANCE_ANIMATION_QUERY =
 /** Never populated — handing this to `useInView` is how a section opts out. */
 const UNOBSERVED: RefObject<Element | null> = { current: null };
 
+/*
+ * One `MediaQueryList` for the page, the way `@client/currentSection` keeps one
+ * observer: the answer is global, so every section reads the same object rather
+ * than minting a fresh one per subscribe and per `getSnapshot` — and
+ * `getSnapshot` runs on every render of every section. Lazy because `window`
+ * does not exist when this module is first imported on the server.
+ */
+let entranceQuery: MediaQueryList | undefined;
+
+const getEntranceQuery = (): MediaQueryList =>
+  (entranceQuery ??= window.matchMedia(ENTRANCE_ANIMATION_QUERY));
+
 const subscribeToEntranceAnimation = (onChange: () => void): (() => void) => {
-  const query = window.matchMedia(ENTRANCE_ANIMATION_QUERY);
+  const query = getEntranceQuery();
 
   query.addEventListener('change', onChange);
 
@@ -40,7 +52,7 @@ const subscribeToEntranceAnimation = (onChange: () => void): (() => void) => {
 const useEntranceAnimation = (): boolean =>
   useSyncExternalStore(
     subscribeToEntranceAnimation,
-    () => window.matchMedia(ENTRANCE_ANIMATION_QUERY).matches,
+    () => getEntranceQuery().matches,
     () => true,
   );
 
