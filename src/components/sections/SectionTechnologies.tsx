@@ -6,6 +6,7 @@ import type { FeaturedTechnologyName } from '@shared/constants/technology.consta
 import { featuredTechnologyOrder } from '@shared/constants/technology.constants';
 import { Sections } from '@shared/types/section.types';
 
+import { Ellipsis } from '@components/Ellipsis';
 import { ClaudeCodeIcon } from '@components/icon/technologies/ClaudeCodeIcon';
 import { ConvexIcon } from '@components/icon/technologies/ConvexIcon';
 import { CypressIcon } from '@components/icon/technologies/CypressIcon';
@@ -73,8 +74,8 @@ export const SectionTechnologies: FC = () => {
           })}
         </div>
       </div>
-      <div className="absolute -top-20 left-32 -z-10 block h-160 w-124.5 ellipsis bg-anakiwa-300" />
-      <div className="absolute top-220 right-0 -z-10 block h-164 w-176 ellipsis bg-accent" />
+      <Ellipsis className="-top-20 left-32 h-160 w-124.5 bg-anakiwa-300" />
+      <Ellipsis className="top-220 right-0 h-164 w-176 bg-accent" />
     </SectionWrapper>
   );
 };

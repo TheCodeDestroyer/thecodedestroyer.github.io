@@ -27,6 +27,12 @@ Section taller than the viewport.
 view. Independent of the Current section: it has its own threshold (the
 `amount` prop) and is disabled below 48rem and under reduced motion.
 
+**Ellipsis** — one of the soft blur blobs sitting behind a Section. Named for
+the shape, not the punctuation. `Ellipsis` in `@components/Ellipsis` holds the
+out-of-flow, behind-the-content contract; the `ellipsis` utility in
+`globals.css` holds the blur, radius and opacity; position, size and colour are
+the call site's.
+
 ## Profile
 
 **Profile** — the résumé facts about Nace, held once in `@shared/constants` and

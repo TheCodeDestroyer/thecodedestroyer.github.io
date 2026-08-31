@@ -11,6 +11,7 @@ import {
 import { Sections } from '@shared/types/section.types';
 
 import { ButtonLink } from '@components/ButtonLink';
+import { Ellipsis } from '@components/Ellipsis';
 import { GitHubIcon } from '@components/icon/GitHubIcon';
 import { LinkedInIcon } from '@components/icon/LinkedInIcon';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
@@ -58,8 +59,8 @@ export const SectionMe: FC = () => (
         priority
       />
     </div>
-    <div className="absolute bottom-60 left-2 -z-10 block h-90 w-2xl rotate-24 ellipsis bg-accent" />
-    <div className="absolute bottom-24 left-80 -z-10 block h-19.5 w-2xl rotate-24 ellipsis bg-karry-100" />
+    <Ellipsis className="bottom-60 left-2 h-90 w-2xl rotate-24 bg-accent" />
+    <Ellipsis className="bottom-24 left-80 h-19.5 w-2xl rotate-24 bg-karry-100" />
   </SectionWrapper>
 );
 

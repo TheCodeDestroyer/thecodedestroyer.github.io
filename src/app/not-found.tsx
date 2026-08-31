@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { buttonVariants } from '@components/buttonVariants';
+import { Ellipsis } from '@components/Ellipsis';
 import { NavBar } from '@components/nav/NavBar';
 
 export const metadata: Metadata = {
@@ -29,8 +30,8 @@ const NotFound: FC = () => (
         </Link>
       </div>
     </div>
-    <div className="absolute -bottom-40 left-2 -z-10 block h-90 w-2xl rotate-24 ellipsis bg-accent" />
-    <div className="absolute -top-40 right-2 -z-10 block h-90 w-2xl rotate-24 ellipsis bg-anakiwa-300" />
+    <Ellipsis className="-bottom-40 left-2 h-90 w-2xl rotate-24 bg-accent" />
+    <Ellipsis className="-top-40 right-2 h-90 w-2xl rotate-24 bg-anakiwa-300" />
   </main>
 );
 

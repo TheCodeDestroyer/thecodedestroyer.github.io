@@ -96,6 +96,10 @@
 }
 
 /* Utilities */
+/*
+ * The look of a decorative blur blob. Its wrapper contract — out of the flow,
+ * behind the content — lives in `Ellipsis` (src/components/Ellipsis.tsx).
+ */
 @utility ellipsis {
   border-radius: 100%;
   filter: blur(200px);
