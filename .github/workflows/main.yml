@@ -39,6 +39,11 @@ jobs:
       - name: Run TypeScript
         run: pnpm tcd-scripts lint --only=tsc
 
+      # Ahead of the build on purpose: these need no bundler and no browser, so
+      # a broken rule fails in seconds rather than after a build and a boot.
+      - name: Run unit tests
+        run: pnpm test:unit
+
       # Without this every run is a cold build: a full bundler compile, a fresh
       # `next/font` fetch and a full sharp re-optimisation of the profile image.
       - name: Cache Next build
@@ -77,7 +82,7 @@ jobs:
       # `playwright.config.ts` boots `pnpm start` against the build above.
       - name: Run E2E tests
         id: e2e
-        run: pnpm test
+        run: pnpm test:e2e
 
       - name: Upload Playwright report
         if: failure() && steps.e2e.outcome == 'failure'

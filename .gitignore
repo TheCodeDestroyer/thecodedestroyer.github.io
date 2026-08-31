@@ -64,3 +64,4 @@ next-env.d.ts
 
 # Agent worktrees (git worktrees created under .claude by Claude Code)
 /.claude/worktrees/
+.env*

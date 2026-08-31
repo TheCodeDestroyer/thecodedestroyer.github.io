@@ -8,7 +8,11 @@
       "@public/*": ["./public/*"]
     },
     "noEmit": true,
-    "incremental": true
+    "incremental": true,
+    /* `node --test` resolves specifiers as plain ESM, so the *.test.ts files
+       import their subject with an explicit extension. Free to allow here
+       because nothing is emitted. */
+    "allowImportingTsExtensions": true
   },
   "include": ["**/*", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
