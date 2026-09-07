@@ -20,11 +20,12 @@ import type { NextConfig } from 'next';
  *   5. The `application/ld+json` block still parses (Rich Results Test).
  *   6. `manifest.webmanifest` and the icon routes load.
  *
- * `next dev` logs one console.error per load: React's development build
- * probes `eval()` for call-stack reconstruction and complains when the CSP
- * blocks it. Nothing else is affected — the page hydrates, HMR connects and
- * no request is blocked — and React never calls `eval()` in production. Do
- * not add `'unsafe-eval'` to silence that dev-only line.
+ * `script-src 'unsafe-eval'` is added in development only, alongside the
+ * `upgrade-insecure-requests` gate below. React's development build calls
+ * `eval()` to reconstruct call stacks across the server/client boundary, so
+ * without it every dev page load logs a console.error and the error overlay
+ * loses those frames. React never calls `eval()` in production, so the shipped
+ * policy is unchanged — see `isDevelopment`.
  *
  * The two decisions worth keeping:
  *
@@ -45,9 +46,40 @@ import type { NextConfig } from 'next';
 /** Dev/debug-only fallback host; production loads from same-origin `/_vercel/*`. */
 const VERCEL_ANALYTICS_HOST = 'https://va.vercel-scripts.com';
 
+/**
+ * `upgrade-insecure-requests` rewrites every `http://` subresource URL to
+ * `https://`. On a deployed HTTPS origin that is free belt-and-braces; on
+ * `next dev` it is fatal, because the dev server speaks plain HTTP and every
+ * chunk, stylesheet and font is then requested over a port with no TLS
+ * listener. Chrome exempts `localhost` from the upgrade, which is why this
+ * hides in local testing, but it does not exempt `127.0.0.1` peers on the LAN
+ * (the "Network:" URL `next dev` prints) and WebKit exempts nothing at all —
+ * Safari renders a bare, scriptless page. So: production only.
+ */
+const isProduction = process.env.NODE_ENV === 'production';
+
+/*
+ * The complement, spelled out rather than inlined as `!isProduction`, because
+ * it reads as the thing being granted at the `script-src` line below.
+ */
+const isDevelopment = !isProduction;
+
+/**
+ * Only ever `'unsafe-eval'`, and only off a production build. React's dev
+ * bundle probes `eval()` for call-stack reconstruction; blocking it costs the
+ * frames the error overlay shows for a server component and logs a
+ * console.error on every load. Nothing in the production bundle calls `eval()`,
+ * so this is a dev-tooling allowance, not a loosening of the shipped policy.
+ */
+const DEVELOPMENT_SCRIPT_SOURCES = isDevelopment ? [`'unsafe-eval'`] : [];
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' ${VERCEL_ANALYTICS_HOST}`,
+  [
+    "script-src 'self' 'unsafe-inline'",
+    VERCEL_ANALYTICS_HOST,
+    ...DEVELOPMENT_SCRIPT_SOURCES,
+  ].join(' '),
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "font-src 'self'",
@@ -59,11 +91,11 @@ const contentSecurityPolicy = [
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
-  // Browsers ignore this in report-only mode, so it only started doing
-  // anything once the header became enforcing. The site is HTTPS-only with
-  // HSTS, so this is belt-and-braces for an `http://` asset URL that sneaks
-  // into content: it gets upgraded instead of blocked as mixed content.
-  'upgrade-insecure-requests',
+  // The site is HTTPS-only with HSTS, so this is belt-and-braces for an
+  // `http://` asset URL that sneaks into content: it gets upgraded instead of
+  // blocked as mixed content. Dev is plain HTTP, hence the guard — see the
+  // note above `isProduction`.
+  ...(isProduction ? ['upgrade-insecure-requests'] : []),
 ].join('; ');
 
 const nextConfig: NextConfig = {
