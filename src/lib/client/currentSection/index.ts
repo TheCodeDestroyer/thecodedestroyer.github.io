@@ -20,6 +20,12 @@ import { pickCurrent } from '@client/currentSection/pickCurrent';
  * `SectionInterests` is `min-h-screen h-auto` and can be taller than the
  * viewport, so its ratio never reaches what a screen-sized section hits. That
  * mismatch is what the old per-section `amount={0.007}` was working around.
+ *
+ * The vertical percentages resolve against viewport *height* in Chromium,
+ * Gecko and WebKit alike, so the band holds its shape at any aspect ratio. The
+ * spec's prose says width instead; no engine reads it that way, and
+ * `navbar-highlight.spec.ts` pins the behavior on a wide, short viewport —
+ * exactly where the two readings would part company.
  */
 const PROBE_BAND_ROOT_MARGIN = '-25% 0px -74% 0px';
 

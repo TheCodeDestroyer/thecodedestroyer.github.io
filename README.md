@@ -49,13 +49,18 @@ pnpm format        # Prettier
 
 ## Tests
 
-End-to-end only, with [Playwright](https://playwright.dev/). The suite lives in
-[`e2e/`](./e2e) and always runs against the production build; see
+Two layers. Unit tests cover the pure helpers and sit next to the code they
+test as `*.test.ts` under [`src/`](./src); they run on Node's own test runner,
+no browser needed. Everything else is end-to-end with
+[Playwright](https://playwright.dev/): that suite lives in [`e2e/`](./e2e) and
+always runs against the production build; see
 [`playwright.config.ts`](./playwright.config.ts) for why.
 
 ```sh
 pnpm exec playwright install chromium   # once, to fetch the browser
-pnpm test                               # boots `next start`, then runs
+pnpm test                               # unit tests, then boots `next start` and runs e2e
+pnpm test:unit                          # unit tests only — fast, no browser
+pnpm test:e2e                           # end-to-end only
 ```
 
 `playwright.config.ts` starts and stops the server itself, so no separate

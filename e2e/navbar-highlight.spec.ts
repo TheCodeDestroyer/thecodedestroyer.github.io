@@ -74,4 +74,26 @@ test.describe('navbar highlight', () => {
       await expect(highlighted).toHaveCount(inNav.includes(section) ? 1 : 0);
     }
   });
+
+  /*
+   * The probe band is a `rootMargin` in percentages. Engines resolve the
+   * vertical ones against viewport height, but the spec's prose says width, and
+   * a wide, short viewport is where the two readings part company: read as
+   * width, the band would invert here and no link would ever light up.
+   */
+  test('survives a wide, short viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 1920, height: 480 });
+    await page.goto('/');
+
+    const technologies = navLink(page, Sections.Technologies);
+
+    await expect(navLink(page, Sections.Me)).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
+
+    await scrollToSection(page, Sections.Technologies);
+
+    await expect(technologies).toHaveAttribute('aria-current', 'page');
+  });
 });
