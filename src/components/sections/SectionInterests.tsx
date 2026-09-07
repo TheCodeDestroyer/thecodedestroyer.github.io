@@ -1,5 +1,3 @@
-'use client';
-
 import type { FC } from 'react';
 
 import { interests } from '@shared/constants/interest.constants';
@@ -13,7 +11,11 @@ export const SectionInterests: FC = () => (
     id={Sections.Hobbies}
     className="overflow-hidden bg-pattern-1 bg-position-[left_-25rem_top_-18rem] bg-no-repeat"
     heightClassName="min-h-screen h-auto"
-    amount={0.007}
+    /* This section is the only one taller than the viewport, so it is the only
+       one that cannot reach the default 0.5. Measured worst case is 1192px
+       against a 600px viewport at 48rem wide — the narrowest the entrance
+       animation is enabled at — which caps the ratio at exactly 0.50. */
+    amount={0.3}
   >
     <h2 className="px-6 text-2xl text-white md:mt-52 md:text-center md:text-8xl xl:text-10xl">
       Interests

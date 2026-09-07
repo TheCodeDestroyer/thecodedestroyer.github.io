@@ -4,15 +4,15 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@shared/*": ["./src/lib/shared/*"],
-      "@server/*": ["./src/lib/server/*"],
       "@client/*": ["./src/lib/client/*"],
-      "@public/*": ["./public/*"],
-      "@server/convex/*": ["./convex/*"]
+      "@public/*": ["./public/*"]
     },
     "noEmit": true,
     "incremental": true,
-    // Remove once TS fixes that this checks node_modules
-    "erasableSyntaxOnly": false
+    /* `node --test` resolves specifiers as plain ESM, so the *.test.ts files
+       import their subject with an explicit extension. Free to allow here
+       because nothing is emitted. */
+    "allowImportingTsExtensions": true
   },
   "include": ["**/*", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

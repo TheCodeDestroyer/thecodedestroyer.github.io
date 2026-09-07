@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 import { previousWork } from '@shared/constants/work.constants';
 import { Sections } from '@shared/types/section.types';

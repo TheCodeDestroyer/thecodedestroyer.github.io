@@ -1,3 +1,7 @@
 node_modules
 postcss.config.js
 .eslintrc.js
+.beads
+
+# Claude Code agent scratch space; see eslint.config.mjs.
+.claude

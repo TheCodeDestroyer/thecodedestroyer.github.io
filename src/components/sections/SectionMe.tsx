@@ -1,13 +1,17 @@
-'use client';
-
 import type { FC } from 'react';
 
 import Image from 'next/image';
 
-import { links } from '@shared/constants/link.types';
+import { links } from '@shared/constants/link.constants';
+import {
+  AUTHOR_COUNTRY,
+  AUTHOR_HEADLINE,
+  AUTHOR_NAME,
+} from '@shared/constants/meta.constants';
 import { Sections } from '@shared/types/section.types';
 
 import { ButtonLink } from '@components/ButtonLink';
+import { Ellipsis } from '@components/Ellipsis';
 import { GitHubIcon } from '@components/icon/GitHubIcon';
 import { LinkedInIcon } from '@components/icon/LinkedInIcon';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
@@ -22,17 +26,25 @@ export const SectionMe: FC = () => (
     <div className="ml-6 flex h-full flex-col items-start justify-center pb-10 md:ml-32 md:justify-end md:pb-32">
       <h1 className="text-9xl">
         <span className="block">{`Hi, I'm`}</span>
-        <span className="block text-accent">Nace Logar!</span>
+        <span className="block text-accent">{`${AUTHOR_NAME}!`}</span>
       </h1>
       <div className="mt-8 flex flex-col text-2xl">
         <span>from</span>
-        <span>Slovenia</span>
+        <span>{AUTHOR_COUNTRY}</span>
       </div>
       <div className="mt-8 flex flex-row space-x-5">
-        <ButtonLink ariaLabel="Visit GitHub profile" href={links.github}>
+        <ButtonLink
+          ariaLabel="Visit GitHub profile"
+          href={links.github}
+          size="icon"
+        >
           <GitHubIcon />
         </ButtonLink>
-        <ButtonLink ariaLabel="Visit LinkedIn profile" href={links.linkedin}>
+        <ButtonLink
+          ariaLabel="Visit LinkedIn profile"
+          href={links.linkedin}
+          size="icon"
+        >
           <LinkedInIcon />
         </ButtonLink>
       </div>
@@ -41,14 +53,14 @@ export const SectionMe: FC = () => (
       <Image
         src={image}
         quality={70}
-        alt="Nace Logar, Senior Frontend Engineer"
+        alt={AUTHOR_HEADLINE}
         height={650}
         className="scale-x-[-1] transform-gpu object-fill"
         priority
       />
     </div>
-    <div className="absolute bottom-60 left-2 -z-10 block h-90 w-2xl rotate-24 ellipsis bg-accent" />
-    <div className="absolute bottom-24 left-80 -z-10 block h-19.5 w-2xl rotate-24 ellipsis bg-karry-100" />
+    <Ellipsis className="bottom-60 left-2 h-90 w-2xl rotate-24 bg-accent" />
+    <Ellipsis className="bottom-24 left-80 h-19.5 w-2xl rotate-24 bg-karry-100" />
   </SectionWrapper>
 );
 
