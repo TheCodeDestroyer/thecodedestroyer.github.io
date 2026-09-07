@@ -7,10 +7,7 @@ import { ButtonLink } from '@components/ButtonLink';
 import { SectionWrapper } from '@components/sections/SectionWrapper';
 
 export const SectionContactMe: FC = () => (
-  <SectionWrapper
-    id={Sections.ContactMe}
-    className="w-full pattern-top-left transition"
-  >
+  <SectionWrapper id={Sections.ContactMe} className="w-full pattern-top-left">
     <div className="nmd:w-3/5 absolute inset-0 -z-10 mx-auto h-full w-full">
       <div className="absolute -bottom-[35%] -z-10 mx-auto h-full w-full rounded-full bg-contact blur-[8rem] sm:-bottom-[60%] sm:blur-[15.625rem]" />
     </div>
